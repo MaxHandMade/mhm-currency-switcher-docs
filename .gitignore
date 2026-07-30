@@ -1,0 +1,32 @@
+# Whitelist. Everything is ignored unless explicitly allowed below.
+*
+
+!.gitignore
+!README.md
+!LICENSE
+!package.json
+!package-lock.json
+!docusaurus.config.js
+!sidebars.js
+
+!docs/
+!docs/**
+!i18n/
+!i18n/**
+!src/
+!src/**
+!static/
+!static/**
+!scripts/
+!scripts/**
+!.github/
+!.github/**
+
+# Never, under any circumstances.
+.env
+.env.*
+node_modules/
+build/
+.docusaurus/
+.claude/
+CLAUDE.md
