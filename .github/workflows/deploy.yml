@@ -30,6 +30,12 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
+      - name: Placement tables match the plugin
+        run: |
+          node scripts/generate-placement-page.js
+          git diff --exit-code -- docs/yerlestirme.md i18n/tr/docusaurus-plugin-content-docs/current/yerlestirme.md \
+            || { echo "::error::Placement tables are stale. Run 'node scripts/generate-placement-page.js' and commit."; exit 1; }
+
       - name: Build website
         run: npm run build
 
