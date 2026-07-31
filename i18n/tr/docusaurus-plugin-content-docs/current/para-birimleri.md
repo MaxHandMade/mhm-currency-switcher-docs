@@ -82,3 +82,5 @@ Kurlar şu kaynaklardan alınır:
 2. **Fawaz Ahmed Currency API** (yedek) — birincil kaynak yanıt vermezse devreye girer
 
 Her iki kaynak da ücretsizdir ve **API anahtarı gerektirmez**. Çekilen kurlar 1 gün boyunca önbellekte tutulur; bu süre dolmadan yapılan senkronizasyonlar önbellekteki değeri kullanır.
+
+Sunucu terminaline erişiminiz varsa kurları `wp mhm-cs rates-sync` ile senkronize edebilir veya `wp mhm-cs cache-flush` ile önbelleği elle temizleyebilirsiniz — bkz. [WP-CLI Komutları](/docs/wp-cli).

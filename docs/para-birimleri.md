@@ -81,5 +81,7 @@ Rates come from:
 
 Both are free and need no API key. Fetched rates are cached for 1 day; syncing again within that window returns the cached value.
 
+If you have server access, you can sync rates or flush the cache from the command line instead — see [WP-CLI Commands](/docs/wp-cli).
+
 The full list of frequently asked questions and known limits is in
 [readme.txt](https://wordpress.org/plugins/mhm-currency-switcher/).
