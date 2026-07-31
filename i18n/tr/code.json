@@ -283,7 +283,7 @@
     "message": "See all results"
   },
   "theme.SearchBar.label": {
-    "message": "Search",
+    "message": "Ara",
     "description": "The ARIA label and placeholder for search button"
   },
   "theme.SearchPage.existingResultsTitle": {
