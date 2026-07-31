@@ -42,6 +42,8 @@ curl https://yourstore.com/wp-json/mhmcs/v1/rates
 }
 ```
 
+`detected` is `true` only when the server itself resolved the currency (geolocation succeeded, with no `currency` sent in the request) — it's `false` for an explicit `currency`, and `false` when detection came up empty too. It matters because the browser's own cookie write is gated on it: `price-converter.js` only persists the cookie when `detected: true`, so a failed detection isn't pinned to the base currency and geolocation gets retried on the visitor's next page.
+
 It's unauthenticated by design — the pages it serves are read by logged-out visitors with no nonce to send — but tightly scoped: only already-public product HTML, nothing written server-side, and a per-address rate limit of **120 requests a minute**, adjustable via the `mhmcs_convert_rate_limit` filter. Going over it returns `429` with a `Retry-After` header. For the full write-up of why it's shaped this way, see the ["Is there a limit on how often the conversion endpoint can be called?"](https://wordpress.org/plugins/mhm-currency-switcher/) entry in readme.txt.
 
 ## Admin endpoints

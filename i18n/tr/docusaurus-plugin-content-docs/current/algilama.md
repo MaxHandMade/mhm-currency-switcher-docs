@@ -18,7 +18,13 @@ Hangi adımdan gelirse gelsin, bulunan kod **ana para birimi** veya **etkin bir 
 
 ## 1. Çerez
 
-Ziyaretçi dönüştürücüden bir para birimi seçtiğinde çerez yazılır.
+Çerezin **üç** ayrı yazma yolu vardır — kılavuzun eski sürümü yalnızca birini (dönüştürücüden seçim) anıyordu; bir ziyaretçi yanlış para biriminde görünüyorsa üçünün de kontrol edilmesi gerekir:
+
+1. **Dönüştürücüden seçim.** Ziyaretçi açılır listeden bir para birimi seçtiğinde çerezi tarayıcı (`switcher.js`) doğrudan kendisi yazar.
+2. **Konum algılama — sunucu tarafında.** `DetectionService::detect_from_geolocation()` bulduğu para birimini bekletir; `template_redirect` kancasının en başında (öncelik 0) çalışan `prime_currency_cookie()` bunu çereze yazar — **ama yalnızca render bir sayfa önbelleği tarafından saklanacak türden değilse.** Render önbelleklenebilir ise (önbellek uyumluluğu modu açık, ziyaretçi oturum açmamış, sayfa mağaza/kategori/ürün sayfası) bu yazma bilerek atlanır: aksi halde bir ziyaretçinin coğrafi konumdan bulunan para birimi önbelleğe giren HTML'e gömülür ve o sayfayı sonra açan herkese aynı para birimi sunulurdu.
+3. **Konum algılama — tarayıcı tarafında.** Tam olarak 2. adımın atlandığı önbelleklenebilir render'larda, tarayıcı önbellek uyumluluğu modunun [dönüştürme uç noktasını](/docs/rest-api) çağırır; yanıt `detected: true` dönerse çerezi bu kez `price-converter.js` kendisi yazar. 2. ve 3. yol birbirini tamamlar, çakışmaz: bir render önbelleklenebilirse yalnızca tarayıcı yazar, önbelleklenemezse yalnızca sunucu yazar.
+
+Üçü de aynı öznitelik setini kullanır (30 gün, `path=/`, `SameSite=Lax`, yalnızca HTTPS'te `Secure`) — kod bunu bilerek tekrarlar, çünkü tek bir özniteliğin üçünde de aynı olmaması, ziyaretçinin tercihinin bir modda sessizce kalıcı olmaktan çıkması demektir.
 
 | Özellik | Değer |
 |---------|-------|

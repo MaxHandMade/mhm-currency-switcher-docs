@@ -88,7 +88,7 @@ Retry-After: 60
 
 Mağazanız bir ters proxy veya CDN arkasındaysa ve her ziyaretçi aynı adresten geliyormuş gibi görünüyorsa, `mhmcs_convert_rate_limit` filtresiyle sınırı yükseltebilir veya kapatabilirsiniz.
 
-Yanıt her zaman `Cache-Control: no-store` başlığıyla döner — içerik ziyaretçinin çerezine bağlı olduğu için bir paylaşımlı önbellek tarafından saklanmamalıdır.
+**Yalnızca başarılı dönüştürme yanıtı** `Cache-Control: no-store` başlığıyla döner — içerik ziyaretçinin çerezine bağlı olduğu için bir paylaşımlı önbellek tarafından saklanmamalıdır. Yukarıdaki 429 (hız sınırı) yanıtında bu başlık **yoktur**, yalnızca `Retry-After` bulunur. Bu fark mağazanız bir paylaşımlı proxy veya CDN arkasındaysa önemlidir: `no-store` taşımayan bir 429, aynı adresten gelen (ör. aynı NAT arkasındaki) başka ziyaretçilere de önbellekten sunulabilir — o ziyaretçiler fiyatların neden dönüştürülmediğine dair sayfada hiçbir açıklama görmeden, süresiz biçimde ana para biriminde takılı kalabilir.
 
 ## Yönetici Uç Noktaları
 

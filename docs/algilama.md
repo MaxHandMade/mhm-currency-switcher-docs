@@ -16,7 +16,13 @@ A code found at any step is discarded (and the chain moves on) unless it's eithe
 
 ## Cookie
 
-Set once a visitor picks a currency from the switcher.
+There are **three** separate places this cookie gets written — if a visitor is stuck in the wrong currency, the fix depends on which one is involved:
+
+1. **Switcher selection.** When a visitor picks a currency from the dropdown, the browser (`switcher.js`) writes the cookie itself.
+2. **Geolocation, server-side.** `detect_from_geolocation()` queues whatever it finds, and `prime_currency_cookie()` — hooked at `template_redirect`, priority 0 — writes it to the cookie, **unless the current render is one a page cache is about to store.** On a cacheable render (cache compatibility mode on, visitor logged out, shop/category/product page) this write is deliberately skipped: writing it there would bake one visitor's geolocated currency into the cached HTML and hand it to everyone who loads that page afterward.
+3. **Geolocation, client-side.** On exactly the cacheable renders where step 2 backs off, the browser calls the [convert endpoint](/docs/rest-api) itself; if the response comes back `detected: true`, `price-converter.js` writes the cookie instead. Steps 2 and 3 are complementary, not overlapping — for any given render, only one of them ever fires.
+
+All three write the same attributes (30 days, `path=/`, `SameSite=Lax`, `Secure` on HTTPS only) — deliberately kept in sync across two separate scripts and the PHP side, because one attribute out of step means a visitor's choice silently stops persisting in one mode but not the others.
 
 | Property | Value |
 |---|---|
