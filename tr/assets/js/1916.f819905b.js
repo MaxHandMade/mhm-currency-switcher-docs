@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkmhm_currency_switcher_docs=self.webpackChunkmhm_currency_switcher_docs||[]).push([["1916"],{7671(e,c,r){r.d(c,{createTreemapServices:()=>s.d});var s=r(4687);r(1400)}}]);

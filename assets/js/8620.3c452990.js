@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkmhm_currency_switcher_docs=self.webpackChunkmhm_currency_switcher_docs||[]).push([["8620"],{8391(c,e,r){r.d(e,{createInfoServices:()=>s.v});var s=r(6491);r(1400)}}]);

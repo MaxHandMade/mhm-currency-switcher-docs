@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkmhm_currency_switcher_docs=self.webpackChunkmhm_currency_switcher_docs||[]).push([["5480"],{872(c,e,r){r.d(e,{createPacketServices:()=>s.$});var s=r(9773);r(1400)}}]);
