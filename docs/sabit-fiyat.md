@@ -23,4 +23,4 @@ For variable products, each variation's pricing row has its own **Fixed Currency
 Setting a fixed price for a currency makes that product's regular price **and** its sale price equal to the same single value. If you want to show a sale for a currency, don't set a fixed price for it.
 
 The full list of frequently asked questions and known limits is in
-[readme.txt](https://wordpress.org/plugins/mhm-currency-switcher/).
+[readme.txt](https://github.com/MaxHandMade/mhm-currency-switcher/blob/develop/readme.txt).

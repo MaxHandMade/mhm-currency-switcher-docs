@@ -62,4 +62,4 @@ The split is deliberate: only *displayed* prices are converted in the browser. C
 Turning the mode off doesn't restore 1.0.0 behaviour exactly — the admin, REST API and scheduled-task fixes stay active in both modes.
 
 The full list of frequently asked questions and known limits is in
-[readme.txt](https://wordpress.org/plugins/mhm-currency-switcher/).
+[readme.txt](https://github.com/MaxHandMade/mhm-currency-switcher/blob/develop/readme.txt).

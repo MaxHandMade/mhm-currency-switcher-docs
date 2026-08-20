@@ -45,6 +45,15 @@ jobs:
       - name: Verify all internal links resolve
         run: npm run check:links
 
+      # Internal links only prove the site is consistent with itself. This
+      # step requests every external link we authored and fails both on a
+      # plain error status and on a 200 that arrived at a different path —
+      # the shape a soft 404 takes. Eleven pages pointed at an unpublished
+      # WordPress.org plugin page for weeks and check:links could not see it,
+      # because it never leaves the build directory.
+      - name: Verify all external links resolve
+        run: npm run check:external
+
       # peaceiris/actions-gh-pages@v4 is a mutable tag. Accepted for parity
       # with mhm-rentiva-docs; if it is ever pinned to a SHA, pin it in both
       # repositories in the same change so they do not diverge.
