@@ -21,7 +21,55 @@ Mağazanızda kullanılacak para birimlerini burada yapılandırırsınız.
 | **Sıra** | Yukarı/aşağı okları ile listedeki sırayı değiştirir |
 | **İşlemler** | Para birimini listeden kaldırır |
 
-Sıralama, dönüştürücü açılır menüsündeki görüntülenme sırasını belirler. Ana para birimi her zaman listenin en başında yer alır.
+Sıralama, dönüştürücü açılır menüsündeki görüntülenme sırasını belirler. Ana para birimi bu
+tabloda bir **satır değildir** — tablonun üstünde yazar ve **WooCommerce > Ayarlar > Genel**
+bölümünden gelir. Vitrindeki dönüştürücüde ise her zaman ilk sırada yer alır.
+
+## Müşteri Ne Görecek
+
+*1.3.0 ile geldi.*
+
+Her satırın altında bir önizleme satırı vardır: `Müşteri şunu görür: 100,00 <ana> → …`. Bu değer
+tarayıcıda tahmin edilmez, **sunucuda mağazanın kendi fiyat biçimlendiricisiyle** hesaplanır;
+yani vitrinin uygulayacağı kuru, komisyonu, yuvarlamayı ve sayı biçimini birebir uygular —
+**henüz kaydetmediğiniz değişiklikler dahil**. Kuru fiyat üretemeyen satırda tire görünür.
+
+## Para Birimi Başına Sayı Biçimi
+
+*1.3.0 ile geldi.*
+
+Bir satırdaki **Biçimi düzenle** bağlantısı, yalnız o para birimi için beş alan açar:
+
+| Alan | Açıklama |
+|-------|----------|
+| **Sembol** | Tutarla birlikte gösterilen sembol |
+| **Konum** | Sol, Sağ, Sol (boşluklu) veya Sağ (boşluklu) |
+| **Ondalık basamak** | Kaç ondalık basamak, 0 ile 4 arası |
+| **Ondalık ayırıcı** | Tek karakter |
+| **Binlik ayırıcı** | Tek karakter |
+
+WooCommerce bunların yalnız **bir** takımını tutar, çünkü mağazanın tek para birimi olduğunu
+varsayar. Buradaki değerler para birimi başınadır ve yalnız o para birimi için geçerlidir.
+
+Girdiler sessizce kabul edilmez, **düzeltilir**: birden uzun ayraç, 0–4 dışında ondalık sayısı,
+ya da ondalık ayracıyla aynı olan binlik ayracı. Bir düzeltme yapıldığında ekran bunu söyler —
+girdinizi haber vermeden değiştirmez.
+
+## Kur Güncel mi?
+
+*1.3.0 ile geldi.*
+
+Her satırda bir durum satırı, sekme başlığında ise bir özet rozeti bulunur:
+
+| Satır | Anlamı |
+|-------|----------|
+| **elle girildi** | Kur **Manuel** bir değerdir; onu bir senkron üretmedi |
+| **Henüz kur yok — bu para birimi mağazada gösterilmiyor** | Kur 0 ya da eksik; vitrin bu para birimini listelemez |
+| **kur kaydedildi, senkron kaydı yok** | Kur var ama bu satır için bir senkron zaman damgası yok |
+| **Kur N önce güncellendi** | Bu değeri bir senkron üretti, N önce |
+
+"Henüz senkron kaydı yok" tam olarak bunu söyler: **kayıt yok**. Bir senkronun hiç koşmadığını
+iddia etmez — zaman damgası tutmayan bir sürümden yükselen mağazada doğru olan da budur.
 
 ## Yeni Para Birimi Ekleme
 

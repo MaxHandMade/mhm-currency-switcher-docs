@@ -21,7 +21,54 @@ This is where you configure which currencies your store offers.
 | **Order** | Up/down arrows to reorder the switcher's dropdown. |
 | **Actions** | Remove the currency from the list. |
 
-The base currency always sits at the top of the list.
+The base currency is **not** a row here — it is named above the table and comes from
+**WooCommerce > Settings > General**. On the storefront it is the switcher's first entry.
+
+## What the customer will see
+
+*Since 1.3.0.*
+
+Under each row is a preview line: `Customer sees: 100.00 <base> → …`. It is computed on the
+server by the store's own price formatter, not estimated in the browser, so it applies the same
+rate, fee, rounding and number format the storefront will apply — **including edits you have
+not saved yet**. A row whose rate cannot produce a price shows a dash instead.
+
+## Number format per currency
+
+*Since 1.3.0.*
+
+**Edit format** on a row opens five fields for that currency alone:
+
+| Field | What it does |
+|---|---|
+| **Symbol** | The symbol shown with the amount |
+| **Position** | Left, Right, Left with space, or Right with space |
+| **Decimals** | How many decimal places, 0 to 4 |
+| **Decimal separator** | One character |
+| **Thousand separator** | One character |
+
+WooCommerce stores exactly one set of these for the whole shop, because it assumes a shop has
+one currency. These values are per currency and apply to that currency only.
+
+Entries are corrected rather than silently accepted — a separator longer than one character, a
+decimal count outside 0–4, or a thousand separator identical to the decimal separator. When a
+correction happens the screen names it, instead of changing your input without saying.
+
+## Is the rate current?
+
+*Since 1.3.0.*
+
+Each row carries a status line, and the tab header carries a summary pill:
+
+| Line | Meaning |
+|---|---|
+| **entered manually** | The rate is a **Manual** value; no sync produced it |
+| **No rate yet — this currency is not shown in the store** | The rate is 0 or missing, so the storefront leaves this currency out |
+| **rate saved, no sync recorded** | There is a rate, but no sync timestamp for this row |
+| **updated N ago** | A sync produced this value, N ago |
+
+"No sync recorded yet" means exactly that — no record. It does not claim a sync never ran,
+which is the honest reading on a shop upgrading from a version that kept no timestamp.
 
 ## Add a currency
 

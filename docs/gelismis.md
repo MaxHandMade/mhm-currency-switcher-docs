@@ -7,7 +7,7 @@ title: Advanced settings
 
 **WooCommerce > MHM Currency > Advanced**
 
-This tab holds three settings.
+This tab holds four settings.
 
 ## Geolocation detection
 
@@ -60,6 +60,21 @@ The split is deliberate: only *displayed* prices are converted in the browser. C
 | **Cache pages in the base currency** | Turning this off converts prices on the server again, as before 1.1.0 — which doesn't play well with a page-caching plugin. Cart, checkout and order totals are always converted on the server either way. |
 
 Turning the mode off doesn't restore 1.0.0 behaviour exactly — the admin, REST API and scheduled-task fixes stay active in both modes.
+
+## What happens when the plugin is removed
+
+*Since 1.3.0.*
+
+| Setting | What it does |
+|---|---|
+| **Delete all data when the plugin is removed** | Off by default. Left off, your settings and the currency and exchange rate recorded on each order stay in place when the plugin is deleted. |
+
+Those per-order records are the only basis for multi-currency sales history and cannot be
+rebuilt afterwards, which is why the destructive choice is the one you have to make
+deliberately rather than the one that happens by default. Deactivating the plugin never deletes
+anything; only deleting it does, and only with this switch on.
+
+On a multisite network the switch clears the site the plugin is removed from.
 
 The full list of frequently asked questions and known limits is in
 [readme.txt](https://github.com/MaxHandMade/mhm-currency-switcher/blob/develop/readme.txt).

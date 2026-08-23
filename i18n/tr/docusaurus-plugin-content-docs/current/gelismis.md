@@ -7,7 +7,7 @@ title: Gelişmiş Ayarlar
 
 **WooCommerce > MHM Para Birimi > Gelişmiş** sekmesi
 
-Bu sekmede üç ayar bulunur.
+Bu sekmede dört ayar bulunur.
 
 ## Konum Algılama
 
@@ -60,3 +60,20 @@ Ayrım kasıtlıdır: yalnızca **görüntülenen** fiyatlar tarayıcıda dönü
 | **Sayfaları ana para biriminde önbellekle** | Kapatıldığında fiyatlar eskisi gibi (1.1.0 öncesi gibi) sunucuda dönüştürülür; bu, sayfa önbellekleme eklentileriyle iyi çalışmaz. Sepet, ödeme ve sipariş toplamları her iki durumda da her zaman sunucuda dönüştürülür. |
 
 Modu kapatmak 1.0.0 davranışını birebir geri getirmez: yönetim ekranları, REST API ve zamanlanmış görevlerle ilgili düzeltmeler her iki modda da etkin kalır.
+
+## Eklenti Kaldırılınca Ne Olur
+
+*1.3.0 ile geldi.*
+
+| Ayar | Açıklama |
+|------|----------|
+| **Eklenti kaldırıldığında tüm verileri sil** | Varsayılan olarak **kapalı**. Kapalı bırakıldığında, eklenti silinse bile ayarlarınız ve her siparişe kaydedilmiş para birimi ile kur yerinde kalır. |
+
+Sipariş başına tutulan bu kayıtlar, çok para birimli satış geçmişinizin tek dayanağıdır ve
+sonradan yeniden üretilemez. Yıkıcı olan seçeneğin bilerek yapılması gereken seçenek olmasının
+sebebi budur — kendiliğinden olan değil.
+
+Eklentiyi **devre dışı bırakmak** hiçbir veriyi silmez; yalnız zamanlanmış kur güncelleme görevi
+temizlenir. Silme yalnız eklenti **kaldırıldığında** ve yalnız bu anahtar açıkken olur.
+
+Çok siteli (multisite) bir ağda anahtar, eklentinin kaldırıldığı siteyi temizler.
