@@ -18,16 +18,24 @@ Paste the switcher shortcode into any post, page, or shortcode-aware template. T
 
 | Shortcode | Attributes |
 |---|---|
-| `[mhm_currency_switcher]` | `size` |
-| `[mhm_currency_prices]` | `currencies`, `product_id`, `show_flags`, `price` |
+| `[mhmcs_currency_switcher]` | `size` |
+| `[mhmcs_currency_prices]` | `currencies`, `product_id`, `show_flags`, `price` |
 
 | Elementor widget |
 |---|
 | Currency Switcher |
 | Currency Prices |
 
-Switcher shortcode: `[mhm_currency_switcher]` · Price list: `[mhm_currency_prices]`
+Switcher shortcode: `[mhmcs_currency_switcher]` · Price list: `[mhmcs_currency_prices]`
 <!-- END GENERATED -->
+
+*Renamed in 2.0.0.* These tags used to be `[mhm_currency_switcher]` and
+`[mhm_currency_prices]`. The old spellings were removed rather than kept as
+aliases, so a page still holding one shows the raw text instead of the switcher
+— update any post, page or template that uses them. WordPress.org reads a
+shortcode's prefix up to the first underscore, which made the old tags "mhm":
+three letters against a four-letter minimum. Your stored data is untouched;
+only the tags you type into content changed.
 
 ## Elementor
 

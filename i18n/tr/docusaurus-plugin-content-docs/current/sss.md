@@ -17,17 +17,19 @@ Kurlar ExchangeRate-API'den gerçek zamanlı çekilir ve kullanılan kaynak ücr
 
 ### Kısa kodlar nelerdir, dönüştürücüyü sitemde nasıl gösteririm?
 
+*2.0.0'da yeniden adlandırıldı.* Bu etiketler önceden `[mhm_currency_switcher]` ve `[mhm_currency_prices]` idi; eskileri takma ad olarak bırakılmadı, kaldırıldı. Hâlâ eski etiketi taşıyan bir sayfa dönüştürücü yerine ham metni gösterir — kullandığınız her yazıyı, sayfayı ve şablonu güncelleyin. Kayıtlı verileriniz değişmedi.
+
 İki kısa kod vardır:
 
-- `[mhm_currency_switcher]` — para birimi açılır listesini gösterir. Tek isteğe bağlı özelliği `size`'dır (`small`, `medium` veya `large`); belirtilmezse Görüntüleme Seçenekleri'nde kayıtlı boyut kullanılır.
-- `[mhm_currency_prices]` — aynı ürün fiyatını birden çok para biriminde gösterir. Tüm özellikleri isteğe bağlıdır: `currencies` (virgülle ayrılmış kodlar, ör. `currencies="USD,EUR"`; belirtilmezse Görüntüleme Seçenekleri'ndeki para birimleri kullanılır — yapılandırmadığınız kodlar yok sayılır), `product_id` (görüntülenen ürün yerine belirli bir ürünü fiyatlandırır), `price` (bir ürün yerine belirli bir tutarı fiyatlandırır), `show_flags` (kayıtlı bayrak ayarını `true`/`false` ile geçersiz kılar).
+- `[mhmcs_currency_switcher]` — para birimi açılır listesini gösterir. Tek isteğe bağlı özelliği `size`'dır (`small`, `medium` veya `large`); belirtilmezse Görüntüleme Seçenekleri'nde kayıtlı boyut kullanılır.
+- `[mhmcs_currency_prices]` — aynı ürün fiyatını birden çok para biriminde gösterir. Tüm özellikleri isteğe bağlıdır: `currencies` (virgülle ayrılmış kodlar, ör. `currencies="USD,EUR"`; belirtilmezse Görüntüleme Seçenekleri'ndeki para birimleri kullanılır — yapılandırmadığınız kodlar yok sayılır), `product_id` (görüntülenen ürün yerine belirli bir ürünü fiyatlandırır), `price` (bir ürün yerine belirli bir tutarı fiyatlandırır), `show_flags` (kayıtlı bayrak ayarını `true`/`false` ile geçersiz kılar).
 
 Her ikisi de Elementor widget'ı olarak kullanılabilir. Dönüştürücüyü header'a eklemenin dört yolu vardır:
 
 1. **Navigasyon menüsü (önerilen):** Görünüm > Menüler'den **Para Birimi Dönüştürücü** öğesini menünüze ekleyin.
-2. **Widget alanı:** Temanızın header widget alanına bir "Kısa Kod" widget'ı ekleyip `[mhm_currency_switcher]` yazın.
+2. **Widget alanı:** Temanızın header widget alanına bir "Kısa Kod" widget'ı ekleyip `[mhmcs_currency_switcher]` yazın.
 3. **Elementor:** Header şablonunuza **Currency Switcher** widget'ını sürükleyin.
-4. **PHP:** Temanızın şablon dosyasına `<?php echo do_shortcode( '[mhm_currency_switcher]' ); ?>` ekleyin.
+4. **PHP:** Temanızın şablon dosyasına `<?php echo do_shortcode( '[mhmcs_currency_switcher]' ); ?>` ekleyin.
 
 ### Belirli bir ürüne sabit fiyat verebilir miyim?
 

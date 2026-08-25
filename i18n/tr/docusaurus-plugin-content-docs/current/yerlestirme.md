@@ -18,16 +18,25 @@ Anahtarı herhangi bir yazıya, sayfaya veya kısa kodu destekleyen bir şablona
 
 | Kısa kod | Öznitelikler |
 |---|---|
-| `[mhm_currency_switcher]` | `size` |
-| `[mhm_currency_prices]` | `currencies`, `product_id`, `show_flags`, `price` |
+| `[mhmcs_currency_switcher]` | `size` |
+| `[mhmcs_currency_prices]` | `currencies`, `product_id`, `show_flags`, `price` |
 
 | Elementor widget'ı |
 |---|
 | Currency Switcher |
 | Currency Prices |
 
-Switcher kısa kodu: `[mhm_currency_switcher]` · Fiyat listesi: `[mhm_currency_prices]`
+Switcher kısa kodu: `[mhmcs_currency_switcher]` · Fiyat listesi: `[mhmcs_currency_prices]`
 <!-- END GENERATED -->
+
+*2.0.0'da yeniden adlandırıldı.* Bu etiketler önceden
+`[mhm_currency_switcher]` ve `[mhm_currency_prices]` idi. Eskileri takma ad
+olarak bırakılmadı, tamamen kaldırıldı — yani hâlâ eski etiketi taşıyan bir
+sayfa dönüştürücü yerine ham metni gösterir; kullandığınız her yazıyı, sayfayı
+ve şablonu güncelleyin. WordPress.org bir kısa kodun ön ekini ilk alt çizgiye
+kadar okuyor, bu da eski etiketleri "mhm" yapıyordu: dört harflik alt sınıra
+karşı üç harf. Kayıtlı verileriniz değişmedi; yalnızca içeriğe yazdığınız
+etiketler değişti.
 
 ## Elementor
 
