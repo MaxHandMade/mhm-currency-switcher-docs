@@ -47,11 +47,15 @@ candidate_text() {
 # What a "claim about the plugin" looks like once it is in code context.
 SHAPE_PREFIXED='(mhmcs|mhm-cs|mhm_cs)[A-Za-z0-9_-]*'
 SHAPE_LEGACY='mhm_currency[A-Za-z0-9_]*'
-SHAPE_SHORTCODE='\[[a-z][a-z0-9_]*\]'
+# 🔴 There is NO separate shortcode shape, deliberately. `[mhmcs_switcher]`
+#    is already caught by SHAPE_PREFIXED — the bracket adds nothing. A shape
+#    like '\[[a-z][a-z0-9_]*\]' would additionally match ordinary markdown
+#    links: in a table cell stripped of backticks, `[kurulum](/docs/kurulum)`
+#    reads as a shortcode named "kurulum". One mechanism, no false positives.
 SHAPE_CLI='wp[[:space:]]+mhmcs[[:space:]]+[a-z][a-z-]*'
 SHAPE_REST='/mhmcs/v[0-9]+(/[A-Za-z0-9_-]+)+'
 SHAPE_HOST='[a-z0-9-]+(\.[a-z0-9-]+)+\.(com|dev|org|eu|net|io)'
-SHAPES_RE="$SHAPE_REST|$SHAPE_CLI|$SHAPE_PREFIXED|$SHAPE_LEGACY|$SHAPE_SHORTCODE|$SHAPE_HOST"
+SHAPES_RE="$SHAPE_REST|$SHAPE_CLI|$SHAPE_PREFIXED|$SHAPE_LEGACY|$SHAPE_HOST"
 
 # ─── Hosts that are never endpoints ──────────────────────────────────────────
 # Documentation and placeholder hosts. Not "findings we tolerate": asking the
@@ -73,7 +77,7 @@ self_test() {
     '```
 .mhmcs-price { color: red; }
 ```'
-    '| `[mhmcs_switcher]` | Places the dropdown |'
+    '| [mhmcs_switcher] | Places the dropdown |'
     'The legacy filter was `mhm_currency_switcher_output`.'
     'Call `/mhmcs/v1/rates` to read the table.'
     'Run `wp mhmcs rates-sync` from the command line.'
@@ -85,6 +89,7 @@ self_test() {
     'See [readme.txt on GitHub](https://github.com/MaxHandMade/mhm-currency-switcher).'
     'Point your browser at `https://yourstore.com/wp-json/`.'
     'Each currency can carry its own fee and rounding step.'
+    '| [kurulum](/docs/kurulum) | Installation guide |'
   )
   for t in "${POS[@]}"; do
     pt=$((pt+1))
