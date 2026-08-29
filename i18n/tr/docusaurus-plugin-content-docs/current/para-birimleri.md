@@ -132,7 +132,7 @@ Kurlar sırayla şu kaynaklardan gelir:
 
 Üçü de ücretsizdir ve API anahtarı istemez. Eklenti sırayla dener ve ilk yanıt
 vereni kullanır; hiçbiri yanıt vermezse mevcut kurların yerinde kalır. Çekilen
-kurlar 1 gün önbelleklenir; bu süre içinde yeniden eşitlerseniz önbellekteki
+kurlar 1 gün önbelleklenir; bu süre içinde yeniden senkronize ederseniz önbellekteki
 değer döner.
 
 *2.1.0'dan itibaren zincir kısalıyor: ExchangeRate-API ve tek yedek olarak

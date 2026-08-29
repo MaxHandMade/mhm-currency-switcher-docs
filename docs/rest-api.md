@@ -13,8 +13,9 @@ Most sites never call these directly — the switcher, the product widget, and c
 
 ### GET `/rates`
 
-*Removed in 2.1.0. On 2.0.0, `/mhmcs/v1/rates` works as described below;
-from 2.1.0 use the conversion endpoint instead.*
+*Removed in 2.1.0 — `/mhmcs/v1/rates` has no public replacement; the rates
+it exposed are already reflected in the prices the page renders. On 2.0.0 it
+works as described below.*
 
 No authentication needed. Returns the base currency and the effective (fee-included) rate for each enabled currency.
 
