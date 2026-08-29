@@ -1,7 +1,7 @@
 ---
 sidebar_position: 4
 title: Görüntüleme Seçenekleri
-slug: /goruntuleme
+slug: /display-options
 ---
 
 # Görüntüleme Seçenekleri
@@ -53,4 +53,4 @@ Sekmenin altında, seçtiğiniz ayarlara göre basit bir önizleme gösterilir. 
 
 ## Sayfa Yenilenmeden Dönüştürme
 
-Önbellek uyumluluğu modu açıkken (varsayılan durum — bkz. [Gelişmiş Ayarlar](/docs/gelismis)) ziyaretçi mağaza, kategori veya ürün sayfasındaki dönüştürücüden para birimi değiştirdiğinde sayfa **yeniden yüklenmez**: eklenti çerezi yazar, sayfadaki fiyatları olduğu yerde dönüştürür ve mini sepeti tazeler. Sepet sayfasında, oturum açmış bir ziyaretçide veya önbellek uyumluluğu kapatıldığında sayfa eskisi gibi yeniden yüklenir.
+Önbellek uyumluluğu modu açıkken (varsayılan durum — bkz. [Gelişmiş Ayarlar](/docs/advanced-settings)) ziyaretçi mağaza, kategori veya ürün sayfasındaki dönüştürücüden para birimi değiştirdiğinde sayfa **yeniden yüklenmez**: eklenti çerezi yazar, sayfadaki fiyatları olduğu yerde dönüştürür ve mini sepeti tazeler. Sepet sayfasında, oturum açmış bir ziyaretçide veya önbellek uyumluluğu kapatıldığında sayfa eskisi gibi yeniden yüklenir.

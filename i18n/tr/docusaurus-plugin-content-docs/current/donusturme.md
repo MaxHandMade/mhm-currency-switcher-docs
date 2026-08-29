@@ -1,7 +1,7 @@
 ---
 sidebar_position: 10
 title: Döviz Kuru Dönüştürme Mantığı
-slug: /donusturme
+slug: /currency-conversion
 ---
 
 # Döviz Kuru Dönüştürme Mantığı

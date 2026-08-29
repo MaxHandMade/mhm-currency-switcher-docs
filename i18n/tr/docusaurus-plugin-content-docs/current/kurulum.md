@@ -1,7 +1,7 @@
 ---
 sidebar_position: 2
 title: Kurulum
-slug: /kurulum
+slug: /installation
 ---
 
 # Kurulum ve Gereksinimler
@@ -30,7 +30,7 @@ Eklenti ilk etkinleştirildiğinde:
 - **Para birimi listesi boş başlar.** Hazır para birimi eklenmez; istediklerinizi kendiniz eklersiniz.
 - Konum algılama **açık** olarak gelir.
 - Dönüştürücü görünümü şu varsayılanlarla gelir: bayrak **açık**, simge **açık**, kod **açık**, para birimi adı **kapalı**, boyut **Orta**.
-- Önbellek uyumluluğu modu **açık** olarak gelir (bkz. [Gelişmiş Ayarlar](/docs/gelismis)).
+- Önbellek uyumluluğu modu **açık** olarak gelir (bkz. [Gelişmiş Ayarlar](/docs/advanced-settings)).
 
 > **Not:** Ana para biriminiz (base currency) her zaman WooCommerce ayarlarından okunur. Değiştirmek için **WooCommerce > Ayarlar > Genel > Para birimi seçenekleri** bölümüne gidin. Ana para birimini eklentinin para birimi listesine ekleyemezsiniz — o zaten çevirinin çıkış noktasıdır.
 

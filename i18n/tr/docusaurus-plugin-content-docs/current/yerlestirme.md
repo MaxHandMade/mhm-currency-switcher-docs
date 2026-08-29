@@ -1,9 +1,9 @@
 ---
 sidebar_position: 7
 title: Anahtarı Yerleştirme
-slug: /yerlestirme
 mdx:
   format: md
+slug: /placing-the-switcher
 ---
 
 # Anahtarı Yerleştirme
@@ -57,5 +57,5 @@ Görüntüleme Seçenekleri sekmesinden ürün fiyat widget'ını açtıysanız 
 
 Bu eklenti henüz kendi bloğunu sunmuyor. Çekirdek **Kısa Kod** bloğunu kullanıp iki kısa koddan birini içine yapıştırın. Elementor kullanıyorsanız widget'lar da kullanılabilir durumda kalır.
 
-Sık sorulan soruların tamamı [SSS](/docs/sss) sayfasında, bilinen sınırların
-tamamı [Bilinen Sınırlar](/docs/bilinen-sinirlar) sayfasındadır.
+Sık sorulan soruların tamamı [SSS](/docs/faq) sayfasında, bilinen sınırların
+tamamı [Bilinen Sınırlar](/docs/known-limits) sayfasındadır.

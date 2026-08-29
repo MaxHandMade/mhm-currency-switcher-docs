@@ -1,7 +1,7 @@
 ---
 sidebar_position: 13
 title: SSS
-slug: /sss
+slug: /faq
 ---
 
 # Sık Sorulan Sorular
@@ -14,7 +14,7 @@ Sınır yoktur — WooCommerce'in sunduğu her para birimini etkinleştirebilirs
 
 ### Döviz kurları nasıl ve ne sıklıkla güncellenir?
 
-Kurlar ExchangeRate-API'den gerçek zamanlı çekilir ve kullanılan kaynak ücretsizdir, API anahtarı gerektirmez. Bu kaynağa ulaşılamazsa eklenti sırayla iki yedek kaynağı dener; hiçbiri yanıt vermezse mevcut kurlarınız yerinde kalır. Üçü de kaynak ve koşullarıyla birlikte [Para Birimlerini Yönetme](/docs/para-birimleri) sayfasında listelidir; ağınız bunlardan birini engelliyorsa `mhmcs_fallback_rates_url` filtresiyle yalnızca o kaynağı, diğerlerine dokunmadan başka bir adrese yönlendirebilirsiniz. Güncelleme sıklığını **Gelişmiş** sekmesinden siz belirlersiniz: saatlik, günde iki kez, günlük veya yalnızca elle. **Kurları Senkronize Et** düğmesiyle her zaman elle de güncelleyebilirsiniz. Çekilen kurlar 1 gün önbellekte tutulur ve bu önbellek yalnızca fiyat ekranını besler — senkronizasyon her zaman API'ye gider.
+Kurlar ExchangeRate-API'den gerçek zamanlı çekilir ve kullanılan kaynak ücretsizdir, API anahtarı gerektirmez. Bu kaynağa ulaşılamazsa eklenti sırayla iki yedek kaynağı dener; hiçbiri yanıt vermezse mevcut kurlarınız yerinde kalır. Üçü de kaynak ve koşullarıyla birlikte [Para Birimlerini Yönetme](/docs/managing-currencies) sayfasında listelidir; ağınız bunlardan birini engelliyorsa `mhmcs_fallback_rates_url` filtresiyle yalnızca o kaynağı, diğerlerine dokunmadan başka bir adrese yönlendirebilirsiniz. Güncelleme sıklığını **Gelişmiş** sekmesinden siz belirlersiniz: saatlik, günde iki kez, günlük veya yalnızca elle. **Kurları Senkronize Et** düğmesiyle her zaman elle de güncelleyebilirsiniz. Çekilen kurlar 1 gün önbellekte tutulur ve bu önbellek yalnızca fiyat ekranını besler — senkronizasyon her zaman API'ye gider.
 
 ### Kısa kodlar nelerdir, dönüştürücüyü sitemde nasıl gösteririm?
 
@@ -34,7 +34,7 @@ Her ikisi de Elementor widget'ı olarak kullanılabilir. Dönüştürücüyü he
 
 ### Belirli bir ürüne sabit fiyat verebilir miyim?
 
-Evet. Ürün düzenleme ekranındaki **Para Birimi Fiyatları** sekmesini kullanın — ayrıntılar için [Ürün Bazında Sabit Fiyatlar](/docs/sabit-fiyat) bölümüne bakın. Şunu bilerek kullanın: sabit fiyat ürün ve para birimi başına saklanır, fiyat türüne göre değil — yani aynı tutar hem normal fiyat hem de indirimli fiyat için kullanılır. Ana para biriminizde indirimde olan bir ürün, sabit fiyat verdiğiniz bir para biriminde indirimde değilmiş gibi görünür. İndirimin o para birimine de yansımasını istiyorsanız, o para birimini sabitlemek yerine döviz kuruna bırakın.
+Evet. Ürün düzenleme ekranındaki **Para Birimi Fiyatları** sekmesini kullanın — ayrıntılar için [Ürün Bazında Sabit Fiyatlar](/docs/fixed-prices) bölümüne bakın. Şunu bilerek kullanın: sabit fiyat ürün ve para birimi başına saklanır, fiyat türüne göre değil — yani aynı tutar hem normal fiyat hem de indirimli fiyat için kullanılır. Ana para biriminizde indirimde olan bir ürün, sabit fiyat verdiğiniz bir para biriminde indirimde değilmiş gibi görünür. İndirimin o para birimine de yansımasını istiyorsanız, o para birimini sabitlemek yerine döviz kuruna bırakın.
 
 ### WooCommerce HPOS (Yüksek Performanslı Sipariş Depolama) ile uyumlu mu?
 
@@ -76,6 +76,6 @@ Bilinen bir sınır: `price_html` alanı aynı şekilde sabitlenmez. Normal bir 
 
 ### Eklentiyi silersem verilerim ne olur?
 
-Anahtara bağlı: [Gelişmiş Ayarlar](/docs/gelismis) sekmesindeki **Eklenti kaldırıldığında tüm verileri sil** anahtarı varsayılan olarak **kapalıdır**. Kapalı kaldığı sürece, eklentiyi WordPress üzerinden sildiğinizde bile ayarlarınız, para birimi yapılandırmanız ve her siparişe kaydedilmiş para birimi ile uygulanan döviz kuru yerinde kalır — yalnızca önbelleğe alınmış kurlar, zamanlanmış görevler ve artık var olmayan ayarların sakladığı gizli bilgiler gibi hiçbir zaman kalmaması gereken şeyler temizlenir.
+Anahtara bağlı: [Gelişmiş Ayarlar](/docs/advanced-settings) sekmesindeki **Eklenti kaldırıldığında tüm verileri sil** anahtarı varsayılan olarak **kapalıdır**. Kapalı kaldığı sürece, eklentiyi WordPress üzerinden sildiğinizde bile ayarlarınız, para birimi yapılandırmanız ve her siparişe kaydedilmiş para birimi ile uygulanan döviz kuru yerinde kalır — yalnızca önbelleğe alınmış kurlar, zamanlanmış görevler ve artık var olmayan ayarların sakladığı gizli bilgiler gibi hiçbir zaman kalmaması gereken şeyler temizlenir.
 
 Bu anahtarı silmeden önce açarsanız eklenti her şeyi kaldırır: ayarları, para birimi yapılandırmasını ve siparişlere kaydedilmiş para birimi kodu ile döviz kurunu — hem klasik gönderi meta verisinde hem de HPOS kullanan mağazaların sipariş tablosunda. Çok para birimli satış geçmişinizi korumak istiyorsanız (ör. WooCommerce Analytics'in birbirine eklediği tutarları her siparişe kaydedilmiş kurla doğru şekilde yeniden hesaplamak için), anahtarı açtıysanız eklentiyi silmeden önce sipariş verilerini dışa aktarın. Yalnızca devre dışı bırakmak hiçbir veriyi silmez.

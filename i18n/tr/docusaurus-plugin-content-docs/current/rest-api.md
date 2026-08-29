@@ -35,13 +35,13 @@ curl https://siteadiniz.com/wp-json/mhmcs/v1/rates
 
 ### POST `/convert`
 
-*Sürüm 1.1.0'dan beri.* Kılavuzun eski sürümü bu uç noktadan hiç bahsetmiyordu; [önbellek uyumluluğu modu](/docs/gelismis) açıkken tarayıcının, önbelleklenmiş bir sayfadaki işaretlenmiş fiyatları ziyaretçinin gerçek para biriminde almak için çağırdığı uç nokta budur. Kimlik doğrulaması gerektirmez.
+*Sürüm 1.1.0'dan beri.* Kılavuzun eski sürümü bu uç noktadan hiç bahsetmiyordu; [önbellek uyumluluğu modu](/docs/advanced-settings) açıkken tarayıcının, önbelleklenmiş bir sayfadaki işaretlenmiş fiyatları ziyaretçinin gerçek para biriminde almak için çağırdığı uç nokta budur. Kimlik doğrulaması gerektirmez.
 
 **Parametreler:**
 
 | Parametre | Tür | Zorunlu mu | Açıklama |
 |-----------|-----|------------|----------|
-| `currency` | `string` veya `null` | Hayır | Fiyatlanacak ISO 4217 kodu. Boş bırakılır veya `null` gönderilirse sunucu ziyaretçinin para birimini [algılama zincirinden](/docs/algilama) (çerez yazmadan) kendisi bulur. |
+| `currency` | `string` veya `null` | Hayır | Fiyatlanacak ISO 4217 kodu. Boş bırakılır veya `null` gönderilirse sunucu ziyaretçinin para birimini [algılama zincirinden](/docs/currency-detection) (çerez yazmadan) kendisi bulur. |
 | `product_ids` | tamsayı dizisi | Evet | Fiyatlanacak ürün veya varyasyon ID'leri. Sunucu bu diziyi en fazla **50** öğeyle sınırlar — istemci de isteklerini 50'lik gruplara böler, ama asıl sınır sunucu tarafında uygulanır; istemcinin gönderdiği sayı önemli değildir. |
 
 **Örnek istek:**

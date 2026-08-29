@@ -1,7 +1,7 @@
 ---
 sidebar_position: 3
 title: Para Birimlerini Yönet
-slug: /para-birimleri
+slug: /managing-currencies
 ---
 
 # Para Birimlerini Yönet

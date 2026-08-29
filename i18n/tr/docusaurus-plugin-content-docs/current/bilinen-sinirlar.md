@@ -1,7 +1,7 @@
 ---
 sidebar_position: 14
 title: Bilinen Sınırlar
-slug: /bilinen-sinirlar
+slug: /known-limits
 ---
 
 # Bilinen Sınırlar

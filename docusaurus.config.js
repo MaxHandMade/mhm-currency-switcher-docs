@@ -64,16 +64,16 @@ const config = {
         {
           title: 'Documentation',
           items: [
-            { label: 'Installation', to: '/docs/kurulum' },
-            { label: 'Placing the switcher', to: '/docs/yerlestirme' },
+            { label: 'Installation', to: '/docs/installation' },
+            { label: 'Placing the switcher', to: '/docs/placing-the-switcher' },
             { label: 'REST API', to: '/docs/rest-api' },
           ],
         },
         {
           title: 'Reference',
           items: [
-            { label: 'FAQ', to: '/docs/sss' },
-            { label: 'Known limits', to: '/docs/bilinen-sinirlar' },
+            { label: 'FAQ', to: '/docs/faq' },
+            { label: 'Known limits', to: '/docs/known-limits' },
             { label: 'CSS classes', to: '/docs/css' },
           ],
         },
