@@ -40,6 +40,7 @@ for h in "${HOSTS[@]}"; do
   done
 done
 
+echo "→ Plugin tree measured: $PLUGIN_SRC"
 echo "→ Endpoint hosts declared by readme: ${#HOSTS[@]} (${HOSTS[*]})"
 echo "→ Pages checked: ${#PAGES[@]}"
 echo "→ Undocumented: $miss"
