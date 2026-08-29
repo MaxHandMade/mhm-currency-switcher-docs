@@ -60,6 +60,41 @@ const config = {
     },
     footer: {
       style: 'dark',
+      links: [
+        {
+          title: 'Documentation',
+          items: [
+            { label: 'Installation', to: '/docs/kurulum' },
+            { label: 'Placing the switcher', to: '/docs/yerlestirme' },
+            { label: 'REST API', to: '/docs/rest-api' },
+          ],
+        },
+        {
+          title: 'Reference',
+          items: [
+            { label: 'FAQ', to: '/docs/sss' },
+            { label: 'Known limits', to: '/docs/bilinen-sinirlar' },
+            { label: 'CSS classes', to: '/docs/css' },
+          ],
+        },
+        {
+          title: 'More',
+          items: [
+            {
+              label: 'GitHub Repository',
+              href: 'https://github.com/MaxHandMade/mhm-currency-switcher',
+            },
+            {
+              label: 'Report an Issue',
+              href: 'https://github.com/MaxHandMade/mhm-currency-switcher/issues',
+            },
+            {
+              label: 'Official Website',
+              href: 'https://wpalemi.com/currency-switcher/',
+            },
+          ],
+        },
+      ],
       copyright: `Copyright © ${new Date().getFullYear()} MaxHandMade. GPL-2.0-or-later.`,
     },
     prism: { theme: prismThemes.github, darkTheme: prismThemes.dracula },

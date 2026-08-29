@@ -2,5 +2,53 @@
   "copyright": {
     "message": "Copyright © 2026 MaxHandMade. GPL-2.0-or-later.",
     "description": "The footer copyright"
+  },
+  "link.title.Documentation": {
+    "message": "Dokümantasyon",
+    "description": "The title of the footer links column with title=Documentation in the footer"
+  },
+  "link.title.Reference": {
+    "message": "Referans",
+    "description": "The title of the footer links column with title=Reference in the footer"
+  },
+  "link.title.More": {
+    "message": "Diğer",
+    "description": "The title of the footer links column with title=More in the footer"
+  },
+  "link.item.label.Installation": {
+    "message": "Kurulum",
+    "description": "The label of footer link with label=Installation linking to /docs/kurulum"
+  },
+  "link.item.label.Placing the switcher": {
+    "message": "Anahtarı Yerleştirme",
+    "description": "The label of footer link with label=Placing the switcher linking to /docs/yerlestirme"
+  },
+  "link.item.label.REST API": {
+    "message": "REST API",
+    "description": "The label of footer link with label=REST API linking to /docs/rest-api"
+  },
+  "link.item.label.FAQ": {
+    "message": "SSS",
+    "description": "The label of footer link with label=FAQ linking to /docs/sss"
+  },
+  "link.item.label.Known limits": {
+    "message": "Bilinen Sınırlar",
+    "description": "The label of footer link with label=Known limits linking to /docs/bilinen-sinirlar"
+  },
+  "link.item.label.CSS classes": {
+    "message": "CSS Sınıfları",
+    "description": "The label of footer link with label=CSS classes linking to /docs/css"
+  },
+  "link.item.label.GitHub Repository": {
+    "message": "GitHub Deposu",
+    "description": "The label of footer link with label=GitHub Repository linking to https://github.com/MaxHandMade/mhm-currency-switcher"
+  },
+  "link.item.label.Report an Issue": {
+    "message": "Hata Bildir",
+    "description": "The label of footer link with label=Report an Issue linking to https://github.com/MaxHandMade/mhm-currency-switcher/issues"
+  },
+  "link.item.label.Official Website": {
+    "message": "Resmi Web Sitesi",
+    "description": "The label of footer link with label=Official Website linking to https://wpalemi.com/currency-switcher/"
   }
 }
