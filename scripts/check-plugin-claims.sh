@@ -52,7 +52,12 @@ SHAPE_LEGACY='mhm_currency[A-Za-z0-9_]*'
 #    like '\[[a-z][a-z0-9_]*\]' would additionally match ordinary markdown
 #    links: in a table cell stripped of backticks, `[kurulum](/docs/kurulum)`
 #    reads as a shortcode named "kurulum". One mechanism, no false positives.
-SHAPE_CLI='wp[[:space:]]+mhmcs[[:space:]]+[a-z][a-z-]*'
+# 🔴 The CLI namespace is `mhm-cs`, NOT `mhmcs` — measured at
+#    src/Plugin.php:347 (`WP_CLI::add_command( 'mhm-cs', $commands )`), and the
+#    docs spell it that way on all five commands. The spec's own example said
+#    `wp mhmcs`, which matched nothing: every CLI claim escaped extraction.
+#    Both spellings are accepted so a future rename cannot silently blind it.
+SHAPE_CLI='wp[[:space:]]+(mhmcs|mhm-cs)[[:space:]]+[a-z][a-z-]*'
 SHAPE_REST='/mhmcs/v[0-9]+(/[A-Za-z0-9_-]+)+'
 SHAPE_HOST='[a-z0-9-]+(\.[a-z0-9-]+)*\.(com|dev|org|eu|net|io)'
 SHAPES_RE="$SHAPE_REST|$SHAPE_CLI|$SHAPE_PREFIXED|$SHAPE_LEGACY|$SHAPE_HOST"
@@ -86,7 +91,7 @@ self_test() {
     '| [mhmcs_switcher] | Places the dropdown |'
     'The legacy filter was `mhm_currency_switcher_output`.'
     'Call `/mhmcs/v1/rates` to read the table.'
-    'Run `wp mhmcs rates-sync` from the command line.'
+    'Run `wp mhm-cs rates-sync` from the command line.'
     'Rates come from `api.exchangerate-api.com`.'
     'Rates come from `frankfurter.dev` when the primary is down.'
   )
@@ -169,9 +174,16 @@ source_has() {   # $1 = token · 0 when the source backs the claim
       printf '%s\n' "$ROUTES" | grep -qxF -- "$route"
       ;;
     "wp "*|"wp	"*)
-      # `wp mhmcs rates-sync` -> the subcommand name must exist in source
+      # `wp mhm-cs rates-sync` -> the subcommand must be DEFINED, not merely
+      # present. WP-CLI derives subcommand names from the command class's
+      # public methods with `_` written as `-`, measured on v2.0.0:
+      #   cache_flush · currencies_list · rates_get · rates_sync · status
+      #   (src/CLI/Commands.php)  ->  cache-flush · currencies-list · …
+      # 🔴 Searching for the bare word would pass `status` on any file that
+      #    happens to contain it — a coincidence, not evidence the command
+      #    exists. Anchoring on the definition makes a generic name safe.
       local sub="${tok##* }"
-      grep -rqF -- "$sub" "$PLUGIN_SRC/src" 2>/dev/null
+      grep -rqE "public function ${sub//-/_}[[:space:]]*\(" "$PLUGIN_SRC/src" 2>/dev/null
       ;;
     *)
       grep -rqF -- "$tok" "$PLUGIN_SRC/src" "$PLUGIN_SRC/assets" \
@@ -203,9 +215,32 @@ done
 # An entry is a claim about ONE SENTENCE, not about a file: the third column is
 # the anchor text. A page may name a removed endpoint on purpose, because the
 # sentence is about its removal.
-allow_program() {   # $1 = path · stdout: sed program blanking spared tokens
-  [ -f "$ALLOW_FILE" ] || return 0
-  awk -F'\t' -v p="$1" '!/^#/ && NF>=3 && $1==p { gsub(/[|]/, "\\|", $2); print "/" $3 "/ s|" $2 "||g" }' "$ALLOW_FILE"
+# 🔴 FULLY LITERAL — no regex, no delimiter, nothing to escape. (Reasons in
+#    the message above; keep this comment short but keep the "why".)
+ALLOW_AWK='
+function blank(line, t,   p, out) {
+    out = ""
+    while ((p = index(line, t)) > 0) {
+        out = out substr(line, 1, p - 1)
+        line = substr(line, p + length(t))
+    }
+    return out line
+}
+BEGIN { FS = "\t" }
+FNR == NR {
+    if ($0 !~ /^#/ && NF >= 3 && $1 == path) { n++; anchor[n] = $3; token[n] = $2 }
+    next
+}
+{
+    line = $0
+    for (i = 1; i <= n; i++)
+        if (index(line, anchor[i]) > 0) line = blank(line, token[i])
+    print line
+}'
+
+apply_allow() {   # $1 = path · stdout: the file body with spared tokens blanked
+  [ -f "$ALLOW_FILE" ] || { cat "$1"; return; }
+  awk -v path="$1" "$ALLOW_AWK" "$ALLOW_FILE" "$1"
 }
 
 # ─── Branch-link rule ────────────────────────────────────────────────────────
@@ -220,15 +255,10 @@ branch_link_hits() {   # $1 = path
 hits=0; files=0; skipped=0; occ=0; blinks=0
 declare -A DISTINCT=()
 for f in "${IN[@]}"; do
-  prog="$(allow_program "$f")"
-  if [ -n "$prog" ]; then
-    before=$(candidate_text <"$f" | extract_tokens | wc -l)
-    body="$(sed "$prog" <"$f")"
-    after=$(printf '%s\n' "$body" | candidate_text | extract_tokens | wc -l)
-    skipped=$((skipped + before - after))
-  else
-    body="$(cat "$f")"
-  fi
+  before=$(candidate_text <"$f" | extract_tokens | wc -l)
+  body="$(apply_allow "$f")"
+  after=$(printf '%s\n' "$body" | candidate_text | extract_tokens | wc -l)
+  skipped=$((skipped + before - after))
   fhit=0
   while IFS= read -r tok; do
     [ -n "$tok" ] || continue
