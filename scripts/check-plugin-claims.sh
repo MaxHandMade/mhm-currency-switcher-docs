@@ -54,7 +54,7 @@ SHAPE_LEGACY='mhm_currency[A-Za-z0-9_]*'
 #    reads as a shortcode named "kurulum". One mechanism, no false positives.
 SHAPE_CLI='wp[[:space:]]+mhmcs[[:space:]]+[a-z][a-z-]*'
 SHAPE_REST='/mhmcs/v[0-9]+(/[A-Za-z0-9_-]+)+'
-SHAPE_HOST='[a-z0-9-]+(\.[a-z0-9-]+)+\.(com|dev|org|eu|net|io)'
+SHAPE_HOST='[a-z0-9-]+(\.[a-z0-9-]+)*\.(com|dev|org|eu|net|io)'
 SHAPES_RE="$SHAPE_REST|$SHAPE_CLI|$SHAPE_PREFIXED|$SHAPE_LEGACY|$SHAPE_HOST"
 
 # ─── Hosts that are never endpoints ──────────────────────────────────────────
@@ -72,6 +72,9 @@ scan_text() {   # stdin: markdown (one or many lines) · stdout: tokens
 
 self_test() {
   local rc=0 pc=0 pt=0 nt=0 ntrip=0 t
+  # 🔴 A new SHAPE_* needs a fixture reachable ONLY through that shape. Twice
+  #    now, a fixture caught by a different rule left its own rule unexercised
+  #    and silently green (the table rule; the two-label host).
   # Every positive is a claim the probe MUST surface for judging.
   local -a POS=(
     '```
@@ -82,6 +85,7 @@ self_test() {
     'Call `/mhmcs/v1/rates` to read the table.'
     'Run `wp mhmcs rates-sync` from the command line.'
     'Rates come from `api.exchangerate-api.com`.'
+    'Rates come from `frankfurter.dev` when the primary is down.'
   )
   # Every negative is text the probe must LEAVE ALONE.
   local -a NEG=(
