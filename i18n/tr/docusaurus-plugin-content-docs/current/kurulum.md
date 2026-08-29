@@ -1,6 +1,7 @@
 ---
 sidebar_position: 2
 title: Kurulum
+slug: /kurulum
 ---
 
 # Kurulum ve Gereksinimler

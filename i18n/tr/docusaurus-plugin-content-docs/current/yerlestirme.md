@@ -1,6 +1,7 @@
 ---
 sidebar_position: 7
 title: Anahtarı Yerleştirme
+slug: /yerlestirme
 mdx:
   format: md
 ---

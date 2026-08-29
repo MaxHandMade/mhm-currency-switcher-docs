@@ -1,6 +1,7 @@
 ---
 sidebar_position: 13
 title: FAQ
+slug: /faq
 ---
 
 # FAQ
@@ -15,7 +16,7 @@ As many as your shop needs — every currency WooCommerce offers can be enabled,
 
 Exchange rates are fetched from ExchangeRate-API in real time, either on demand or on a schedule you configure (hourly, twice daily, or daily) so your rates stay current without manual intervention.
 
-If that source cannot be reached, the plugin tries two fallbacks in turn before giving up and leaving your existing rates in place. All three are named, with their terms, on the [Managing currencies](/docs/para-birimleri) page. If your network blocks one of them, the `mhmcs_fallback_rates_url` filter can point that source somewhere else without moving the others.
+If that source cannot be reached, the plugin tries two fallbacks in turn before giving up and leaving your existing rates in place. All three are named, with their terms, on the [Managing currencies](/docs/managing-currencies) page. If your network blocks one of them, the `mhmcs_fallback_rates_url` filter can point that source somewhere else without moving the others.
 
 ### What are the shortcodes?
 
@@ -28,11 +29,11 @@ If that source cannot be reached, the plugin tries two fallbacks in turn before 
 - `price` — price a specific amount instead of a product's.
 - `show_flags` — `true` or `false`, overriding the saved Display Options setting.
 
-Both are also available as Elementor widgets. See [Placing the switcher](/docs/yerlestirme) for the shortcodes' rename history and every way to add them to your site.
+Both are also available as Elementor widgets. See [Placing the switcher](/docs/placing-the-switcher) for the shortcodes' rename history and every way to add them to your site.
 
 ### Can I set a fixed price for a specific product?
 
-Yes. Use the **Currency Prices** tab on the product edit screen — see [Fixed prices per product](/docs/sabit-fiyat) for the details. One thing worth knowing: a fixed price is stored per product and currency, not per price type, so the same amount is used for the regular price and the sale price. A product that's on sale in your base currency shows as not on sale in a currency you've given a fixed price to. If you want the sale to carry across, leave that currency to the exchange rate instead of fixing it.
+Yes. Use the **Currency Prices** tab on the product edit screen — see [Fixed prices per product](/docs/fixed-prices) for the details. One thing worth knowing: a fixed price is stored per product and currency, not per price type, so the same amount is used for the regular price and the sale price. A product that's on sale in your base currency shows as not on sale in a currency you've given a fixed price to. If you want the sale to carry across, leave that currency to the exchange rate instead of fixing it.
 
 ### Is the plugin compatible with WooCommerce HPOS?
 
@@ -74,7 +75,7 @@ One known limit: the `price_html` field is not pinned in the same way. It cannot
 
 ### What happens to my data if I delete the plugin?
 
-By default, deleting the plugin keeps your settings, currency configuration, and the currency and exchange rate recorded on each order — deletion only clears what should never survive, such as cached rates, scheduled tasks, and secrets stored by settings that have since been removed. To have the plugin remove everything instead, including order currency data (both in classic order meta and in the order tables of stores using HPOS), turn on **Delete all data when the plugin is removed** in [Advanced settings](/docs/gelismis) before you delete it. With that switch left off, your multi-currency sales history survives even after the plugin is gone.
+By default, deleting the plugin keeps your settings, currency configuration, and the currency and exchange rate recorded on each order — deletion only clears what should never survive, such as cached rates, scheduled tasks, and secrets stored by settings that have since been removed. To have the plugin remove everything instead, including order currency data (both in classic order meta and in the order tables of stores using HPOS), turn on **Delete all data when the plugin is removed** in [Advanced settings](/docs/advanced-settings) before you delete it. With that switch left off, your multi-currency sales history survives even after the plugin is gone.
 
 Something not answered here? Open an issue on
 [GitHub](https://github.com/MaxHandMade/mhm-currency-switcher/issues).

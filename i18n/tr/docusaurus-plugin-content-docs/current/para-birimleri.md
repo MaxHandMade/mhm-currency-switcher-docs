@@ -1,6 +1,7 @@
 ---
 sidebar_position: 3
 title: Para Birimlerini Yönet
+slug: /para-birimleri
 ---
 
 # Para Birimlerini Yönet

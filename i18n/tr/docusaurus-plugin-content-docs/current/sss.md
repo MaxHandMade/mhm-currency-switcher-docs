@@ -1,6 +1,7 @@
 ---
 sidebar_position: 13
 title: SSS
+slug: /sss
 ---
 
 # Sık Sorulan Sorular

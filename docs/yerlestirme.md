@@ -1,6 +1,7 @@
 ---
 sidebar_position: 7
 title: Placing the switcher
+slug: /placing-the-switcher
 mdx:
   format: md
 ---
@@ -49,5 +50,5 @@ Go to **Appearance → Menus** and add the **Currency Switcher** item to a menu.
 
 This plugin does not provide its own block yet. Use the core **Shortcode** block and paste either shortcode into it.
 
-The full FAQ is on the [FAQ](/docs/sss) page; the full list of known limits is
-on the [Known limits](/docs/bilinen-sinirlar) page.
+The full FAQ is on the [FAQ](/docs/faq) page; the full list of known limits is
+on the [Known limits](/docs/known-limits) page.

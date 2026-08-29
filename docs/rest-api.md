@@ -36,7 +36,7 @@ curl https://yourstore.com/wp-json/mhmcs/v1/rates
 
 ### POST `/convert`
 
-*Since 1.1.0.* This is what the browser calls, automatically, when [cache compatibility mode](/docs/gelismis) is on — it asks for the real prices of whatever products are marked on an otherwise base-currency-cached page. Send `product_ids` (up to 50 per request; the server enforces the cap regardless of what you send) and, optionally, a `currency`; omit it to let the server [detect](/docs/algilama) the visitor's currency for you. The response echoes back which currency was used and the priced HTML for each ID:
+*Since 1.1.0.* This is what the browser calls, automatically, when [cache compatibility mode](/docs/advanced-settings) is on — it asks for the real prices of whatever products are marked on an otherwise base-currency-cached page. Send `product_ids` (up to 50 per request; the server enforces the cap regardless of what you send) and, optionally, a `currency`; omit it to let the server [detect](/docs/currency-detection) the visitor's currency for you. The response echoes back which currency was used and the priced HTML for each ID:
 
 ```json
 {
@@ -48,7 +48,7 @@ curl https://yourstore.com/wp-json/mhmcs/v1/rates
 
 `detected` is `true` only when the server itself resolved the currency (geolocation succeeded, with no `currency` sent in the request) — it's `false` for an explicit `currency`, and `false` when detection came up empty too. It matters because the browser's own cookie write is gated on it: `price-converter.js` only persists the cookie when `detected: true`, so a failed detection isn't pinned to the base currency and geolocation gets retried on the visitor's next page.
 
-It's unauthenticated by design — the pages it serves are read by logged-out visitors with no nonce to send — but tightly scoped: only already-public product HTML, nothing written server-side, and a per-address rate limit of **120 requests a minute**, adjustable via the `mhmcs_convert_rate_limit` filter. Going over it returns `429` with a `Retry-After` header. For the full write-up of why it's shaped this way, see the ["Is there a limit on how often the conversion endpoint can be called?"](/docs/sss) question in our FAQ.
+It's unauthenticated by design — the pages it serves are read by logged-out visitors with no nonce to send — but tightly scoped: only already-public product HTML, nothing written server-side, and a per-address rate limit of **120 requests a minute**, adjustable via the `mhmcs_convert_rate_limit` filter. Going over it returns `429` with a `Retry-After` header. For the full write-up of why it's shaped this way, see the ["Is there a limit on how often the conversion endpoint can be called?"](/docs/faq) question in our FAQ.
 
 ## Admin endpoints
 
@@ -74,5 +74,5 @@ curl https://yourstore.com/wp-json/wc/v3/products?currency=EUR
 
 `price`, `regular_price`, and `sale_price` come back converted, and a `currency_code` field is added. Omit the parameter, or send one your store doesn't offer, and the response is pinned to your base currency — so the answer depends only on the request, never on the caller's cookies.
 
-The full FAQ is on the [FAQ](/docs/sss) page; the full list of known limits is
-on the [Known limits](/docs/bilinen-sinirlar) page.
+The full FAQ is on the [FAQ](/docs/faq) page; the full list of known limits is
+on the [Known limits](/docs/known-limits) page.

@@ -1,6 +1,7 @@
 ---
 sidebar_position: 9
 title: Para Birimi Algılama Mekanizması
+slug: /algilama
 ---
 
 # Para Birimi Algılama Mekanizması

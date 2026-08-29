@@ -1,6 +1,7 @@
 ---
 sidebar_position: 2
 title: Installation
+slug: /installation
 ---
 
 # Installation and requirements
@@ -29,7 +30,7 @@ You need the `manage_woocommerce` capability to see the settings screen (the Sho
 - **The currency list starts empty.** No currencies are pre-added; you add the ones you want.
 - Geolocation detection starts **on**.
 - The switcher's appearance starts with these defaults: flag **on**, symbol **on**, code **on**, currency name **off**, size **Medium**.
-- Cache compatibility mode starts **on** — see [Advanced settings](/docs/gelismis) for what that does.
+- Cache compatibility mode starts **on** — see [Advanced settings](/docs/advanced-settings) for what that does.
 
 Your store's base currency always comes from WooCommerce's own settings (**WooCommerce > Settings > General > Currency options**). You cannot add the base currency to the plugin's currency list — it is already the conversion's starting point.
 
@@ -44,5 +45,5 @@ Your store's base currency always comes from WooCommerce's own settings (**WooCo
 
 Unsaved changes show a bar at the top of the screen. **Save Changes** appears both in that bar and at the bottom of the page, and saves all four tabs in one request.
 
-The full FAQ is on the [FAQ](/docs/sss) page; the full list of known limits is
-on the [Known limits](/docs/bilinen-sinirlar) page.
+The full FAQ is on the [FAQ](/docs/faq) page; the full list of known limits is
+on the [Known limits](/docs/known-limits) page.

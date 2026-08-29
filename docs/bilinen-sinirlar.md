@@ -1,6 +1,7 @@
 ---
 sidebar_position: 14
 title: Known limits
+slug: /known-limits
 ---
 
 # Known limits
@@ -13,7 +14,7 @@ Three fixes sit above the setting and stay in place whether it is on or off: pri
 
 ### Search engines and crawlers see your base prices
 
-With the mode on, the page a crawler fetches has not been through the browser, so it carries base-currency prices, and so does the machine-readable product data in it. See the related question in the [FAQ](/docs/sss); the mismatch is deliberate.
+With the mode on, the page a crawler fetches has not been through the browser, so it carries base-currency prices, and so does the machine-readable product data in it. See the related question in the [FAQ](/docs/faq); the mismatch is deliberate.
 
 ### Converted prices replace the base ones a moment after the page appears
 

@@ -1,6 +1,7 @@
 ---
 sidebar_position: 3
 title: Managing currencies
+slug: /managing-currencies
 ---
 
 # Managing currencies
@@ -139,5 +140,5 @@ Bank's daily reference feed as its only fallback.*
 
 If you have server access, you can sync rates or flush the cache from the command line instead — see [WP-CLI Commands](/docs/wp-cli).
 
-The full FAQ is on the [FAQ](/docs/sss) page; the full list of known limits is
-on the [Known limits](/docs/bilinen-sinirlar) page.
+The full FAQ is on the [FAQ](/docs/faq) page; the full list of known limits is
+on the [Known limits](/docs/known-limits) page.

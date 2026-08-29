@@ -1,6 +1,7 @@
 ---
 sidebar_position: 5
 title: Advanced settings
+slug: /advanced-settings
 ---
 
 # Advanced settings
@@ -76,5 +77,5 @@ anything; only deleting it does, and only with this switch on.
 
 On a multisite network the switch clears the site the plugin is removed from.
 
-The full FAQ is on the [FAQ](/docs/sss) page; the full list of known limits is
-on the [Known limits](/docs/bilinen-sinirlar) page.
+The full FAQ is on the [FAQ](/docs/faq) page; the full list of known limits is
+on the [Known limits](/docs/known-limits) page.
