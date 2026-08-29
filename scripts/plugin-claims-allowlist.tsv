@@ -9,10 +9,16 @@
 #
 # path	token	anchor (LITERAL substring — not a regex; metacharacters match themselves)
 #
-# Today this list is EMPTY, and that is correct. An entry earns its place only
-# when the gate would otherwise report the sentence: `mhm-cs-variation-prices`
-# still exists in the v2.0.0 source, so the page naming it needs no pardon.
-# The first real entries arrive with the GET /rates note (Task 8), and the CSS
-# rename entries arrive in Faz B, when the sweep makes those names stale.
+# An entry earns its place only when the gate would otherwise report the
+# sentence. The two rows below are the first real entries: they spare the
+# "Removed in 2.1.0" note's `/mhmcs/v1/rates` mention. That note is correct
+# but currently INERT — the anchor in plugin-ref.txt is still v2.0.0, where
+# /rates is a live route, so source_has() finds it and the gate would pass
+# with or without this pardon. The row goes live (starts doing work) only
+# once the anchor moves to v2.1.0 and /rates actually drops out of source —
+# at that point, without this entry, the sentence naming the removed route
+# would itself become a false-positive finding.
+# The CSS rename entries arrive in Faz B, when the sweep makes those names
+# stale.
 docs/rest-api.md	/mhmcs/v1/rates	Removed in 2.1.0
 i18n/tr/docusaurus-plugin-content-docs/current/rest-api.md	/mhmcs/v1/rates	2.1.0'da kaldırıldı

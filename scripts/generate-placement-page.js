@@ -7,14 +7,24 @@
 // both break at once — which is the point.
 
 const fs = require('fs');
+const path = require('path');
 const https = require('https');
 
 const PLUGIN_REF = fs
-  .readFileSync(require('path').join(__dirname, '..', 'plugin-ref.txt'), 'utf8')
+  .readFileSync(path.join(__dirname, '..', 'plugin-ref.txt'), 'utf8')
   .trim();
 
-const SRC =
-  `https://raw.githubusercontent.com/MaxHandMade/mhm-currency-switcher/${PLUGIN_REF}/admin-app/src/components/tabs/HowToUse.jsx`;
+const SRC_PATH = 'admin-app/src/components/tabs/HowToUse.jsx';
+
+const SRC = `https://raw.githubusercontent.com/MaxHandMade/mhm-currency-switcher/${PLUGIN_REF}/${SRC_PATH}`;
+
+// deploy.yml checks the plugin out at the same PLUGIN_REF into .plugin-src one
+// step before this script runs, so the file it needs is already on disk. Read
+// that copy first — it is the same bytes the raw.githubusercontent.com fetch
+// below would return, minus the network round trip and its failure mode.
+// Fall back to the network for local/manual runs where .plugin-src doesn't
+// exist.
+const LOCAL_SRC = path.join(__dirname, '..', '.plugin-src', SRC_PATH);
 
 function fetch(url) {
   return new Promise((resolve, reject) => {
@@ -30,6 +40,15 @@ function fetch(url) {
       })
       .on('error', reject);
   });
+}
+
+function readSource() {
+  if (fs.existsSync(LOCAL_SRC)) {
+    console.log(`reading ${SRC_PATH} from local checkout at ${LOCAL_SRC}`);
+    return Promise.resolve(fs.readFileSync(LOCAL_SRC, 'utf8'));
+  }
+  console.log(`no local checkout at ${LOCAL_SRC}, fetching ${SRC}`);
+  return fetch(SRC);
 }
 
 function parse(jsx) {
@@ -90,7 +109,7 @@ function table({ samples, widgets }, locale) {
 }
 
 (async () => {
-  const jsx = await fetch(SRC);
+  const jsx = await readSource();
   const parsed = parse(jsx);
 
   for (const [p, locale] of [
