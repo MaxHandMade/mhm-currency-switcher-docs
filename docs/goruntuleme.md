@@ -52,5 +52,5 @@ A preview at the bottom of the tab reflects your current settings; it's a simpli
 
 When cache compatibility mode is on (the default — see [Advanced settings](/docs/gelismis)) and a visitor picks a different currency on a shop, category, or product page, the page doesn't reload: the plugin writes the cookie, converts the visible prices in place, and refreshes the mini-cart. On the cart page, for a logged-in visitor, or with cache compatibility switched off, the page reloads as before.
 
-The full list of frequently asked questions and known limits is in
-[readme.txt](https://github.com/MaxHandMade/mhm-currency-switcher/blob/v2.0.0/readme.txt).
+The full FAQ is on the [FAQ](/docs/sss) page; the full list of known limits is
+on the [Known limits](/docs/bilinen-sinirlar) page.

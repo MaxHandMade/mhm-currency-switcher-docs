@@ -106,6 +106,7 @@ Mağazanız bir ters proxy veya CDN arkasındaysa ve her ziyaretçi aynı adrest
 | POST | `/currencies` | Para birimlerini kaydeder |
 | POST | `/rates/sync` | Kurları kaynaktan çekip günceller |
 | GET | `/rates/preview` | Her para birimi için ham ve efektif kuru döndürür |
+| POST | `/rates/preview` | Aynısını, henüz kaydedilmemiş gönderilen bir yapılandırma için döndürür — hiçbir şey kaydetmez |
 
 ## WooCommerce Ürün API'sinde Para Birimi
 

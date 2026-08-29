@@ -132,8 +132,10 @@ Kurlar sırayla şu kaynaklardan gelir:
 
 Üçü de ücretsizdir ve API anahtarı istemez. Eklenti sırayla dener ve ilk yanıt
 vereni kullanır; hiçbiri yanıt vermezse mevcut kurların yerinde kalır. Çekilen
-kurlar 1 gün önbelleklenir; bu süre içinde yeniden senkronize ederseniz önbellekteki
-değer döner.
+kurlar 1 gün önbelleklenir, ama bu önbellek yalnızca alıcıya gösterilen fiyat
+ekranını besler. **Kurları Senkronize Et** — ister düğmeye tıklayın, ister
+`wp mhm-cs rates-sync` çalıştırın, ister zamanlanmış görev tetiklensin — her
+durumda önbelleği atlar ve doğrudan API'ye gider.
 
 *2.1.0'dan itibaren zincir kısalıyor: ExchangeRate-API ve tek yedek olarak
 Avrupa Merkez Bankası'nın günlük referans kur akışı.*

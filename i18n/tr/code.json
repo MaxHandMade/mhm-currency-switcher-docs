@@ -371,7 +371,7 @@
     "message": "Her para biriminin kendi döviz kuru, komisyonu ve yuvarlama adımı vardır; panel müşterinin gerçekte göreceği fiyatı gösterir."
   },
   "home.card.placement.alt": {
-    "message": "Bir sitenin gezinme menüsünde açık duran para birimi anahtarı; Türk lirası, ABD doları, euro ve İngiliz sterlinini listeliyor"
+    "message": "Bir sitenin gezinme menüsünde açık duran para birimi dönüştürücüsü; Türk lirası, ABD doları, euro ve İngiliz sterlinini listeliyor"
   },
   "home.card.placement.title": {
     "message": "Beş farklı yerleştirme yolu"
@@ -380,13 +380,13 @@
     "message": "İki kısa kod, iki Elementor widget'ı veya bir gezinme menüsü ögesi — her biri kopyalanabilir kodla belgelenmiştir."
   },
   "home.card.cache.alt": {
-    "message": "Tüm fiyatların Türk lirasına dönüştürüldüğü bir ürün ızgarası, üstünde para birimi anahtarı"
+    "message": "Tüm fiyatların Türk lirasına dönüştürüldüğü bir ürün ızgarası, üstünde para birimi dönüştürücüsü"
   },
   "home.card.cache.title": {
     "message": "Sayfa önbelleğinde bile çalışır"
   },
   "home.card.cache.body": {
-    "message": "Anonim sayfalar temel para biriminde önbellekte kalır, fiyatlar sayfa yüklendikten sonra dönüştürülür — çoğu para birimi anahtarının bozulduğu nokta tam olarak burasıdır."
+    "message": "Anonim sayfalar temel para biriminde önbellekte kalır, fiyatlar sayfa yüklendikten sonra dönüştürülür — çoğu para birimi dönüştürücüsünün bozulduğu nokta tam olarak burasıdır."
   },
   "home.title": {
     "message": "MHM Currency Switcher Dokümantasyonu"

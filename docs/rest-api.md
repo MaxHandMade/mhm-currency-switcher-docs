@@ -62,6 +62,7 @@ It's unauthenticated by design — the pages it serves are read by logged-out vi
 | POST | `/currencies` | Save currencies |
 | POST | `/rates/sync` | Fetch and update rates from source |
 | GET | `/rates/preview` | Raw and effective rate per currency |
+| POST | `/rates/preview` | Same, for a submitted (unsaved) configuration — saves nothing |
 
 ## Currency on the WooCommerce product API
 
@@ -73,5 +74,5 @@ curl https://yourstore.com/wp-json/wc/v3/products?currency=EUR
 
 `price`, `regular_price`, and `sale_price` come back converted, and a `currency_code` field is added. Omit the parameter, or send one your store doesn't offer, and the response is pinned to your base currency — so the answer depends only on the request, never on the caller's cookies.
 
-The full list of frequently asked questions and known limits is in
-[readme.txt](https://github.com/MaxHandMade/mhm-currency-switcher/blob/v2.0.0/readme.txt).
+The full FAQ is on the [FAQ](/docs/sss) page; the full list of known limits is
+on the [Known limits](/docs/bilinen-sinirlar) page.

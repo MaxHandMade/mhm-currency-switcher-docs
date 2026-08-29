@@ -5,15 +5,15 @@ title: SSS
 
 # Sık Sorulan Sorular
 
-Bu sayfa, eklentinin `readme.txt` dosyasındaki sık sorulan sorularla bu kılavuzun kendi SSS bölümünü birleştirir; aynı soru iki kaynakta da varsa daha iyi anlatılan cevap kullanılmış, yalnızca birinde geçen sorular olduğu gibi taşınmıştır.
+Bu sayfa, eklentinin `readme.txt` dosyasındaki sık sorulan sorularla bu kılavuzun kendi SSS bölümünü birleştirir; aynı soru iki kaynakta da varsa readme'nin cevabı kullanılmıştır — kaynak metin readme.txt'tir.
 
 ### Kaç para birimi ekleyebilirim?
 
-Sınır yoktur — istediğiniz kadar para birimi ekleyebilirsiniz. Tek istisna ürün sayfasındaki fiyat bileşenidir: **Görüntüleme Seçenekleri** sekmesinden en fazla 5 para birimi seçip aynı anda gösterebilirsiniz.
+Sınır yoktur — WooCommerce'in sunduğu her para birimini etkinleştirebilirsiniz, ücretli bir sürüm için hiçbir şey saklı tutulmaz. REST API, tek istekte 500'den fazla para birimi satırı taşınmasını reddeder; bu aşırı büyük yüklere karşı bir korumadır ve WooCommerce'in kendi sunduğu kod sayısının çok üzerindedir, yani panelden bu sınıra hiçbir zaman ulaşılmaz. Kullanıcının gördüğü tek sınır ürün sayfasındaki fiyat bileşenidir: **Görüntüleme Seçenekleri** sekmesinden en fazla 5 para birimi seçip aynı anda gösterebilirsiniz.
 
 ### Döviz kurları nasıl ve ne sıklıkla güncellenir?
 
-Kurlar ExchangeRate-API'den gerçek zamanlı çekilir ve kullanılan kaynak ücretsizdir, API anahtarı gerektirmez. Güncelleme sıklığını **Gelişmiş** sekmesinden siz belirlersiniz: saatlik, günde iki kez, günlük veya yalnızca elle. **Kurları Senkronize Et** düğmesiyle her zaman elle de güncelleyebilirsiniz. Çekilen kurlar 1 gün önbellekte tutulur.
+Kurlar ExchangeRate-API'den gerçek zamanlı çekilir ve kullanılan kaynak ücretsizdir, API anahtarı gerektirmez. Bu kaynağa ulaşılamazsa eklenti sırayla iki yedek kaynağı dener; hiçbiri yanıt vermezse mevcut kurlarınız yerinde kalır. Üçü de kaynak ve koşullarıyla birlikte [Para Birimlerini Yönetme](/docs/para-birimleri) sayfasında listelidir; ağınız bunlardan birini engelliyorsa `mhmcs_fallback_rates_url` filtresiyle yalnızca o kaynağı, diğerlerine dokunmadan başka bir adrese yönlendirebilirsiniz. Güncelleme sıklığını **Gelişmiş** sekmesinden siz belirlersiniz: saatlik, günde iki kez, günlük veya yalnızca elle. **Kurları Senkronize Et** düğmesiyle her zaman elle de güncelleyebilirsiniz. Çekilen kurlar 1 gün önbellekte tutulur ve bu önbellek yalnızca fiyat ekranını besler — senkronizasyon her zaman API'ye gider.
 
 ### Kısa kodlar nelerdir, dönüştürücüyü sitemde nasıl gösteririm?
 

@@ -5,11 +5,11 @@ title: FAQ
 
 # FAQ
 
-This page merges the plugin's readme.txt FAQ with a handful of questions specific to this guide's readers. Where a question appears in both places, the readme's answer is used here.
+This page merges the plugin's readme.txt FAQ with a handful of questions specific to this guide's readers. Where a question appears in both places, the readme's answer is used here — readme.txt is the source of record.
 
 ### How many currencies can I add?
 
-As many as your shop needs — every currency WooCommerce offers can be enabled, and nothing is held back for a paid version. The REST API refuses a request carrying more than 500 currency rows; that is a guard against oversized payloads and is well above the number of codes WooCommerce itself offers, so the panel cannot reach it.
+As many as your shop needs — every currency WooCommerce offers can be enabled, and nothing is held back for a paid version. The REST API refuses a request carrying more than 500 currency rows; that is a guard against oversized payloads and is well above the number of codes WooCommerce itself offers, so the panel cannot reach it. The one place a cap is user-visible is the product price widget: the **Display Options** tab lets you show at most 5 currencies there at once.
 
 ### How are exchange rates fetched?
 
