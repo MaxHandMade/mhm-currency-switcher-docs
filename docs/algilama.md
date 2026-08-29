@@ -1,6 +1,7 @@
 ---
 sidebar_position: 9
 title: Currency detection
+slug: /currency-detection
 ---
 
 # Currency detection
@@ -9,7 +10,7 @@ Every price surface on the site — page renders, the cart, the convert endpoint
 
 1. **Cookie** — highest priority.
 2. **URL parameter** (`?currency=EUR`).
-3. **Geolocation** — only when it's turned on under [Advanced settings](/docs/gelismis).
+3. **Geolocation** — only when it's turned on under [Advanced settings](/docs/advanced-settings).
 4. **Base currency** — the fallback.
 
 A code found at any step is discarded (and the chain moves on) unless it's either the store's base currency or a currency you've enabled. There's exactly one implementation of this rule, shared by every caller — no page or endpoint has its own copy that could quietly drift from it.
@@ -46,7 +47,7 @@ Handy for campaign links. It's **read-only** for that request — it deliberatel
 
 ## Geolocation
 
-Runs only when enabled, and only when there's no cookie yet. See [Advanced settings](/docs/gelismis) for the CloudFlare/MaxMind lookup order and what happens when it can't resolve a country.
+Runs only when enabled, and only when there's no cookie yet. See [Advanced settings](/docs/advanced-settings) for the CloudFlare/MaxMind lookup order and what happens when it can't resolve a country.
 
 ## Base currency
 

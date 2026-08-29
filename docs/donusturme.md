@@ -1,6 +1,7 @@
 ---
 sidebar_position: 10
 title: Currency conversion
+slug: /currency-conversion
 ---
 
 # Currency conversion
@@ -29,7 +30,7 @@ The effective rate folds in whatever fee type a currency has:
 
 If a currency's rate is 0, or the currency can't be found, the price is left unconverted rather than shown as zero.
 
-Rounding (Nearest / Round up / Round down, by a step and an optional subtract amount — see [Managing currencies](/docs/para-birimleri)) runs **after** the rate and fee. It's not limited to product prices — since 1.1.0 it also applies to shipping and cart fees, and to fixed-amount coupons.
+Rounding (Nearest / Round up / Round down, by a step and an optional subtract amount — see [Managing currencies](/docs/managing-currencies)) runs **after** the rate and fee. It's not limited to product prices — since 1.1.0 it also applies to shipping and cart fees, and to fixed-amount coupons.
 
 ## What gets converted
 

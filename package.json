@@ -11,12 +11,13 @@
     "clear": "docusaurus clear",
     "write-translations": "docusaurus write-translations",
     "check:links": "bash scripts/check-links.sh",
-    "check:parity": "bash scripts/check-locale-parity.sh",
+    "check:parity": "bash scripts/check-locale-parity.sh && bash scripts/check-slug-parity.sh",
     "check:external": "bash scripts/check-external-links.sh"
   },
   "dependencies": {
     "@docusaurus/core": "^3.9.2",
     "@docusaurus/faster": "^3.9.2",
+    "@docusaurus/plugin-client-redirects": "^3.10.2",
     "@docusaurus/preset-classic": "^3.9.2",
     "@docusaurus/theme-mermaid": "^3.9.2",
     "@easyops-cn/docusaurus-search-local": "^0.52.2",

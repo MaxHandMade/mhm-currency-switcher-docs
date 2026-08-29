@@ -1,0 +1,24 @@
+# Tokens a page names ON PURPOSE, because the sentence is about the name.
+#
+# NOT "findings we tolerate". Sweeping one of these would make the sentence
+# false — worse than the stale token it fixes.
+#
+# 🔴 AN ENTRY IS A CLAIM ABOUT ONE SENTENCE, NOT ABOUT A FILE. That is why the
+#    third column exists: the token is spared only on lines matching it.
+#    A (file, token) list would hide a second, stale occurrence in the same file.
+#
+# path	token	anchor (LITERAL substring — not a regex; metacharacters match themselves)
+#
+# An entry earns its place only when the gate would otherwise report the
+# sentence. The two rows below are the first real entries: they spare the
+# "Removed in 2.1.0" note's `/mhmcs/v1/rates` mention. That note is correct
+# but currently INERT — the anchor in plugin-ref.txt is still v2.0.0, where
+# /rates is a live route, so source_has() finds it and the gate would pass
+# with or without this pardon. The row goes live (starts doing work) only
+# once the anchor moves to v2.1.0 and /rates actually drops out of source —
+# at that point, without this entry, the sentence naming the removed route
+# would itself become a false-positive finding.
+# The CSS rename entries arrive in Faz B, when the sweep makes those names
+# stale.
+docs/rest-api.md	/mhmcs/v1/rates	Removed in 2.1.0
+i18n/tr/docusaurus-plugin-content-docs/current/rest-api.md	/mhmcs/v1/rates	2.1.0'da kaldırıldı

@@ -1,6 +1,7 @@
 ---
 sidebar_position: 3
 title: Managing currencies
+slug: /managing-currencies
 ---
 
 # Managing currencies
@@ -121,14 +122,23 @@ A step of `0` disables rounding.
 
 **Sync Rates** fetches current rates immediately and writes them into the table. It needs outbound HTTP access from your server — it doesn't work offline.
 
-Rates come from:
+Rates come from, in order:
 
 1. **ExchangeRate-API** (primary) — `api.exchangerate-api.com`
-2. **Fawaz Ahmed Currency API** (fallback) — used if the primary source doesn't respond
+2. **Currency API** (fallback) — `latest.currency-api.pages.dev`
+3. **Frankfurter** (second fallback) — `api.frankfurter.dev`
 
-Both are free and need no API key. Fetched rates are cached for 1 day; syncing again within that window returns the cached value.
+All three are free and need no API key. The plugin tries them in order and stops
+at the first that answers; if none does, your existing rates stay in place.
+Fetched rates are cached for 1 day, and that cache is what backs the price
+display shown to shoppers. **Sync Rates** — whether you click the button, run
+`wp mhm-cs rates-sync`, or let the scheduled task fire — always skips the cache
+and goes straight to the API.
+
+*From 2.1.0 the chain is shorter: ExchangeRate-API with the European Central
+Bank's daily reference feed as its only fallback.*
 
 If you have server access, you can sync rates or flush the cache from the command line instead — see [WP-CLI Commands](/docs/wp-cli).
 
-The full list of frequently asked questions and known limits is in
-[readme.txt](https://github.com/MaxHandMade/mhm-currency-switcher/blob/develop/readme.txt).
+The full FAQ is on the [FAQ](/docs/faq) page; the full list of known limits is
+on the [Known limits](/docs/known-limits) page.

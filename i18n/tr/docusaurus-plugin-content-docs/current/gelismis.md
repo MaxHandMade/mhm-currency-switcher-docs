@@ -1,6 +1,7 @@
 ---
 sidebar_position: 5
 title: Gelişmiş Ayarlar
+slug: /advanced-settings
 ---
 
 # Gelişmiş Ayarlar

@@ -3,6 +3,7 @@ sidebar_position: 7
 title: Anahtarı Yerleştirme
 mdx:
   format: md
+slug: /placing-the-switcher
 ---
 
 # Anahtarı Yerleştirme
@@ -56,5 +57,5 @@ Görüntüleme Seçenekleri sekmesinden ürün fiyat widget'ını açtıysanız 
 
 Bu eklenti henüz kendi bloğunu sunmuyor. Çekirdek **Kısa Kod** bloğunu kullanıp iki kısa koddan birini içine yapıştırın. Elementor kullanıyorsanız widget'lar da kullanılabilir durumda kalır.
 
-Sık sorulan soruların ve bilinen sınırların tam listesi
-[readme.txt](https://github.com/MaxHandMade/mhm-currency-switcher/blob/develop/readme.txt) dosyasındadır.
+Sık sorulan soruların tamamı [SSS](/docs/faq) sayfasında, bilinen sınırların
+tamamı [Bilinen Sınırlar](/docs/known-limits) sayfasındadır.

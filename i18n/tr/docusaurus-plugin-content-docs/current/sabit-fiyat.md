@@ -1,6 +1,7 @@
 ---
 sidebar_position: 6
 title: Ürün Bazında Sabit Fiyatlar
+slug: /fixed-prices
 ---
 
 # Ürün Bazında Sabit Fiyatlar

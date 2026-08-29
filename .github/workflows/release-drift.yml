@@ -1,0 +1,26 @@
+name: Plugin release drift
+
+# Deliberately separate from deploy.yml: a drift window must not block the
+# deploy that would replace the stale page. Failing here is loud but harmless.
+#
+# 🔴 GitHub disables scheduled workflows in a public repository after 60 days
+#    with no activity. This repository is exactly that kind of repository, so a
+#    push-side backup is a known follow-up (tag-triggered release workflow in
+#    the plugin repository), tracked in the spec's Ertelenenler.
+on:
+  schedule:
+    - cron: '17 6 * * *'
+  workflow_dispatch: {}
+
+permissions:
+  contents: read
+
+jobs:
+  drift:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+      - name: Compare the anchor with the latest release
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: bash scripts/check-plugin-release-drift.sh

@@ -1,8 +1,23 @@
+/* Palette sampled from the plugin's own banner (#1b4ec4 → #4347b1 → #5940ae),
+   not picked by eye. Dark mode gets its own tone: the same blue on a dark
+   ground falls under the contrast floor. */
 :root {
-  --ifm-color-primary: #2b6cb0;
+  --ifm-color-primary: #1b4ec4;
+  --ifm-color-primary-dark: #1846b0;
+  --ifm-color-primary-darker: #1642a6;
+  --ifm-color-primary-darkest: #123789;
+  --ifm-color-primary-light: #2159d8;
+  --ifm-color-primary-lighter: #2c62dc;
+  --ifm-color-primary-lightest: #4b79e3;
   --ifm-code-font-size: 95%;
 }
 
 [data-theme='dark'] {
-  --ifm-color-primary: #90cdf4;
+  --ifm-color-primary: #8ea6ef;
+  --ifm-color-primary-dark: #7392ea;
+  --ifm-color-primary-darker: #6688e8;
+  --ifm-color-primary-darkest: #416ae1;
+  --ifm-color-primary-light: #a9baf4;
+  --ifm-color-primary-lighter: #b6c4f6;
+  --ifm-color-primary-lightest: #dde4fb;
 }

@@ -30,11 +30,34 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
+      - name: Read the plugin anchor
+        id: ref
+        run: |
+          # 🔴 An empty output here would make actions/checkout fall back to the
+          #    plugin repo's DEFAULT branch, and every gate below would measure
+          #    develop while claiming the pinned tag. Fail loudly instead.
+          REF="$(tr -d '[:space:]' < plugin-ref.txt 2>/dev/null || true)"
+          [ -n "$REF" ] || { echo "::error::plugin-ref.txt is missing or empty — refusing to fall back to the default branch"; exit 1; }
+          echo "v=$REF" >> "$GITHUB_OUTPUT"
+
+      - name: Check out the plugin tree at that anchor
+        uses: actions/checkout@v5
+        with:
+          repository: MaxHandMade/mhm-currency-switcher
+          ref: ${{ steps.ref.outputs.v }}
+          path: .plugin-src
+
       - name: Placement tables match the plugin
         run: |
           node scripts/generate-placement-page.js
           git diff --exit-code -- docs/yerlestirme.md i18n/tr/docusaurus-plugin-content-docs/current/yerlestirme.md \
             || { echo "::error::Placement tables are stale. Run 'node scripts/generate-placement-page.js' and commit."; exit 1; }
+
+      - name: Docs claims are backed by the plugin source
+        run: bash scripts/check-plugin-claims.sh
+
+      - name: Every endpoint the plugin calls is documented
+        run: bash scripts/check-external-services.sh
 
       - name: Build website
         run: npm run build

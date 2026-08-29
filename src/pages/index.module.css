@@ -1,0 +1,64 @@
+/* Gradient band sampled from the plugin's own banner, not picked by eye. */
+.heroBanner {
+  background: linear-gradient(135deg, #1b4ec4 0%, #4347b1 55%, #5940ae 100%);
+  /* Infima's own .hero class (from the "hero" class on the <header>) sets
+     color: var(--ifm-hero-text-color), and that variable defaults to a dark
+     grey (--ifm-color-emphasis-800). Both .hero and this module class carry
+     the same (0,1,0) specificity, and .hero's rule wins the tie, so a plain
+     `color: #fff` below never reaches the h1/subtitle. Setting the variable
+     here is what Infima's own rule actually reads. */
+  --ifm-hero-text-color: #fff;
+  color: #fff;
+  padding: 3rem 1rem 2.5rem;
+  text-align: center;
+}
+
+.heroTitle {
+  font-size: 2.25rem;
+  margin-bottom: 0.5rem;
+}
+
+/* Docusaurus ships `img:not(#\#):not(#\#) { max-width: 100% }` — the doubled
+   escaped, nonexistent-id `:not()` counts as two ID selectors for
+   specificity (2,0,1) while matching every real image, so no class-based
+   rule on the <img> itself can ever outrank it (a scoped `.heroBanner
+   .heroBannerImage` at (0,2,0) was tried and lost). The wrapper below sets
+   the 1000px ceiling on a <div> instead, which that img-only rule has
+   nothing to say about. */
+.heroBannerFrame {
+  max-width: 1000px;
+  margin: 1.5rem auto 0;
+}
+
+.heroBannerImage {
+  width: 100%;
+  display: block;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1.5rem;
+  max-width: 1000px;
+  margin: 3rem auto;
+  padding: 0 1rem;
+}
+
+.card {
+  border: 1px solid var(--ifm-color-emphasis-200);
+  border-radius: var(--ifm-card-border-radius);
+  overflow: hidden;
+}
+
+.card img {
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  object-fit: cover;
+  display: block;
+}
+
+.cardBody {
+  padding: 1rem 1.25rem 1.5rem;
+}
