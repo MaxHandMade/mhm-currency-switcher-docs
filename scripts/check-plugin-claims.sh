@@ -60,7 +60,10 @@ SHAPES_RE="$SHAPE_REST|$SHAPE_CLI|$SHAPE_PREFIXED|$SHAPE_LEGACY|$SHAPE_HOST"
 # ─── Hosts that are never endpoints ──────────────────────────────────────────
 # Documentation and placeholder hosts. Not "findings we tolerate": asking the
 # plugin source to contain `yourstore.com` would be asking the wrong question.
-KEEP_RE='github\.com|yourstore\.com|example\.com|example\.org|wordpress\.org|woocommerce\.com|maxhandmade\.github\.io|gnu\.org'
+# 🔴 Placeholder hosts exist in BOTH languages — `yourstore.com` in the English
+#    pages and `siteadiniz.com` in the Turkish ones. Adding only the English
+#    spelling leaves the gate permanently red on five real TR lines.
+KEEP_RE='github\.com|yourstore\.com|siteadiniz\.com|example\.com|example\.org|wordpress\.org|woocommerce\.com|maxhandmade\.github\.io|gnu\.org'
 
 extract_tokens() {   # stdin: candidate text · stdout: one token per line
   grep -oE "$SHAPES_RE" 2>/dev/null | grep -vE "^($KEEP_RE)$" || true

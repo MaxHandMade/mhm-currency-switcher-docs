@@ -8,4 +8,9 @@
 #    A (file, token) list would hide a second, stale occurrence in the same file.
 #
 # path	token	anchor (regex matched against the line)
-i18n/tr/docusaurus-plugin-content-docs/current/css.md	mhm-cs-variation-prices	buraya dahil değildir
+#
+# Today this list is EMPTY, and that is correct. An entry earns its place only
+# when the gate would otherwise report the sentence: `mhm-cs-variation-prices`
+# still exists in the v2.0.0 source, so the page naming it needs no pardon.
+# The first real entries arrive with the GET /rates note (Task 8), and the CSS
+# rename entries arrive in Faz B, when the sweep makes those names stale.
