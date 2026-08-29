@@ -50,4 +50,4 @@ Go to **Appearance → Menus** and add the **Currency Switcher** item to a menu.
 This plugin does not provide its own block yet. Use the core **Shortcode** block and paste either shortcode into it.
 
 The full list of frequently asked questions and known limits is in
-[readme.txt](https://github.com/MaxHandMade/mhm-currency-switcher/blob/develop/readme.txt).
+[readme.txt](https://github.com/MaxHandMade/mhm-currency-switcher/blob/v2.0.0/readme.txt).

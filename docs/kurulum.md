@@ -45,4 +45,4 @@ Your store's base currency always comes from WooCommerce's own settings (**WooCo
 Unsaved changes show a bar at the top of the screen. **Save Changes** appears both in that bar and at the bottom of the page, and saves all four tabs in one request.
 
 The full list of frequently asked questions and known limits is in
-[readme.txt](https://github.com/MaxHandMade/mhm-currency-switcher/blob/develop/readme.txt).
+[readme.txt](https://github.com/MaxHandMade/mhm-currency-switcher/blob/v2.0.0/readme.txt).

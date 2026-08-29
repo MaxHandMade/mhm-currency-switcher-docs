@@ -138,4 +138,4 @@ Bank's daily reference feed as its only fallback.*
 If you have server access, you can sync rates or flush the cache from the command line instead — see [WP-CLI Commands](/docs/wp-cli).
 
 The full list of frequently asked questions and known limits is in
-[readme.txt](https://github.com/MaxHandMade/mhm-currency-switcher/blob/develop/readme.txt).
+[readme.txt](https://github.com/MaxHandMade/mhm-currency-switcher/blob/v2.0.0/readme.txt).

@@ -9,8 +9,12 @@
 const fs = require('fs');
 const https = require('https');
 
+const PLUGIN_REF = fs
+  .readFileSync(require('path').join(__dirname, '..', 'plugin-ref.txt'), 'utf8')
+  .trim();
+
 const SRC =
-  'https://raw.githubusercontent.com/MaxHandMade/mhm-currency-switcher/develop/admin-app/src/components/tabs/HowToUse.jsx';
+  `https://raw.githubusercontent.com/MaxHandMade/mhm-currency-switcher/${PLUGIN_REF}/admin-app/src/components/tabs/HowToUse.jsx`;
 
 function fetch(url) {
   return new Promise((resolve, reject) => {

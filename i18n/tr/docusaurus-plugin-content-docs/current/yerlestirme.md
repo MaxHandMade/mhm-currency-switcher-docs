@@ -57,4 +57,4 @@ Görüntüleme Seçenekleri sekmesinden ürün fiyat widget'ını açtıysanız 
 Bu eklenti henüz kendi bloğunu sunmuyor. Çekirdek **Kısa Kod** bloğunu kullanıp iki kısa koddan birini içine yapıştırın. Elementor kullanıyorsanız widget'lar da kullanılabilir durumda kalır.
 
 Sık sorulan soruların ve bilinen sınırların tam listesi
-[readme.txt](https://github.com/MaxHandMade/mhm-currency-switcher/blob/develop/readme.txt) dosyasındadır.
+[readme.txt](https://github.com/MaxHandMade/mhm-currency-switcher/blob/v2.0.0/readme.txt) dosyasındadır.
