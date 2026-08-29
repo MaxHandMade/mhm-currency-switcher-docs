@@ -124,11 +124,18 @@ Yuvarlamayı **Yok** dışında bir değere ayarladığınızda iki alan açıl�
 
 **Kurları Senkronize Et** düğmesi güncel kurları anında çeker ve tabloya yazar. Senkronizasyon çevrimdışı çalışmaz — sunucunuzun dışarıya HTTP isteği yapabilmesi gerekir.
 
-Kurlar şu kaynaklardan alınır:
+Kurlar sırayla şu kaynaklardan gelir:
 
 1. **ExchangeRate-API** (birincil) — `api.exchangerate-api.com`
-2. **Fawaz Ahmed Currency API** (yedek) — birincil kaynak yanıt vermezse devreye girer
+2. **Currency API** (yedek) — `latest.currency-api.pages.dev`
+3. **Frankfurter** (ikinci yedek) — `api.frankfurter.dev`
 
-Her iki kaynak da ücretsizdir ve **API anahtarı gerektirmez**. Çekilen kurlar 1 gün boyunca önbellekte tutulur; bu süre dolmadan yapılan senkronizasyonlar önbellekteki değeri kullanır.
+Üçü de ücretsizdir ve API anahtarı istemez. Eklenti sırayla dener ve ilk yanıt
+vereni kullanır; hiçbiri yanıt vermezse mevcut kurların yerinde kalır. Çekilen
+kurlar 1 gün önbelleklenir; bu süre içinde yeniden eşitlerseniz önbellekteki
+değer döner.
+
+*2.1.0'dan itibaren zincir kısalıyor: ExchangeRate-API ve tek yedek olarak
+Avrupa Merkez Bankası'nın günlük referans kur akışı.*
 
 Sunucu terminaline erişiminiz varsa kurları `wp mhm-cs rates-sync` ile senkronize edebilir veya `wp mhm-cs cache-flush` ile önbelleği elle temizleyebilirsiniz — bkz. [WP-CLI Komutları](/docs/wp-cli).
