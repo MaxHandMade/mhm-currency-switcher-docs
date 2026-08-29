@@ -1,6 +1,13 @@
 /* Gradient band sampled from the plugin's own banner, not picked by eye. */
 .heroBanner {
   background: linear-gradient(135deg, #1b4ec4 0%, #4347b1 55%, #5940ae 100%);
+  /* Infima's own .hero class (from the "hero" class on the <header>) sets
+     color: var(--ifm-hero-text-color), and that variable defaults to a dark
+     grey (--ifm-color-emphasis-800). Both .hero and this module class carry
+     the same (0,1,0) specificity, and .hero's rule wins the tie, so a plain
+     `color: #fff` below never reaches the h1/subtitle. Setting the variable
+     here is what Infima's own rule actually reads. */
+  --ifm-hero-text-color: #fff;
   color: #fff;
   padding: 3rem 1rem 2.5rem;
   text-align: center;
@@ -11,7 +18,9 @@
   margin-bottom: 0.5rem;
 }
 
-.heroBannerImage {
+/* Scoped under .heroBanner (0,2,0) so it beats Docusaurus/Infima's global
+   `img { max-width: 100% }` (0,0,1) without reaching for !important. */
+.heroBanner .heroBannerImage {
   max-width: 1000px;
   width: 100%;
   border-radius: 10px;
