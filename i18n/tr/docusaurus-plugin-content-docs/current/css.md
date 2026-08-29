@@ -107,4 +107,4 @@ Görünümü temanızın stil dosyasından veya **Görünüm > Özelleştir > Ek
 
 ## Kapsam dışı bırakılanlar
 
-Bu sayfa yalnızca **ön yüzde** (mağaza, ürün, menü) görünen, ziyaretçinin gördüğü işaretlemeyi listeler. Yönetim ekranındaki değişken/varyasyon fiyat panelinin sınıfları (`mhm-cs-variation-prices` gibi) buraya dahil değildir — satır içi stille geldikleri için CSS özelleştirmesi için tasarlanmamışlardır ve yalnızca **WooCommerce > Ürünler** ekranında görünürler.
+Bu sayfa yalnızca **ön yüzde** (mağaza, ürün, menü) görünen, ziyaretçinin gördüğü işaretlemeyi listeler. Yönetim ekranındaki değişken/varyasyon fiyat panelinin sınıfları (`mhm-cs-variation-prices` gibi) buraya dahil değildir — bu panel yalnızca **WooCommerce > Ürünler** ekranında görünür.

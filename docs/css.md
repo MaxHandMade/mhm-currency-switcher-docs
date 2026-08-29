@@ -59,4 +59,4 @@ Below 480px the widget already stacks vertically and hides its separators on its
 | Nav menu item | `.menu-item.mhm-cs-menu-item` |
 | Product price widget | `.mhm-cs-product-prices`, `.mhm-cs-product-price`, `.mhm-cs-separator`, `.mhm-cs-amount` |
 
-These are all front-end classes. Variation price classes such as `mhm-cs-variation-prices` are not included on this page: they belong to the variation-pricing panel in the product editor, an admin-only screen that's styled inline rather than meant for CSS customization.
+These are all front-end classes. Variation price classes such as `mhm-cs-variation-prices` are not included on this page: they belong to the admin-only variation pricing panel, which appears only on the WooCommerce Products screen.
