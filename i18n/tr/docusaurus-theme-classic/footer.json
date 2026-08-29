@@ -17,11 +17,11 @@
   },
   "link.item.label.Installation": {
     "message": "Kurulum",
-    "description": "The label of footer link with label=Installation linking to /docs/kurulum"
+    "description": "The label of footer link with label=Installation linking to /docs/installation"
   },
   "link.item.label.Placing the switcher": {
     "message": "Anahtarı Yerleştirme",
-    "description": "The label of footer link with label=Placing the switcher linking to /docs/yerlestirme"
+    "description": "The label of footer link with label=Placing the switcher linking to /docs/placing-the-switcher"
   },
   "link.item.label.REST API": {
     "message": "REST API",
@@ -29,11 +29,11 @@
   },
   "link.item.label.FAQ": {
     "message": "SSS",
-    "description": "The label of footer link with label=FAQ linking to /docs/sss"
+    "description": "The label of footer link with label=FAQ linking to /docs/faq"
   },
   "link.item.label.Known limits": {
     "message": "Bilinen Sınırlar",
-    "description": "The label of footer link with label=Known limits linking to /docs/bilinen-sinirlar"
+    "description": "The label of footer link with label=Known limits linking to /docs/known-limits"
   },
   "link.item.label.CSS classes": {
     "message": "CSS Sınıfları",
