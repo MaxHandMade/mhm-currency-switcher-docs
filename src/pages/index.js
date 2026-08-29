@@ -12,7 +12,7 @@ const CARDS = [
     alt: translate({
       id: 'home.card.currencies.alt',
       message:
-        'The Manage Currencies tab, listing each currency with its own rate, fee and rounding controls',
+        'The Manage Currencies tab, listing euro, Turkish lira and pound sterling with their own rate, fee and rounding controls',
     }),
     title: <Translate id="home.card.currencies.title">Rates, fees and rounding</Translate>,
     body: (
@@ -26,7 +26,8 @@ const CARDS = [
     img: 'img/shot-placement.webp',
     alt: translate({
       id: 'home.card.placement.alt',
-      message: 'A product grid with every price converted, the switcher above it',
+      message:
+        "A site's navigation menu with the currency switcher's dropdown open, listing Turkish lira, US dollar, euro and pound sterling",
     }),
     title: <Translate id="home.card.placement.title">Five ways to place it</Translate>,
     body: (
@@ -40,7 +41,7 @@ const CARDS = [
     img: 'img/shot-cache.webp',
     alt: translate({
       id: 'home.card.cache.alt',
-      message: 'The switcher dropdown open in a site navigation menu',
+      message: 'A product grid with every price converted to Turkish lira, the switcher above it',
     }),
     title: <Translate id="home.card.cache.title">It survives a page cache</Translate>,
     body: (

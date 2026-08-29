@@ -362,7 +362,7 @@
     "description": "The title of the tag list page"
   },
   "home.card.currencies.alt": {
-    "message": "Para birimlerini yönet sekmesi; her para biriminin kendi kuru, komisyonu ve yuvarlama ayarıyla listelendiği görünüm"
+    "message": "Para Birimlerini Yönet sekmesi; euro, Türk lirası ve İngiliz sterlini kendi kuru, komisyonu ve yuvarlama ayarlarıyla listelenmiş"
   },
   "home.card.currencies.title": {
     "message": "Kur, komisyon ve yuvarlama"
@@ -371,7 +371,7 @@
     "message": "Her para biriminin kendi döviz kuru, komisyonu ve yuvarlama adımı vardır; panel müşterinin gerçekte göreceği fiyatı gösterir."
   },
   "home.card.placement.alt": {
-    "message": "Tüm fiyatların dönüştürüldüğü bir ürün ızgarası, üstünde para birimi anahtarı"
+    "message": "Bir sitenin gezinme menüsünde açık duran para birimi anahtarı; Türk lirası, ABD doları, euro ve İngiliz sterlinini listeliyor"
   },
   "home.card.placement.title": {
     "message": "Beş farklı yerleştirme yolu"
@@ -380,7 +380,7 @@
     "message": "İki kısa kod, iki Elementor widget'ı veya bir gezinme menüsü ögesi — her biri kopyalanabilir kodla belgelenmiştir."
   },
   "home.card.cache.alt": {
-    "message": "Site gezinme menüsünde açık duran para birimi anahtarı açılır listesi"
+    "message": "Tüm fiyatların Türk lirasına dönüştürüldüğü bir ürün ızgarası, üstünde para birimi anahtarı"
   },
   "home.card.cache.title": {
     "message": "Sayfa önbelleğinde bile çalışır"
