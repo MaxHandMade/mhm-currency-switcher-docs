@@ -360,5 +360,50 @@
   "theme.tags.tagsPageTitle": {
     "message": "Etiketler",
     "description": "The title of the tag list page"
+  },
+  "home.card.currencies.alt": {
+    "message": "Para birimlerini yönet sekmesi; her para biriminin kendi kuru, komisyonu ve yuvarlama ayarıyla listelendiği görünüm"
+  },
+  "home.card.currencies.title": {
+    "message": "Kur, komisyon ve yuvarlama"
+  },
+  "home.card.currencies.body": {
+    "message": "Her para biriminin kendi döviz kuru, komisyonu ve yuvarlama adımı vardır; panel müşterinin gerçekte göreceği fiyatı gösterir."
+  },
+  "home.card.placement.alt": {
+    "message": "Tüm fiyatların dönüştürüldüğü bir ürün ızgarası, üstünde para birimi anahtarı"
+  },
+  "home.card.placement.title": {
+    "message": "Beş farklı yerleştirme yolu"
+  },
+  "home.card.placement.body": {
+    "message": "İki kısa kod, iki Elementor widget'ı veya bir gezinme menüsü ögesi — her biri kopyalanabilir kodla belgelenmiştir."
+  },
+  "home.card.cache.alt": {
+    "message": "Site gezinme menüsünde açık duran para birimi anahtarı açılır listesi"
+  },
+  "home.card.cache.title": {
+    "message": "Sayfa önbelleğinde bile çalışır"
+  },
+  "home.card.cache.body": {
+    "message": "Anonim sayfalar temel para biriminde önbellekte kalır, fiyatlar sayfa yüklendikten sonra dönüştürülür — çoğu para birimi anahtarının bozulduğu nokta tam olarak burasıdır."
+  },
+  "home.title": {
+    "message": "MHM Currency Switcher Dokümantasyonu"
+  },
+  "home.description": {
+    "message": "Sayfa önbelleğinde bile çalışan, WooCommerce için çoklu para birimi desteği"
+  },
+  "home.hero.title": {
+    "message": "MHM Currency Switcher Dokümantasyonu"
+  },
+  "home.hero.subtitle": {
+    "message": "Kurulumdan REST API'ye kadar, WooCommerce için çoklu para birimi desteği"
+  },
+  "home.hero.cta": {
+    "message": "Başlayın"
+  },
+  "home.hero.bannerAlt": {
+    "message": "MHM Currency Switcher — WooCommerce için çoklu para birimi desteği"
   }
 }

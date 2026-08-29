@@ -1,0 +1,47 @@
+/* Gradient band sampled from the plugin's own banner, not picked by eye. */
+.heroBanner {
+  background: linear-gradient(135deg, #1b4ec4 0%, #4347b1 55%, #5940ae 100%);
+  color: #fff;
+  padding: 3rem 1rem 2.5rem;
+  text-align: center;
+}
+
+.heroTitle {
+  font-size: 2.25rem;
+  margin-bottom: 0.5rem;
+}
+
+.heroBannerImage {
+  max-width: 1000px;
+  width: 100%;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  margin: 1.5rem auto 0;
+  display: block;
+}
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1.5rem;
+  max-width: 1000px;
+  margin: 3rem auto;
+  padding: 0 1rem;
+}
+
+.card {
+  border: 1px solid var(--ifm-color-emphasis-200);
+  border-radius: var(--ifm-card-border-radius);
+  overflow: hidden;
+}
+
+.card img {
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  object-fit: cover;
+  display: block;
+}
+
+.cardBody {
+  padding: 1rem 1.25rem 1.5rem;
+}
