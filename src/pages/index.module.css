@@ -18,15 +18,23 @@
   margin-bottom: 0.5rem;
 }
 
-/* Scoped under .heroBanner (0,2,0) so it beats Docusaurus/Infima's global
-   `img { max-width: 100% }` (0,0,1) without reaching for !important. */
-.heroBanner .heroBannerImage {
+/* Docusaurus ships `img:not(#\#):not(#\#) { max-width: 100% }` — the doubled
+   escaped, nonexistent-id `:not()` counts as two ID selectors for
+   specificity (2,0,1) while matching every real image, so no class-based
+   rule on the <img> itself can ever outrank it (a scoped `.heroBanner
+   .heroBannerImage` at (0,2,0) was tried and lost). The wrapper below sets
+   the 1000px ceiling on a <div> instead, which that img-only rule has
+   nothing to say about. */
+.heroBannerFrame {
   max-width: 1000px;
+  margin: 1.5rem auto 0;
+}
+
+.heroBannerImage {
   width: 100%;
+  display: block;
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-  margin: 1.5rem auto 0;
-  display: block;
 }
 
 .cards {

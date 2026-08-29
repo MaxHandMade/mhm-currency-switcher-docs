@@ -74,15 +74,17 @@ export default function Home() {
           <Link className="button button--secondary button--lg" to="/docs/intro">
             <Translate id="home.hero.cta">Get started</Translate>
           </Link>
-          <img
-            className={styles.heroBannerImage}
-            src="img/banner.webp"
-            alt={translate({
-              id: 'home.hero.bannerAlt',
-              message:
-                'MHM Currency Switcher — multi-currency support for WooCommerce',
-            })}
-          />
+          <div className={styles.heroBannerFrame}>
+            <img
+              className={styles.heroBannerImage}
+              src="img/banner.webp"
+              alt={translate({
+                id: 'home.hero.bannerAlt',
+                message:
+                  'MHM Currency Switcher — multi-currency support for WooCommerce',
+              })}
+            />
+          </div>
         </div>
       </header>
       <main>
