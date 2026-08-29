@@ -1,0 +1,11 @@
+# Tokens a page names ON PURPOSE, because the sentence is about the name.
+#
+# NOT "findings we tolerate". Sweeping one of these would make the sentence
+# false — worse than the stale token it fixes.
+#
+# 🔴 AN ENTRY IS A CLAIM ABOUT ONE SENTENCE, NOT ABOUT A FILE. That is why the
+#    third column exists: the token is spared only on lines matching it.
+#    A (file, token) list would hide a second, stale occurrence in the same file.
+#
+# path	token	anchor (regex matched against the line)
+i18n/tr/docusaurus-plugin-content-docs/current/css.md	mhm-cs-variation-prices	buraya dahil değildir
