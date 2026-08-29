@@ -7,7 +7,7 @@
 #    third column exists: the token is spared only on lines matching it.
 #    A (file, token) list would hide a second, stale occurrence in the same file.
 #
-# path	token	anchor (regex matched against the line)
+# path	token	anchor (LITERAL substring — not a regex; metacharacters match themselves)
 #
 # Today this list is EMPTY, and that is correct. An entry earns its place only
 # when the gate would otherwise report the sentence: `mhm-cs-variation-prices`

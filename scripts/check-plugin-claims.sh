@@ -133,6 +133,25 @@ REF_FILE="${REF_FILE:-plugin-ref.txt}"
 REF="$(tr -d '[:space:]' < "$REF_FILE")"
 [ -n "$REF" ] || { echo "ERROR: $REF_FILE is empty" >&2; exit 2; }
 
+# 🔴 Fail closed on a malformed allowlist, and say WHICH line. The guards in
+#    ALLOW_AWK make a bad row harmless, but harmless-and-silent is how a row
+#    that was meant to spare something ends up sparing nothing while its
+#    author believes otherwise. Run once, before any scanning.
+validate_allowlist() {
+  [ -f "$ALLOW_FILE" ] || return 0
+  local bad
+  bad=$(awk -F'\t' '!/^#/ && $0 !~ /^[[:space:]]*$/ {
+      if (NF < 3 || $1 == "" || $2 == "" || $3 == "")
+        printf("  line %d: needs three non-empty tab-separated columns (path, token, anchor)\n", FNR)
+  }' "$ALLOW_FILE")
+  [ -z "$bad" ] && return 0
+  echo "ERROR: $ALLOW_FILE is malformed:" >&2
+  printf '%s\n' "$bad" >&2
+  exit 2
+}
+
+validate_allowlist
+
 # Registered REST routes, in full. Built once, matched exactly.
 # 🔴 Exact segments, never substrings: /rates was removed while /rates/sync
 #    lives, and a substring search finds the dead one inside the living one.
@@ -219,6 +238,11 @@ done
 #    the message above; keep this comment short but keep the "why".)
 ALLOW_AWK='
 function blank(line, t,   p, out) {
+    # 🔴 Measured: index(line, "") returns 1 and length("") is 0, so an empty
+    #    token makes substr() return the line unchanged and this loop never
+    #    terminates — the gate hangs in CI with no output at all. A missing tab
+    #    in one future row is enough to cause it.
+    if (t == "") return line
     out = ""
     while ((p = index(line, t)) > 0) {
         out = out substr(line, 1, p - 1)
@@ -228,7 +252,12 @@ function blank(line, t,   p, out) {
 }
 BEGIN { FS = "\t" }
 FNR == NR {
-    if ($0 !~ /^#/ && NF >= 3 && $1 == path) { n++; anchor[n] = $3; token[n] = $2 }
+    # An empty anchor would match EVERY line (index(line,"")==1) and spare the
+    # token file-wide — silently defeating "an entry is a claim about one
+    # sentence". Both columns must be non-empty to be loaded at all.
+    if ($0 !~ /^#/ && NF >= 3 && $1 == path && $2 != "" && $3 != "") {
+        n++; anchor[n] = $3; token[n] = $2
+    }
     next
 }
 {
