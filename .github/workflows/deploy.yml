@@ -32,7 +32,13 @@ jobs:
 
       - name: Read the plugin anchor
         id: ref
-        run: echo "v=$(tr -d '[:space:]' < plugin-ref.txt)" >> "$GITHUB_OUTPUT"
+        run: |
+          # 🔴 An empty output here would make actions/checkout fall back to the
+          #    plugin repo's DEFAULT branch, and every gate below would measure
+          #    develop while claiming the pinned tag. Fail loudly instead.
+          REF="$(tr -d '[:space:]' < plugin-ref.txt 2>/dev/null || true)"
+          [ -n "$REF" ] || { echo "::error::plugin-ref.txt is missing or empty — refusing to fall back to the default branch"; exit 1; }
+          echo "v=$REF" >> "$GITHUB_OUTPUT"
 
       - name: Check out the plugin tree at that anchor
         uses: actions/checkout@v5

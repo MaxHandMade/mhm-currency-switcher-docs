@@ -20,11 +20,14 @@ ANCHOR="$(tr -d '[:space:]' < "$REF_FILE")"
 
 command -v gh >/dev/null || { echo "ERROR: gh not found" >&2; exit 2; }
 
-if ! LATEST="$(gh release view --repo "$REPO" --json tagName -q .tagName 2>&1)"; then
+ERR_FILE="$(mktemp)"
+if ! LATEST="$(gh release view --repo "$REPO" --json tagName -q .tagName 2>"$ERR_FILE")"; then
   echo "ERROR: could not read the latest release — NOT the same as 'no drift'." >&2
-  echo "$LATEST" >&2
+  cat "$ERR_FILE" >&2
+  rm -f "$ERR_FILE"
   exit 2
 fi
+rm -f "$ERR_FILE"
 [ -n "$LATEST" ] || { echo "ERROR: empty tag from gh" >&2; exit 2; }
 
 echo "→ Anchor: $ANCHOR · latest published release: $LATEST"
