@@ -14,3 +14,5 @@
 # still exists in the v2.0.0 source, so the page naming it needs no pardon.
 # The first real entries arrive with the GET /rates note (Task 8), and the CSS
 # rename entries arrive in Faz B, when the sweep makes those names stale.
+docs/rest-api.md	/mhmcs/v1/rates	Removed in 2.1.0
+i18n/tr/docusaurus-plugin-content-docs/current/rest-api.md	/mhmcs/v1/rates	2.1.0'da kaldırıldı

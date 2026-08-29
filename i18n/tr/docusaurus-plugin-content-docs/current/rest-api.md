@@ -12,6 +12,9 @@ title: REST API Referansı
 
 ### GET `/rates`
 
+*2.1.0'da kaldırıldı. 2.0.0'da `/mhmcs/v1/rates` aşağıda anlatıldığı gibi
+çalışır; 2.1.0'dan itibaren yerine dönüştürme ucunu kullanın.*
+
 Kimlik doğrulaması gerektirmez. Ana para birimini ve etkin para birimlerinin efektif (komisyon dahil) kurlarını döndürür.
 
 ```bash
