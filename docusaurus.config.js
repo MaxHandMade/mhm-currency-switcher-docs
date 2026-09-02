@@ -104,7 +104,13 @@ const config = {
   plugins: [
     [
       require.resolve('@easyops-cn/docusaurus-search-local'),
-      { hashed: true, language: ['en', 'tr'] },
+      // indexBlog defaults to true (validateOptions.js), so the plugin scans
+      // blog/ and warns twice per build — once per locale — for a directory
+      // that cannot exist: the preset above sets `blog: false`. Flip this back
+      // to true in the same change that creates the blog (Faz B, Şerit 6);
+      // leaving it false with a blog present would silently drop release posts
+      // out of search.
+      { hashed: true, language: ['en', 'tr'], indexBlog: false },
     ],
     [
       require.resolve('@docusaurus/plugin-client-redirects'),
