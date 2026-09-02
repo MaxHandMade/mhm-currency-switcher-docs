@@ -12,7 +12,8 @@
     "write-translations": "docusaurus write-translations",
     "check:links": "bash scripts/check-links.sh",
     "check:parity": "bash scripts/check-locale-parity.sh && bash scripts/check-slug-parity.sh",
-    "check:external": "bash scripts/check-external-links.sh"
+    "check:external": "bash scripts/check-external-links.sh",
+    "report:coverage": "bash scripts/check-docs-coverage.sh"
   },
   "dependencies": {
     "@docusaurus/core": "^3.9.2",

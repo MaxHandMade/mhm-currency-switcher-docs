@@ -12,6 +12,8 @@ These are consequences of how cache compatibility mode works, not defects. They'
 
 Three fixes sit above the setting and stay in place whether it is on or off: prices are no longer converted on admin screens or in admin AJAX (which used to write a converted price into an order line item), `wc/v3` REST reads are pinned to the base currency, and scheduled tasks and WP-CLI no longer convert. Switching the mode off restores the 1.0.0 *display* behaviour — prices converted on the server — and nothing else.
 
+*Since 1.1.0.* If one of those rules is wrong for a third-party context the plugin cannot see, the `mhmcs_should_convert` filter is the escape hatch. It receives the decision and the branch that produced it — one of `force`, `admin`, `rest`, `cron_cli`, `cache_compat_off`, `money`, `logged_in`, `pre_wp`, `display` — and returning `true` converts while `false` keeps the base currency. Once a request has settled on converting, the filter is not consulted again for that request: re-opening the answer mid-render is what used to let a page show base prices while its AJAX checkout charged the converted amount.
+
 ### Search engines and crawlers see your base prices
 
 With the mode on, the page a crawler fetches has not been through the browser, so it carries base-currency prices, and so does the machine-readable product data in it. See the related question in the [FAQ](/docs/faq); the mismatch is deliberate.
