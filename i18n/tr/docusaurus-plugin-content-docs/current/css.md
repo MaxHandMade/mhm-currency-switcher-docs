@@ -7,59 +7,61 @@ title: CSS ile Özelleştirme
 
 Görünümü temanızın stil dosyasından veya **Görünüm > Özelleştir > Ek CSS** bölümünden değiştirebilirsiniz. Aşağıdaki sınıfların tümü eklentinin ürettiği işaretlemede gerçekten bulunur.
 
+*2.1.0'da yeniden adlandırıldı.* Bu sayfadaki sınıfların tümü önceden `mhm-cs-` önekini taşıyordu, artık `mhmcs-` taşıyor. Eski adlar takma ad olarak bırakılmadı; eski yazımlara göre yazılmış özel CSS veya JavaScript güncellemeden sonra eşleşmeyi bırakır — seçicilerinizi aşağıdaki adlarla değiştirin.
+
 ## Dönüştürücü Sınıfları
 
 ```css
 /* Ana kapsayıcı */
-.mhm-cs-switcher { }
+.mhmcs-switcher { }
 
 /* Boyut varyantları */
-.mhm-cs-size--small  { }
-.mhm-cs-size--medium { }
-.mhm-cs-size--large  { }
+.mhmcs-size--small  { }
+.mhmcs-size--medium { }
+.mhmcs-size--large  { }
 
 /* Seçim düğmesi */
-.mhm-cs-selected { }
+.mhmcs-selected { }
 
 /* Açılır liste */
-.mhm-cs-dropdown { }
+.mhmcs-dropdown { }
 
 /* Açılır liste açıkken */
-.mhm-cs-dropdown.mhm-cs-open { }
+.mhmcs-dropdown.mhmcs-open { }
 
 /* Listedeki her bir seçenek */
-.mhm-cs-option { }
+.mhmcs-option { }
 
 /* Seçili olan seçenek */
-.mhm-cs-active { }
+.mhmcs-active { }
 
 /* Bayrak görseli */
-.mhm-cs-flag { }
+.mhmcs-flag { }
 
 /* Düğmedeki etiket metni */
-.mhm-cs-label { }
+.mhmcs-label { }
 
 /* Açılır ok */
-.mhm-cs-arrow { }
+.mhmcs-arrow { }
 
 /* Menüye eklendiğinde menü öğesi */
-.menu-item.mhm-cs-menu-item { }
+.menu-item.mhmcs-menu-item { }
 ```
 
 ## Ürün Fiyat Bileşeni Sınıfları
 
 ```css
 /* Bileşen kapsayıcısı */
-.mhm-cs-product-prices { }
+.mhmcs-product-prices { }
 
 /* Her bir fiyat öğesi */
-.mhm-cs-product-price { }
+.mhmcs-product-price { }
 
 /* Fiyatlar arasındaki ayırıcı */
-.mhm-cs-separator { }
+.mhmcs-separator { }
 
 /* Fiyat tutarı */
-.mhm-cs-amount { }
+.mhmcs-amount { }
 ```
 
 ## Özelleştirme Örnekleri
@@ -67,7 +69,7 @@ Görünümü temanızın stil dosyasından veya **Görünüm > Özelleştir > Ek
 **Dönüştürücü düğmesinin rengini değiştirme:**
 
 ```css
-.mhm-cs-selected {
+.mhmcs-selected {
     background-color: #1a1a2e;
     color: #ffffff;
     border-color: #16213e;
@@ -77,17 +79,17 @@ Görünümü temanızın stil dosyasından veya **Görünüm > Özelleştir > Ek
 **Açılır menüyü genişletme:**
 
 ```css
-.mhm-cs-switcher .mhm-cs-dropdown {
+.mhmcs-switcher .mhmcs-dropdown {
     min-width: 200px;
 }
 ```
 
-> Açılır listenin kuralları tema çakışmalarına karşı `!important` ile korunduğu için, konum ve görünürlük değerlerini geçersiz kılarken sizin de `.mhm-cs-switcher .mhm-cs-dropdown` gibi daha özgül bir seçici kullanmanız gerekebilir.
+> Açılır listenin kuralları tema çakışmalarına karşı `!important` ile korunduğu için, konum ve görünürlük değerlerini geçersiz kılarken sizin de `.mhmcs-switcher .mhmcs-dropdown` gibi daha özgül bir seçici kullanmanız gerekebilir.
 
 **Menüdeki dönüştürücüyü hizalama:**
 
 ```css
-.menu-item.mhm-cs-menu-item .mhm-cs-dropdown {
+.menu-item.mhmcs-menu-item .mhmcs-dropdown {
     left: auto;
     right: 0;
     min-width: 160px;
@@ -97,7 +99,7 @@ Görünümü temanızın stil dosyasından veya **Görünüm > Özelleştir > Ek
 **Ürün fiyat bileşenini büyütme:**
 
 ```css
-.mhm-cs-product-prices {
+.mhmcs-product-prices {
     font-size: 16px;
     color: #333;
 }
@@ -107,4 +109,4 @@ Görünümü temanızın stil dosyasından veya **Görünüm > Özelleştir > Ek
 
 ## Kapsam dışı bırakılanlar
 
-Bu sayfa yalnızca **ön yüzde** (mağaza, ürün, menü) görünen, ziyaretçinin gördüğü işaretlemeyi listeler. Yönetim ekranındaki değişken/varyasyon fiyat panelinin sınıfları (`mhm-cs-variation-prices` gibi) buraya dahil değildir — bu panel yalnızca **WooCommerce > Ürünler** ekranında görünür.
+Bu sayfa yalnızca **ön yüzde** (mağaza, ürün, menü) görünen, ziyaretçinin gördüğü işaretlemeyi listeler. Yönetim ekranındaki değişken/varyasyon fiyat panelinin sınıfları (`mhmcs-variation-prices` gibi) buraya dahil değildir — bu panel yalnızca **WooCommerce > Ürünler** ekranında görünür.

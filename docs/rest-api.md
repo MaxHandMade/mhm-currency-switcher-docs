@@ -11,28 +11,9 @@ Most sites never call these directly — the switcher, the product widget, and c
 
 ## Public endpoints
 
-### GET `/rates`
+### GET `/rates` — removed
 
-*Removed in 2.1.0 — `/mhmcs/v1/rates` has no public replacement; the rates
-it exposed are already reflected in the prices the page renders. On 2.0.0 it
-works as described below.*
-
-No authentication needed. Returns the base currency and the effective (fee-included) rate for each enabled currency.
-
-```bash
-curl https://yourstore.com/wp-json/mhmcs/v1/rates
-```
-
-```json
-{
-    "base": "TRY",
-    "rates": {
-        "EUR": 0.0274,
-        "USD": 0.0293,
-        "GBP": 0.0250
-    }
-}
-```
+*Removed in 2.1.0.* The public, unauthenticated `/mhmcs/v1/rates` endpoint is gone and has no replacement — it duplicated information the page already shows in its prices. The authenticated `/rates/sync` and `/rates/preview` routes used by the settings screen are unaffected.
 
 ### POST `/convert`
 
@@ -63,6 +44,8 @@ It's unauthenticated by design — the pages it serves are read by logged-out vi
 | POST | `/rates/sync` | Fetch and update rates from source |
 | GET | `/rates/preview` | Raw and effective rate per currency |
 | POST | `/rates/preview` | Same, for a submitted (unsaved) configuration — saves nothing |
+| POST | `/cache-notice/snooze-anomaly` | Snooze the cache-anomaly admin notice *(2.1.0)* |
+| POST | `/cache-notice/snooze-fragments` | Snooze the cache-fragments admin notice *(2.1.0)* |
 
 ## Currency on the WooCommerce product API
 
