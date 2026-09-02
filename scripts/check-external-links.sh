@@ -102,7 +102,34 @@ canonical() {
     | awk -F/ '{ $1 = tolower($1); OFS="/"; print }'
 }
 
+# A BAD ANSWER AND NO ANSWER ARE DIFFERENT FINDINGS, counted separately.
+#
+#   fail_count        the link is wrong: a bad status, or a soft 404. Ours to
+#                     fix, reproducible, and ALWAYS fatal.
+#   unreachable_count nobody answered: DNS, TLS or timeout, three times. This
+#                     says something about the network at that moment, not
+#                     about the link.
+#
+# 🔴 EXTERNAL_UNREACHABLE_IS_FATAL defaults to 1 — FAIL CLOSED. A run that does
+#    not set it (a laptop, a new workflow, a cron) gets the strict behaviour.
+#    deploy.yml sets it to 0 for the push that follows a merge, and only there:
+#    on a pull_request the authored links are being introduced or changed, so an
+#    unreachable host must block; on the merge push the same links passed minutes
+#    earlier, so a network failure can only be someone else's outage, and
+#    blocking on it leaves merged work unpublished. Measured 2026-09-02:
+#    wpalemi.com was unreachable from the runner for ~80 seconds (200 and ~0.5s
+#    from a workstation immediately after) and PR #5 sat merged-but-not-deployed
+#    until a manual re-run.
+#
+# 🔴 THE LOOSENING IS NARROW ON PURPOSE. It applies to ONE finding type in ONE
+#    context. A permanently dead host still prints on every single run, and the
+#    finding that this script was written for — wordpress.org answering an
+#    unpublished slug with a 200 on a different path — is a soft 404, which stays
+#    fatal everywhere.
+UNREACHABLE_IS_FATAL="${EXTERNAL_UNREACHABLE_IS_FATAL:-1}"
+
 fail_count=0
+unreachable_count=0
 pass_count=0
 
 for url in "${urls[@]}"; do
@@ -123,7 +150,7 @@ for url in "${urls[@]}"; do
   done
 
   if [ -z "$result" ]; then
-    fail_count=$((fail_count + 1))
+    unreachable_count=$((unreachable_count + 1))
     echo "UNREACHABLE: $url"
     echo "             three attempts failed at the network level (DNS, TLS or timeout)."
     continue
@@ -156,7 +183,24 @@ for url in "${urls[@]}"; do
 done
 
 echo ""
-echo "External link check: ${pass_count} OK, ${fail_count} broken (out of ${#urls[@]} unique URLs)"
+echo "External link check: ${pass_count} OK, ${fail_count} broken, ${unreachable_count} unreachable (out of ${#urls[@]} unique URLs)"
 
+# A wrong link fails everywhere, in every context, with no way to opt out.
 [ "$fail_count" -gt 0 ] && exit 1
+
+if [ "$unreachable_count" -gt 0 ]; then
+  if [ "$UNREACHABLE_IS_FATAL" != "0" ]; then
+    echo "→ Unreachable counts as broken here (EXTERNAL_UNREACHABLE_IS_FATAL=$UNREACHABLE_IS_FATAL)."
+    exit 1
+  fi
+  # 🔴 Loud, not silent. This is the one path where the script knows something
+  #    is wrong and still exits 0, so it must be impossible to skim past — and
+  #    it must say what to do rather than just shrug.
+  echo "⚠️  ${unreachable_count} host(s) did not answer, and this run treats that as a WARNING"
+  echo "    (EXTERNAL_UNREACHABLE_IS_FATAL=0 — set by the post-merge deploy so a"
+  echo "    third party's outage cannot leave merged work unpublished)."
+  echo "    It is NOT a pass. If the same host is listed on the next run too, it is"
+  echo "    not an outage any more — treat it as a dead link and fix or remove it."
+  exit 0
+fi
 exit 0

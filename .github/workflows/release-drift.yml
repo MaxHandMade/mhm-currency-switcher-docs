@@ -1,7 +1,19 @@
-name: Plugin release drift
+name: Drift watch
 
-# Deliberately separate from deploy.yml: a drift window must not block the
-# deploy that would replace the stale page. Failing here is loud but harmless.
+# Two questions with the same shape: is the world still what the site says it
+# is? Neither is about the change being deployed, so neither belongs in
+# deploy.yml — a drift window must not block the deploy that would replace the
+# stale page. Failing here is loud but harmless.
+#
+#   drift           does plugin-ref.txt still name the latest release?
+#   external-links  do the links we authored still resolve? This job is the
+#                   REASON the deploy path is allowed to downgrade an
+#                   unreachable host to a warning: on a merge push those links
+#                   passed on the pull_request minutes earlier, so a failure
+#                   there is someone else's outage — but link ROT happens over
+#                   time, and without a strict run on a timer it would only
+#                   surface at the next pull request, which might be months
+#                   away. Strict here, every day, on the deployed content.
 #
 # 🔴 GitHub disables scheduled workflows in a public repository after 60 days
 #    with no activity. This repository is exactly that kind of repository, so a
@@ -24,3 +36,14 @@ jobs:
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: bash scripts/check-plugin-release-drift.sh
+
+  external-links:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+      # No npm install: the checker is bash and curl, and it scans the authored
+      # source rather than build/, so there is nothing to build first.
+      # EXTERNAL_UNREACHABLE_IS_FATAL is deliberately NOT set — the script fails
+      # closed, which is the whole point of running it here.
+      - name: Every authored external link still resolves
+        run: bash scripts/check-external-links.sh
