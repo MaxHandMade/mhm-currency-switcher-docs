@@ -24,6 +24,15 @@ npm run check:links
 npm run check:external
 ```
 
+`check:external` has one context-dependent rule. A bad status or a soft 404 is
+always fatal — everywhere, with no opt-out. "Nobody answered, three times" is
+fatal too **except** on the push that follows a merge, where those same links
+passed on the pull request minutes earlier and a network failure can only be a
+third party's outage; blocking there leaves merged work unpublished. The script
+fails closed, so a local run is strict. Link rot is caught by the daily strict
+run in `.github/workflows/release-drift.yml` (workflow **Drift watch**, job
+`external-links`), not by the deploy path.
+
 The two claim gates need the plugin tree checked out at `plugin-ref.txt` into
 `.plugin-src/`, which `deploy.yml` does for itself:
 

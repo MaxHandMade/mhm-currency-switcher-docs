@@ -74,7 +74,20 @@ jobs:
       # the shape a soft 404 takes. Eleven pages pointed at an unpublished
       # WordPress.org plugin page for weeks and check:links could not see it,
       # because it never leaves the build directory.
+      # 🔴 The loosening below applies to ONE finding type in ONE context.
+      #    A bad status and a soft 404 stay fatal on every event — including the
+      #    finding this check was written for, wordpress.org answering an
+      #    unpublished slug with a 200 on a different path.
+      #    Only "nobody answered, three times" is downgraded, and only on the push
+      #    that follows a merge, where the same links passed on the pull_request
+      #    minutes earlier and a network failure can only be someone else's
+      #    outage. Measured 2026-09-02: wpalemi.com was unreachable from the
+      #    runner for ~80s (200 in ~0.5s from a workstation immediately after) and
+      #    PR #5 sat merged-but-not-deployed until a manual re-run.
+      #    The script FAILS CLOSED when this variable is unset.
       - name: Verify all external links resolve
+        env:
+          EXTERNAL_UNREACHABLE_IS_FATAL: ${{ github.event_name == 'pull_request' && '1' || '0' }}
         run: npm run check:external
 
       # peaceiris/actions-gh-pages@v4 is a mutable tag. Accepted for parity
