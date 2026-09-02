@@ -18,6 +18,8 @@ Exchange rates are fetched from ExchangeRate-API in real time, either on demand 
 
 If that source cannot be reached, the plugin tries one fallback — the European Central Bank's daily reference feed — before giving up and leaving your existing rates in place. Both are named, with their terms, on the [Managing currencies](/docs/managing-currencies) page. If your network blocks the fallback, the `mhmcs_fallback_rates_url` filter can point it somewhere else; since 2.1.0 the filter's source argument is always `ecb`, because the chain has a single fallback.
 
+Fetched rates are cached for 1 day, and that cache only backs the price display shoppers see — a sync always skips it and goes straight to the source, whether you press **Sync Rates**, run the WP-CLI command, or let the scheduled task fire.
+
 ### What are the shortcodes?
 
 `[mhmcs_currency_switcher]` renders the currency dropdown. It accepts one attribute, `size`, which may be `small`, `medium` or `large`; leave it out to use the size saved in Display Options.
