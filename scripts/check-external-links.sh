@@ -136,15 +136,30 @@ for url in "${urls[@]}"; do
   [ -z "$url" ] && continue
 
   result=""
+  why=""
   for attempt in 1 2 3; do
     # -L follow redirects, GET (some hosts refuse HEAD), body discarded.
-    if result="$(curl -sS -L -o /dev/null \
-                      --max-time 25 \
-                      -A 'mhm-currency-switcher-docs link checker' \
-                      -w '%{http_code} %{url_effective}' \
-                      "$url" 2>/dev/null)"; then
+    # 🔴 KEEP curl's OWN ERROR. "Three attempts failed at the network level
+    #    (DNS, TLS or timeout)" names three very different problems and leaves
+    #    whoever has to fix the host guessing which one they have. Measured
+    #    2026-09-02: wpalemi.com is unreachable from GitHub runners and answers
+    #    a workstation in half a second, and the first question anyone asked was
+    #    "resolution or connection?" — which this script had thrown away.
+    err_file="$(mktemp)"
+    rc=0
+    # `|| rc=$?` rather than `if …; then` so curl's OWN exit status survives:
+    # after a failed `if` condition `$?` is the status of the `if`, not of curl.
+    result="$(curl -sS -L -o /dev/null \
+                   --max-time 25 \
+                   -A 'mhm-currency-switcher-docs link checker' \
+                   -w '%{http_code} %{url_effective}' \
+                   "$url" 2>"$err_file")" || rc=$?
+    if [ "$rc" -eq 0 ]; then
+      rm -f "$err_file"
       break
     fi
+    why="curl exit $rc · $(tr -d '\r' < "$err_file" | tail -1)"
+    rm -f "$err_file"
     result=""
     [ "$attempt" -lt 3 ] && sleep $((attempt * 2))
   done
@@ -152,7 +167,8 @@ for url in "${urls[@]}"; do
   if [ -z "$result" ]; then
     unreachable_count=$((unreachable_count + 1))
     echo "UNREACHABLE: $url"
-    echo "             three attempts failed at the network level (DNS, TLS or timeout)."
+    echo "             three attempts failed before any HTTP status came back."
+    echo "             last curl error: ${why:-（none captured）}"
     continue
   fi
 
