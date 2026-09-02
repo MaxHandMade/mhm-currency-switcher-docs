@@ -14,9 +14,9 @@ As many as your shop needs — every currency WooCommerce offers can be enabled,
 
 ### How are exchange rates fetched?
 
-Exchange rates are fetched from ExchangeRate-API in real time, either on demand or on a schedule you configure (hourly, twice daily, or daily) so your rates stay current without manual intervention.
+Exchange rates are fetched from ExchangeRate-API in real time, either on demand or on a schedule you configure (hourly, twice daily, daily, or manual only) so your rates stay current without manual intervention.
 
-If that source cannot be reached, the plugin tries two fallbacks in turn before giving up and leaving your existing rates in place. All three are named, with their terms, on the [Managing currencies](/docs/managing-currencies) page. If your network blocks one of them, the `mhmcs_fallback_rates_url` filter can point that source somewhere else without moving the others.
+If that source cannot be reached, the plugin tries one fallback — the European Central Bank's daily reference feed — before giving up and leaving your existing rates in place. Both are named, with their terms, on the [Managing currencies](/docs/managing-currencies) page. If your network blocks the fallback, the `mhmcs_fallback_rates_url` filter can point it somewhere else; since 2.1.0 the filter's source argument is always `ecb`, because the chain has a single fallback.
 
 ### What are the shortcodes?
 
