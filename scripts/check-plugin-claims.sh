@@ -193,16 +193,31 @@ source_has() {   # $1 = token · 0 when the source backs the claim
       printf '%s\n' "$ROUTES" | grep -qxF -- "$route"
       ;;
     "wp "*|"wp	"*)
-      # `wp mhm-cs rates-sync` -> the subcommand must be DEFINED, not merely
-      # present. WP-CLI derives subcommand names from the command class's
-      # public methods with `_` written as `-`, measured on v2.0.0:
-      #   cache_flush · currencies_list · rates_get · rates_sync · status
-      #   (src/CLI/Commands.php)  ->  cache-flush · currencies-list · …
-      # 🔴 Searching for the bare word would pass `status` on any file that
-      #    happens to contain it — a coincidence, not evidence the command
-      #    exists. Anchoring on the definition makes a generic name safe.
-      local sub="${tok##* }"
-      grep -rqE "public function ${sub//-/_}[[:space:]]*\(" "$PLUGIN_SRC/src" 2>/dev/null
+      # `wp mhmcs rates-sync` -> BOTH halves of the contract must hold.
+      #
+      # 1. The subcommand must be DEFINED, not merely present. WP-CLI derives
+      #    subcommand names from the command class's public methods with `_`
+      #    written as `-`:
+      #      cache_flush · currencies_list · rates_get · rates_sync · status
+      #      (src/CLI/Commands.php)  ->  cache-flush · currencies-list · …
+      #    🔴 Searching for the bare word would pass `status` on any file that
+      #       happens to contain it — a coincidence, not evidence.
+      #
+      # 2. The NAMESPACE must be the one the plugin registers. SHAPE_CLI
+      #    deliberately accepts both spellings so a rename cannot blind
+      #    EXTRACTION — but nothing measured which spelling was LIVE, so half
+      #    the contract went unchecked.
+      #    🔴 Measured 2026-09-02: 2.1.0 renamed the namespace `mhm-cs` ->
+      #       `mhmcs` (Plugin.php: `WP_CLI::add_command( 'mhmcs', … )`). All
+      #       fourteen `wp mhm-cs …` lines in the documentation were dead and
+      #       this gate stayed green on every one of them, because the five
+      #       method names had not changed. Negative control: reintroduce
+      #       `wp mhm-cs rates-sync` and this must exit 1.
+      local ns sub
+      ns="$(printf '%s\n' "$tok" | awk '{print $2}')"
+      sub="${tok##* }"
+      grep -rqE "add_command\([[:space:]]*'${ns}'" "$PLUGIN_SRC/src" 2>/dev/null \
+        && grep -rqE "public function ${sub//-/_}[[:space:]]*\(" "$PLUGIN_SRC/src" 2>/dev/null
       ;;
     *)
       grep -rqF -- "$tok" "$PLUGIN_SRC/src" "$PLUGIN_SRC/assets" \

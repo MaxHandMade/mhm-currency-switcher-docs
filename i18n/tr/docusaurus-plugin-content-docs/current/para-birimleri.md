@@ -128,17 +128,19 @@ Yuvarlamayı **Yok** dışında bir değere ayarladığınızda iki alan açıl�
 Kurlar sırayla şu kaynaklardan gelir:
 
 1. **ExchangeRate-API** (birincil) — `api.exchangerate-api.com`
-2. **Currency API** (yedek) — `latest.currency-api.pages.dev`
-3. **Frankfurter** (ikinci yedek) — `api.frankfurter.dev`
+2. **Avrupa Merkez Bankası** (yedek) — `www.ecb.europa.eu` adresindeki günlük referans kur akışı
 
-Üçü de ücretsizdir ve API anahtarı istemez. Eklenti sırayla dener ve ilk yanıt
-vereni kullanır; hiçbiri yanıt vermezse mevcut kurların yerinde kalır. Çekilen
+İkisi de ücretsizdir ve API anahtarı istemez. Eklenti sırayla dener ve ilk yanıt
+vereni kullanır; ikisi de yanıt vermezse mevcut kurlar yerinde kalır. Çekilen
 kurlar 1 gün önbelleklenir, ama bu önbellek yalnızca alıcıya gösterilen fiyat
 ekranını besler. **Kurları Senkronize Et** — ister düğmeye tıklayın, ister
-`wp mhm-cs rates-sync` çalıştırın, ister zamanlanmış görev tetiklensin — her
+`wp mhmcs rates-sync` çalıştırın, ister zamanlanmış görev tetiklensin — her
 durumda önbelleği atlar ve doğrudan API'ye gider.
 
-*2.1.0'dan itibaren zincir kısalıyor: ExchangeRate-API ve tek yedek olarak
-Avrupa Merkez Bankası'nın günlük referans kur akışı.*
+*2.1.0'da değişti.* Zincirde önceden iki yedek vardı — önce Currency API, sonra
+Frankfurter — artık tek yedek var. Kapsam değişmedi: ECB akışı zaten eski
+zincirin son durağıydı, yaklaşık otuz para birimi; kaldırılan yalnızca aradaki
+duraktır. Sunucunuz dışarıya çıkan istekleri bir izin listesiyle sınırlıyorsa
+`www.ecb.europa.eu` adresine izin verin.
 
-Sunucu terminaline erişiminiz varsa kurları `wp mhm-cs rates-sync` ile senkronize edebilir veya `wp mhm-cs cache-flush` ile önbelleği elle temizleyebilirsiniz — bkz. [WP-CLI Komutları](/docs/wp-cli).
+Sunucu terminaline erişiminiz varsa kurları `wp mhmcs rates-sync` ile senkronize edebilir veya `wp mhmcs cache-flush` ile önbelleği elle temizleyebilirsiniz — bkz. [WP-CLI Komutları](/docs/wp-cli).

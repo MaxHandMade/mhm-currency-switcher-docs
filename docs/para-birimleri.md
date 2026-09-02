@@ -125,18 +125,20 @@ A step of `0` disables rounding.
 Rates come from, in order:
 
 1. **ExchangeRate-API** (primary) — `api.exchangerate-api.com`
-2. **Currency API** (fallback) — `latest.currency-api.pages.dev`
-3. **Frankfurter** (second fallback) — `api.frankfurter.dev`
+2. **European Central Bank** (fallback) — the daily reference feed at `www.ecb.europa.eu`
 
-All three are free and need no API key. The plugin tries them in order and stops
-at the first that answers; if none does, your existing rates stay in place.
+Both are free and need no API key. The plugin tries them in order and stops
+at the first that answers; if neither does, your existing rates stay in place.
 Fetched rates are cached for 1 day, and that cache is what backs the price
 display shown to shoppers. **Sync Rates** — whether you click the button, run
-`wp mhm-cs rates-sync`, or let the scheduled task fire — always skips the cache
+`wp mhmcs rates-sync`, or let the scheduled task fire — always skips the cache
 and goes straight to the API.
 
-*From 2.1.0 the chain is shorter: ExchangeRate-API with the European Central
-Bank's daily reference feed as its only fallback.*
+*Changed in 2.1.0.* The chain used to have two fallbacks, Currency API and then
+Frankfurter, and now has one. Coverage is unchanged — the ECB feed was already
+the final stage of the old chain, roughly thirty currencies — only the
+intermediate stage is gone. If your store restricts outbound requests to an
+allow-list, permit `www.ecb.europa.eu`.
 
 If you have server access, you can sync rates or flush the cache from the command line instead — see [WP-CLI Commands](/docs/wp-cli).
 

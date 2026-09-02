@@ -10,28 +10,9 @@ title: REST API Referansı
 
 ## Herkese Açık Uç Noktalar
 
-### GET `/rates`
+### GET `/rates` — kaldırıldı
 
-*2.1.0'da kaldırıldı — `/mhmcs/v1/rates` yerine geçen genel bir uç nokta yok;
-sunduğu kurlar zaten sayfanın bastığı fiyatlara yansıyor. 2.0.0'da aşağıda
-anlatıldığı gibi çalışır.*
-
-Kimlik doğrulaması gerektirmez. Ana para birimini ve etkin para birimlerinin efektif (komisyon dahil) kurlarını döndürür.
-
-```bash
-curl https://siteadiniz.com/wp-json/mhmcs/v1/rates
-```
-
-```json
-{
-    "base": "TRY",
-    "rates": {
-        "EUR": 0.0274,
-        "USD": 0.0293,
-        "GBP": 0.0250
-    }
-}
-```
+*2.1.0'da kaldırıldı.* Kimlik doğrulaması gerektirmeyen herkese açık `/mhmcs/v1/rates` uç noktası kaldırıldı ve yerine geçen bir uç nokta yok — sunduğu bilgi zaten sayfanın bastığı fiyatlara yansıyordu. Ayarlar ekranının kullandığı kimlik doğrulamalı `/rates/sync` ve `/rates/preview` rotaları etkilenmedi.
 
 ### POST `/convert`
 
@@ -107,6 +88,8 @@ Mağazanız bir ters proxy veya CDN arkasındaysa ve her ziyaretçi aynı adrest
 | POST | `/rates/sync` | Kurları kaynaktan çekip günceller |
 | GET | `/rates/preview` | Her para birimi için ham ve efektif kuru döndürür |
 | POST | `/rates/preview` | Aynısını, henüz kaydedilmemiş gönderilen bir yapılandırma için döndürür — hiçbir şey kaydetmez |
+| POST | `/cache-notice/snooze-anomaly` | Önbellek anomalisi yönetici bildirimini erteler *(2.1.0)* |
+| POST | `/cache-notice/snooze-fragments` | Önbellek parçalama yönetici bildirimini erteler *(2.1.0)* |
 
 ## WooCommerce Ürün API'sinde Para Birimi
 

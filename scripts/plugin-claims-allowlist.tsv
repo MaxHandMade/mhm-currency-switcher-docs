@@ -10,15 +10,19 @@
 # path	token	anchor (LITERAL substring — not a regex; metacharacters match themselves)
 #
 # An entry earns its place only when the gate would otherwise report the
-# sentence. The two rows below are the first real entries: they spare the
-# "Removed in 2.1.0" note's `/mhmcs/v1/rates` mention. That note is correct
-# but currently INERT — the anchor in plugin-ref.txt is still v2.0.0, where
-# /rates is a live route, so source_has() finds it and the gate would pass
-# with or without this pardon. The row goes live (starts doing work) only
-# once the anchor moves to v2.1.0 and /rates actually drops out of source —
-# at that point, without this entry, the sentence naming the removed route
-# would itself become a false-positive finding.
-# The CSS rename entries arrive in Faz B, when the sweep makes those names
-# stale.
+# sentence. The rest-api rows were the first real entries: they spare the
+# "Removed in 2.1.0" note's `/mhmcs/v1/rates` mention. They were INERT while
+# the anchor was v2.0.0, where /rates is a live route and source_has() found
+# it with or without the pardon. They went live with the 2.1.0 anchor bump —
+# /rates dropped out of source, and without them the sentence naming the
+# removed route would itself have become a false-positive finding.
+# The 2.1.0 sweep added the two CLI rows below. The `wp mhm-cs` namespace was
+# renamed to `wp mhmcs`, and both wp-cli pages say so in a rename note that has
+# to spell the dead command for the sentence to mean anything. No CSS row was
+# needed: those notes name only the `mhm-cs-` prefix, which the plugin readme
+# still carries in its own changelog.
+
 docs/rest-api.md	/mhmcs/v1/rates	Removed in 2.1.0
 i18n/tr/docusaurus-plugin-content-docs/current/rest-api.md	/mhmcs/v1/rates	2.1.0'da kaldırıldı
+docs/wp-cli.md	wp mhm-cs rates-sync	Renamed in 2.1.0
+i18n/tr/docusaurus-plugin-content-docs/current/wp-cli.md	wp mhm-cs rates-sync	2.1.0'da yeniden adlandırıldı
