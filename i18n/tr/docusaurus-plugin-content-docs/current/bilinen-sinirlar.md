@@ -12,6 +12,8 @@ Bunlar önbellek uyumluluğu modunun nasıl çalıştığının sonuçlarıdır,
 
 Ayarın üstünde duran üç düzeltme, mod açık ya da kapalı olsun yerinde kalır: fiyatlar artık yönetim ekranlarında veya yönetici AJAX isteklerinde çevrilmez (eskiden bu, sipariş satırına çevrilmiş bir fiyat yazıyordu), `wc/v3` REST okumaları ana para birimine sabitlenir ve zamanlanmış görevler ile WP-CLI artık çevirmez. Modu kapatmak yalnızca 1.0.0'daki *görüntüleme* davranışını — fiyatların sunucuda çevrilmesini — geri getirir, başka hiçbir şeyi değil.
 
+*Sürüm 1.1.0'dan beri.* Bu kurallardan biri, eklentinin göremediği bir üçüncü taraf bağlamı için yanlış sonuç veriyorsa `mhmcs_should_convert` filtresi kaçış kapısıdır. Filtreye hem karar hem de kararı üreten dal geçirilir — `force`, `admin`, `rest`, `cron_cli`, `cache_compat_off`, `money`, `logged_in`, `pre_wp`, `display` değerlerinden biri — `true` döndürmek çevirir, `false` ana para biriminde bırakır. Bir istek çevirmeye karar verdikten sonra filtre o istek için bir daha sorulmaz: kararı sayfa oluşturulurken yeniden açmak, eskiden sayfanın ana para biriminde fiyat gösterirken AJAX ödeme adımının çevrilmiş tutarı tahsil etmesine yol açıyordu.
+
 ### Arama motorları ve tarayıcı robotları ana para biriminizdeki fiyatları görür
 
 Mod açıkken bir tarayıcı robotunun getirdiği sayfa tarayıcıdan geçmemiştir; bu yüzden hem sayfa hem de içindeki makine tarafından okunabilir ürün verisi ana para biriminde fiyat taşır. Yapılandırılmış veri hakkındaki SSS sorusuna bakın; bu uyumsuzluk kasıtlıdır.
