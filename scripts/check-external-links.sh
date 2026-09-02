@@ -183,6 +183,17 @@ for url in "${urls[@]}"; do
 done
 
 echo ""
+# 🔴 STATE THE POLICY ON EVERY RUN, INCLUDING A CLEAN ONE. Without this line the
+#    only run that reveals which mode it is in is a failing one — so a
+#    misevaluated `${{ ... }}` expression in the workflow would sit there
+#    configured-but-not-working, and the first evidence would be a deploy that
+#    blocked (or didn't) when it should have done the opposite.
+if [ "$UNREACHABLE_IS_FATAL" != "0" ]; then
+  echo "Policy: an unreachable host is FATAL (EXTERNAL_UNREACHABLE_IS_FATAL=$UNREACHABLE_IS_FATAL)."
+else
+  echo "Policy: an unreachable host is a WARNING (EXTERNAL_UNREACHABLE_IS_FATAL=0)."
+fi
+echo "        A bad status and a soft 404 are fatal regardless."
 echo "External link check: ${pass_count} OK, ${fail_count} broken, ${unreachable_count} unreachable (out of ${#urls[@]} unique URLs)"
 
 # A wrong link fails everywhere, in every context, with no way to opt out.
