@@ -34,3 +34,4 @@ build/
 
 # mhm:hafiza-allow — pencere kartı izlenir (2026-09-04)
 !CLAUDE.md
+.claude/settings.json
