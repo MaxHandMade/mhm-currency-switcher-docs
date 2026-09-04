@@ -31,3 +31,4 @@ build/
 .docusaurus/
 .claude/
 CLAUDE.md
+.claude/memory/
