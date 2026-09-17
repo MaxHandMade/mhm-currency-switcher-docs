@@ -30,7 +30,7 @@ Bu sekmede dört ayar bulunur.
 1. MaxMind'da bir hesap açıp **GeoLite2** kaydını tamamlayın.
 2. **Manage License Keys** bölümünden bir lisans anahtarı üretin.
 3. Anahtarı **WooCommerce > Ayarlar > Entegrasyon > MaxMind Geolocation** ekranına yapıştırıp kaydedin.
-4. WooCommerce veritabanını `wp-content/uploads/woocommerce_uploads/` klasörüne indirir. Dosya adı tahmin edilemez bir önekle başlar; bu bilinçlidir ve dosyanın adresinin dışarıdan tahmin edilmesini engeller. `uploads/` klasörünün kökünde aramayın.
+4. WooCommerce veritabanını sitenizin yükleme (uploads) dizinindeki `woocommerce_uploads/` klasörüne indirir — standart tek sitede bu `wp-content/uploads/woocommerce_uploads/` olur; multisite alt sitesinde ya da yükleme konumu özelleştirilmişse o sitenin kendi yükleme dizinidir. Dosya adı tahmin edilemez bir önekle başlar; bu bilinçlidir ve dosyanın adresinin dışarıdan tahmin edilmesini engeller. Yükleme dizininin kökünde aramayın.
 
 **Nasıl çalışır:**
 

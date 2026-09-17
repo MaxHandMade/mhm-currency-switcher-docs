@@ -30,7 +30,7 @@ Country detection tries two sources, in order, and **neither one sends anything 
 1. Create a MaxMind account and complete the **GeoLite2** signup.
 2. Generate a license key under **Manage License Keys**.
 3. Paste the key into **WooCommerce > Settings > Integration > MaxMind Geolocation** and save.
-4. WooCommerce downloads the database into `wp-content/uploads/woocommerce_uploads/`. The file name starts with an unpredictable prefix on purpose, so its address can't be guessed from outside — don't look for it at the root of `uploads/`.
+4. WooCommerce downloads the database into a `woocommerce_uploads/` folder inside your site's uploads directory — on a standard single site that's `wp-content/uploads/woocommerce_uploads/`; on a multisite subsite, or when the uploads location has been customized, it's that site's own uploads directory instead. The file name starts with an unpredictable prefix on purpose, so its address can't be guessed from outside — don't look for it at the root of the uploads directory.
 
 **How it works:**
 
