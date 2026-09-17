@@ -16,10 +16,21 @@ Bu sekmede dört ayar bulunur.
 |------|----------|
 | **Konuma dayalı para birimi algılamayı etkinleştir** | Ziyaretçinin ülkesini tespit edip eşleşen para birimini gösterir |
 
-Ülke tespiti iki kaynaktan kademeli olarak yapılır:
+Ülke tespiti iki kaynaktan kademeli olarak yapılır ve **hiçbir aşamada ziyaretçiye dair bir bilgi sunucunuzdan dışarı çıkmaz** (döviz kurları ayrı bir konudur — aşağıdaki Otomatik Kur Güncelleme bölümüne bakın):
 
 1. **CloudFlare (birincil):** Siteniz CloudFlare arkasındaysa ülke kodu `CF-IPCountry` başlığından okunur. Ek yapılandırma gerektirmez ve çok hızlıdır. Bilinmeyen ülke ve Tor çıkış düğümü kodları yok sayılır.
-2. **WooCommerce MaxMind (yedek):** CloudFlare başlığı yoksa WooCommerce'in yerleşik MaxMind GeoIP veritabanı sorgulanır. Bunun için **WooCommerce > Ayarlar > Entegrasyon > MaxMind Geolocation** bölümünden lisans anahtarı girilmiş olmalıdır.
+2. **Yerel MaxMind veritabanı (yedek):** CloudFlare başlığı yoksa WooCommerce'in **sunucunuzda duran** MaxMind GeoIP veritabanı dosyası sorgulanır. Bunun için **WooCommerce > Ayarlar > Entegrasyon > MaxMind Geolocation** bölümünden ücretsiz bir lisans anahtarı girilmiş olmalıdır.
+
+**İkisi de yoksa:** Algılama sonuç bulamaz ve ziyaretçi, kendisi bir seçim yapana kadar ana para birimini görür. Üçüncü bir tarafa sorulmaz. Gelişmiş sekmesi bunu ayarın hemen altında, ayar açık da olsa kapalı da olsa yazar.
+
+> **2.2.0'da değişti.** Önceki sürümler WooCommerce'in `geolocate_ip()` çağrısını varsayılan argümanlarıyla yapıyordu. MaxMind veritabanı olmayan bir mağazada bu, her yeni ziyaretçinin IP adresinin uzak bir konum servisine gönderilmesi demekti. 2.2.0 bu yedeği kapatır. CloudFlare ya da MaxMind veritabanı olmadan konum algılamaya güveniyorsanız artık sonuç bulunmaz — ücretsiz bir MaxMind lisans anahtarı eklemek özelliği geri getirir. WooCommerce veritabanı dosyasını MaxMind'dan indirir ve belirli aralıklarla yeniler; bu istek lisans anahtarınızı taşır, hiçbir ziyaretçi adresini değil, ve sonrasındaki her sorgu kendi sunucunuzda yapılır.
+
+**MaxMind veritabanı nasıl kurulur (ücretsiz):**
+
+1. MaxMind'da bir hesap açıp **GeoLite2** kaydını tamamlayın.
+2. **Manage License Keys** bölümünden bir lisans anahtarı üretin.
+3. Anahtarı **WooCommerce > Ayarlar > Entegrasyon > MaxMind Geolocation** ekranına yapıştırıp kaydedin.
+4. WooCommerce veritabanını `wp-content/uploads/woocommerce_uploads/` klasörüne indirir. Dosya adı tahmin edilemez bir önekle başlar; bu bilinçlidir ve dosyanın adresinin dışarıdan tahmin edilmesini engeller. `uploads/` klasörünün kökünde aramayın.
 
 **Nasıl çalışır:**
 

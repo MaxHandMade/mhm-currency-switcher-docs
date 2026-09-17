@@ -16,10 +16,21 @@ This tab holds four settings.
 |---|---|
 | **Enable geolocation-based currency detection** | Detects the visitor's country and shows the matching currency |
 
-Country detection tries two sources, in order:
+Country detection tries two sources, in order, and **neither one sends anything about the visitor off your server** (exchange rates are a separate matter — see Automatic rate updates below):
 
 1. **CloudFlare (primary)** — if your site is behind CloudFlare, the country code is read from the `CF-IPCountry` header. No configuration needed, and fast. Unknown-country and Tor exit-node codes are ignored.
-2. **WooCommerce MaxMind (fallback)** — if there's no CloudFlare header, WooCommerce's built-in MaxMind GeoIP database is queried instead. This needs a license key entered under **WooCommerce > Settings > Integration > MaxMind Geolocation**.
+2. **Local MaxMind database (fallback)** — if there's no CloudFlare header, WooCommerce's MaxMind GeoIP database file, **stored on your own server**, is queried instead. This needs a free license key entered under **WooCommerce > Settings > Integration > MaxMind Geolocation**.
+
+**If neither is available:** detection finds nothing, and the visitor sees the base currency until they pick one themselves. No third party is asked. The Advanced tab says this directly under the setting, whether the setting is on or off.
+
+> **Changed in 2.2.0.** Earlier versions called WooCommerce's `geolocate_ip()` with its default arguments. On a store with no MaxMind database, that sent every new visitor's IP address to a remote geolocation service. 2.2.0 closes that fallback. If you relied on geolocation without CloudFlare or a MaxMind database, it now finds nothing — add a free MaxMind license key to bring it back. WooCommerce downloads the database file from MaxMind and refreshes it on a schedule; that request carries your license key, never a visitor's address, and every lookup after that happens on your own server.
+
+**Setting up the MaxMind database (free):**
+
+1. Create a MaxMind account and complete the **GeoLite2** signup.
+2. Generate a license key under **Manage License Keys**.
+3. Paste the key into **WooCommerce > Settings > Integration > MaxMind Geolocation** and save.
+4. WooCommerce downloads the database into `wp-content/uploads/woocommerce_uploads/`. The file name starts with an unpredictable prefix on purpose, so its address can't be guessed from outside — don't look for it at the root of `uploads/`.
 
 **How it works:**
 

@@ -28,7 +28,7 @@ You need the `manage_woocommerce` capability to see the settings screen (the Sho
 ## What you get right after activation
 
 - **The currency list starts empty.** No currencies are pre-added; you add the ones you want.
-- Geolocation detection starts **on**.
+- Geolocation detection starts **off** (since 2.2.0). Working out a visitor's country from their IP address is data processing, so it's left for you to switch on deliberately. Stores that upgrade keep whatever they had already chosen.
 - The switcher's appearance starts with these defaults: flag **on**, symbol **on**, code **on**, currency name **off**, size **Medium**.
 - Cache compatibility mode starts **on** — see [Advanced settings](/docs/advanced-settings) for what that does.
 
