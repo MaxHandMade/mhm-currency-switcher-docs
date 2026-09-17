@@ -28,7 +28,7 @@ Yönetim sayfasını görebilmek için `manage_woocommerce` yetkisine sahip olma
 Eklenti ilk etkinleştirildiğinde:
 
 - **Para birimi listesi boş başlar.** Hazır para birimi eklenmez; istediklerinizi kendiniz eklersiniz.
-- Konum algılama **açık** olarak gelir.
+- Konum algılama **kapalı** olarak gelir (2.2.0'dan itibaren). Ziyaretçinin ülkesini IP adresinden çözmek bir veri işleme kararıdır; bu yüzden bilerek açmanız beklenir. Güncelleme yapan mağazalarda daha önce seçilmiş ayar olduğu gibi kalır.
 - Dönüştürücü görünümü şu varsayılanlarla gelir: bayrak **açık**, simge **açık**, kod **açık**, para birimi adı **kapalı**, boyut **Orta**.
 - Önbellek uyumluluğu modu **açık** olarak gelir (bkz. [Gelişmiş Ayarlar](/docs/advanced-settings)).
 

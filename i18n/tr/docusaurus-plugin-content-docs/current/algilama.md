@@ -49,7 +49,7 @@ Kampanya bağlantıları ve dış yönlendirmeler için kullanışlıdır. Bu pa
 
 ## 3. Konum Algılama
 
-**Gelişmiş** sekmesinden açıldıysa devreye girer. Kaynaklar (CloudFlare / WooCommerce MaxMind), sıralama ve algılamanın hangi durumlarda çalıştığına dair ayrıntılar için [Gelişmiş Ayarlar](/docs/advanced-settings) sayfasına bakın.
+**Gelişmiş** sekmesinden açıldıysa devreye girer. Kaynaklar (CloudFlare başlığı / sunucunuzdaki MaxMind veritabanı), sıralama ve ülke çözülemediğinde ne olduğu için [Gelişmiş Ayarlar](/docs/advanced-settings) sayfasına bakın.
 
 ## 4. Ana Para Birimi
 
