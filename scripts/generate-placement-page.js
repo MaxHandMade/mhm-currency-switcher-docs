@@ -123,7 +123,14 @@ function table({ samples, widgets }, locale) {
     const before = current.split(marker)[0];
     const after = current.split(end)[1];
     if (after === undefined) throw new Error(`${p} is missing the generated-block markers.`);
-    fs.writeFileSync(p, `${before}${marker}\n${generated}\n${end}${after}`);
+    // Write the block with the file's OWN line ending. A Windows checkout
+    // (core.autocrlf=true) has CRLF around the markers; joining the block with
+    // "\n" left the file mixed, and git then reported it modified after every
+    // run with no content change. Matching the file's ending keeps both kinds
+    // of checkout clean without asking anyone to re-checkout or renormalize.
+    const eol = current.includes('\r\n') ? '\r\n' : '\n';
+    const block = generated.split('\n').join(eol);
+    fs.writeFileSync(p, `${before}${marker}${eol}${block}${eol}${end}${after}`);
   }
   console.log('placement tables regenerated');
 })();
