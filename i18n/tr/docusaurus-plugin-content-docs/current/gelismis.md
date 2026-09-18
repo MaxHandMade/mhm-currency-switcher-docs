@@ -63,7 +63,7 @@ Aralığı değiştirdiğinizde mevcut zamanlanmış görev temizlenir ve yeni a
 
 Bir sayfa önbelleği (page cache), sunucunuzun ürettiği HTML'i ilk isteyen ziyaretçi için saklar ve sonraki ziyaretçilere aynı HTML'i sunar. Fiyatlar sunucuda dönüştürülüyorsa bu, ilk ziyaretçinin para biriminin herkese gösterilmesi anlamına gelir.
 
-**Önbellek uyumluluğu modu**, varsayılan olarak **açık** gelir ve bu sorunu şöyle çözer: oturum açmamış ziyaretçiler için mağaza, kategori ve ürün sayfaları her zaman **ana para biriminizde** oluşturulur, böylece önbellekteki aynı sayfa herkes için doğrudur. Tarayıcı, sayfa yüklendikten sonra bu eklentiye yaptığı bir REST isteğiyle görünen fiyatları ziyaretçinin seçtiği para birimine dönüştürür.
+**Önbellek uyumluluğu modu**, varsayılan olarak **açık** gelir ve bu sorunu şöyle çözer: oturum açmamış ziyaretçiler için sepet, ödeme ve hesap sayfaları dışındaki her ön yüz sayfası — mağaza, kategori ve ürün sayfaları dahil — her zaman **ana para biriminizde** oluşturulur, böylece önbellekteki aynı sayfa herkes için doğrudur. Tarayıcı, sayfa yüklendikten sonra bu eklentiye yaptığı bir REST isteğiyle görünen fiyatları ziyaretçinin seçtiği para birimine dönüştürür. Bir tema ya da eklenti WooCommerce'in sepet sabitini her sayfada tanımlıyorsa bu geçerli olmaz — eklenti bunu yönetim panelinde bildirir; bkz. [SSS](/docs/faq).
 
 Ayrım kasıtlıdır: yalnızca **görüntülenen** fiyatlar tarayıcıda dönüştürülür. Sepet, ödeme, sipariş toplamları, sipariş e-postaları ve WooCommerce REST API'si her zaman sunucuda, ziyaretçinin gerçekten seçtiği para biriminde hesaplanır — yani tahsil edilen tutar tarayıcıdan değiştirilemez.
 

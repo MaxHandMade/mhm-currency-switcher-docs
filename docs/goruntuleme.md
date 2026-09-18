@@ -51,7 +51,7 @@ A preview at the bottom of the tab reflects your current settings; it's a simpli
 
 ## Switching without a page reload
 
-When cache compatibility mode is on (the default — see [Advanced settings](/docs/advanced-settings)) and a visitor picks a different currency on a shop, category, or product page, the page doesn't reload: the plugin writes the cookie, converts the visible prices in place, and refreshes the mini-cart. On the cart page, for a logged-in visitor, or with cache compatibility switched off, the page reloads as before.
+When cache compatibility mode is on (the default — see [Advanced settings](/docs/advanced-settings)) and a visitor picks a different currency on any page other than the cart, checkout or account page, the page doesn't reload: the plugin writes the cookie, converts the visible prices in place, and refreshes the mini-cart. On the cart, checkout or account page, on a page where a theme or plugin defines WooCommerce's cart constant (see the [FAQ](/docs/faq)), for a logged-in visitor, or with cache compatibility switched off, the page reloads as before.
 
 The full FAQ is on the [FAQ](/docs/faq) page; the full list of known limits is
 on the [Known limits](/docs/known-limits) page.
