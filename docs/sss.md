@@ -59,7 +59,7 @@ Some themes and plugins define WooCommerce's cart constant on every page, usuall
 
 **Which page it names.** The warning names the first page the problem was seen on (the path only, without any query string) and keeps naming that page while the problem lasts, even when other pages show the same problem. A visit to the real cart or checkout page does not count either way: the constant is legitimately defined there.
 
-**When it clears.** Once that same page renders normally again, once that page no longer exists (a request for it returns "not found"), or as soon as you save cache compatibility switched off. A copy served from your page cache does not run the plugin at all, so purge the cache after fixing the theme.
+**When it clears.** Once that same page renders normally again, once that page no longer exists (a request for it returns "not found"), or as soon as you save cache compatibility switched off. A copy served from your page cache never reaches the plugin's check on the server, so purge the cache after fixing the theme.
 
 **Who sees it, and where.** It is shown only to users who can manage WooCommerce, and only on three screens: this plugin's settings page, **WooCommerce > Settings** and **WooCommerce > Status**.
 

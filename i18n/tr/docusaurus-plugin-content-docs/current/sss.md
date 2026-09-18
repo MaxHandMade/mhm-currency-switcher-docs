@@ -58,7 +58,7 @@ Bazı temalar ve eklentiler, header'da bir sepet toplamı göstermek için WooCo
 
 **Hangi sayfayı gösterir.** Uyarı, sorunun ilk görüldüğü sayfayı adıyla söyler (yalnız yol; sorgu dizesi olmadan) ve sorun sürdükçe başka sayfalarda da aynı sorun görülse bile o sayfayı göstermeye devam eder. Gerçek sepet ya da ödeme sayfasına yapılan bir ziyaret iki yönde de sayılmaz: sabit orada zaten meşru olarak tanımlıdır.
 
-**Ne zaman kalkar.** Aynı sayfa yeniden normal şekilde işlendiğinde, o sayfa artık yoksa (sayfaya yapılan istek "bulunamadı" döndüğünde) ya da önbellek uyumluluğunu kapatıp kaydettiğiniz anda. Sayfa önbelleğinizden sunulan bir kopya eklentiyi hiç çalıştırmaz; bu yüzden temayı düzelttikten sonra önbelleği temizleyin.
+**Ne zaman kalkar.** Aynı sayfa yeniden normal şekilde işlendiğinde, o sayfa artık yoksa (sayfaya yapılan istek "bulunamadı" döndüğünde) ya da önbellek uyumluluğunu kapatıp kaydettiğiniz anda. Sayfa önbelleğinizden sunulan bir kopya eklentinin sunucudaki denetimine hiç ulaşmaz; bu yüzden temayı düzelttikten sonra önbelleği temizleyin.
 
 **Kim görür, nerede görünür.** Yalnızca WooCommerce'i yönetebilen kullanıcılara ve yalnızca üç ekranda gösterilir: bu eklentinin ayarlar sayfası, **WooCommerce > Ayarlar** ve **WooCommerce > Durum**.
 
