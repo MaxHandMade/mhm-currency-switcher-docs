@@ -55,7 +55,23 @@ Yes. When cache compatibility mode is on, prices on cached pages are converted t
 
 ### I see a warning that cache compatibility is not being applied. What is it?
 
-Some themes and plugins define WooCommerce's cart constant on every page, usually to show a cart total in the header. When that happens the plugin treats every page as a checkout — the customer's money is at stake — and converts prices on the server, which is exactly what cache compatibility mode exists to avoid. Nothing looks wrong on the site: prices are still correct for whoever loads the page first, and then a page cache can serve that person's currency to everyone else. Because there is no visible symptom, the plugin says so in the admin instead. The notice clears itself as soon as a front-end page renders normally again.
+Some themes and plugins define WooCommerce's cart constant on every page, usually to show a cart total in the header. When that happens the plugin treats every page as a checkout — the customer's money is at stake — and converts prices on the server, which is exactly what cache compatibility mode exists to avoid. Nothing looks wrong on the site: prices are still correct for whoever loads the page first, and then a page cache can serve that person's currency to everyone else. Because there is no visible symptom, the plugin says so in the admin instead.
+
+**Which page it names.** The warning names the first page the problem was seen on (the path only, without any query string) and keeps naming that page while the problem lasts, even when other pages show the same problem. A visit to the real cart or checkout page does not count either way: the constant is legitimately defined there.
+
+**When it clears.** Once that same page renders normally again, once that page no longer exists (a request for it returns "not found"), or as soon as you save cache compatibility switched off. A copy served from your page cache does not run the plugin at all, so purge the cache after fixing the theme.
+
+**Who sees it, and where.** It is shown only to users who can manage WooCommerce, and only on three screens: this plugin's settings page, **WooCommerce > Settings** and **WooCommerce > Status**.
+
+**Snoozing it.** **Snooze until this changes** hides the warning for you alone — other users who can manage WooCommerce still see it — until the warning clears. If the problem comes back after that, the warning is shown again, even on the same page.
+
+### I see a warning that the mini-cart is stuck in the base currency. What is it?
+
+On a page that gets cached, the mini-cart is printed in your base currency and then refreshed by WooCommerce's `wc-cart-fragments` script. That refresh goes through the server, which is where the conversion happens. Themes and optimisation plugins often remove the script for speed, and when they do, every other price on the page is converted in the browser while the mini-cart total stays in your base currency.
+
+The warning only appears when all four are true: cache compatibility is on, the page is one that gets cached (a logged-out visitor on a page that is not the cart, checkout or account page), a mini-cart was actually rendered, and WordPress did not output the script on that page. A shop with no mini-cart never sees it, even if the script is removed. To fix it, let the script load again or remove the mini-cart from cached pages.
+
+It names a page, is shown to the same people on the same screens, and snoozes the same way as the cache compatibility warning above. It clears itself once that same page renders for a logged-out visitor with the script loaded — or, if you removed the mini-cart, for a logged-out visitor who has something in their cart — or as soon as you save cache compatibility switched off. Browsing your own store while logged in never clears it, because that view is not the one a cache stores; and on any page where the cart constant is defined — the problem the warning above reports — no render counts as cacheable either, so fix that one first. As with the other warning, purge your page cache after the fix.
 
 ### Why does the structured data show a different currency from the price on the page?
 
