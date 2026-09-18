@@ -63,7 +63,7 @@ Rate sources need no API key, so this tab has no provider selector or key field.
 
 A page cache stores the HTML your server produced for whoever asked first. When prices are converted on the server, that means the first visitor's currency is what every later visitor is served.
 
-**Cache compatibility mode**, on by default, avoids this: for logged-out visitors, every front-end page except the cart, checkout and account pages — shop, category and product pages included — is always rendered in your **base currency**, so the same cached page is correct for everyone. The browser then converts the displayed prices, after the page loads, through a request to this plugin.
+**Cache compatibility mode**, on by default, avoids this: for logged-out visitors, every front-end page except the cart, checkout and account pages — shop, category and product pages included — is always rendered in your **base currency**, so the same cached page is correct for everyone. The browser then converts the displayed prices, after the page loads, through a request to this plugin. If a theme or plugin defines WooCommerce's cart constant on every page, this no longer applies — the plugin warns you in the admin; see the [FAQ](/docs/faq).
 
 The split is deliberate: only *displayed* prices are converted in the browser. Cart, checkout, order totals, order emails and the WooCommerce REST API are always calculated on the server, in the currency the customer actually chose — so the amount charged can't be altered from the browser.
 
