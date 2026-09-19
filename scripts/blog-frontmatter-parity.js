@@ -112,5 +112,58 @@ for (const en of posts) {
     }
   }
 }
+// Tags file. Once blog/tags.yml exists, every tag a post uses must be declared
+// in it — Docusaurus only WARNS about an undeclared tag (onInlineTags), and a
+// warning does not fail CI. The Turkish tags.yml must declare the same keys
+// with the same permalinks (only labels are translated): a missing Turkish
+// file falls back to the English labels silently, a different permalink moves
+// the tag page in one locale only.
+function loadTags(dir) {
+  const f = path.join(dir, 'tags.yml');
+  if (!fs.existsSync(f)) return null;
+  try {
+    const d = yaml.load(fs.readFileSync(f, 'utf8').replace(/^﻿/, ''));
+    return d && typeof d === 'object' ? d : {};
+  } catch (e) {
+    return { __yamlError: e.reason || e.message };
+  }
+}
+const permalinkOf = (tags, k) => (tags[k] && tags[k].permalink) || '/' + k;
+const enTags = loadTags(enDir);
+let declared = 0;
+if (enTags && enTags.__yamlError) {
+  problems.push('tags.yml: EN is not valid YAML — ' + enTags.__yamlError);
+} else if (enTags) {
+  declared = Object.keys(enTags).length;
+  for (const en of posts) {
+    const fm = frontMatter(en);
+    if (!fm || fm.__yamlError) continue;
+    const used = Array.isArray(fm.tags) ? fm.tags : fm.tags ? [fm.tags] : [];
+    for (const tag of used) {
+      const key = typeof tag === 'string' ? tag : tag && (tag.key || tag.label);
+      if (key && !Object.prototype.hasOwnProperty.call(enTags, key)) {
+        problems.push(path.relative(enDir, en) + ': tag "' + key + '" is not declared in ' + path.join(enDir, 'tags.yml'));
+      }
+    }
+  }
+  const trTags = loadTags(trDir);
+  if (!trTags) {
+    problems.push('tags.yml: ' + path.join(enDir, 'tags.yml') + ' exists but ' + path.join(trDir, 'tags.yml') + ' does not — Turkish tag labels fall back to English');
+  } else if (trTags.__yamlError) {
+    problems.push('tags.yml: TR is not valid YAML — ' + trTags.__yamlError);
+  } else {
+    const ek = Object.keys(enTags);
+    const tk = Object.keys(trTags);
+    for (const k of ek) if (!tk.includes(k)) problems.push('tags.yml: "' + k + '" is missing from the Turkish tags.yml');
+    for (const k of tk) if (!ek.includes(k)) problems.push('tags.yml: "' + k + '" is only in the Turkish tags.yml');
+    for (const k of ek) {
+      if (tk.includes(k) && permalinkOf(enTags, k) !== permalinkOf(trTags, k)) {
+        problems.push('tags.yml: "' + k + '" permalink differs — EN ' + permalinkOf(enTags, k) + ' vs TR ' + permalinkOf(trTags, k));
+      }
+    }
+  }
+}
+
 console.log('PAIRS ' + pairs);
+console.log('TAGS ' + declared);
 for (const p of problems) console.log('PROBLEM ' + p);

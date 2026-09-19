@@ -37,7 +37,9 @@
 #
 # Blog posts (blog/ ↔ i18n/tr/docusaurus-plugin-content-blog/) are checked
 # too, by scripts/blog-frontmatter-parity.js: slug, date, authors and tags
-# must exist on both sides and be equal (tags/authors as sets).
+# must exist on both sides and be equal (tags/authors as sets). Once
+# blog/tags.yml exists, every tag a post uses must be declared there and the
+# Turkish tags.yml must carry the same keys and permalinks.
 #
 # Usage: bash scripts/check-slug-parity.sh
 
@@ -138,6 +140,7 @@ if [ -d "$BLOG_EN_DIR" ]; then
     [ -n "$line" ] && note "blog front matter: ${line#PROBLEM }"
   done < <(grep '^PROBLEM ' <<<"$blog_out" || true)
   echo "Blog front matter: ${blog_pairs:-0} pair(s) checked."
+  echo "Blog tags file: $(sed -n 's/^TAGS //p' <<<"$blog_out") tag(s) declared."
 fi
 
 echo ""
