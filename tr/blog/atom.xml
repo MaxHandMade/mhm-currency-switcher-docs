@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?><?xml-stylesheet type="text/xsl" href="atom.xsl"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://MaxHandMade.github.io/mhm-currency-switcher-docs/tr/blog</id>
-    <title>MHM Currency Switcher Release Notes</title>
+    <title>MHM Currency Switcher Sürüm Notları</title>
     <updated>2026-09-18T20:07:00.000Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://MaxHandMade.github.io/mhm-currency-switcher-docs/tr/blog"/>
-    <subtitle>MHM Currency Switcher Blog</subtitle>
+    <subtitle>MHM Currency Switcher sürüm notları</subtitle>
     <icon>https://MaxHandMade.github.io/mhm-currency-switcher-docs/tr/img/favicon.ico</icon>
     <entry>
         <title type="html"><![CDATA[Currency Switcher 2.2.1 — Türkçe eklentinin içinde, önbellek uyarıları yerinde]]></title>
@@ -24,10 +24,10 @@
             <name>MaxHandMade</name>
             <uri>https://github.com/MaxHandMade</uri>
         </author>
-        <category label="release" term="release"/>
-        <category label="currency-switcher" term="currency-switcher"/>
-        <category label="translation" term="translation"/>
-        <category label="cache" term="cache"/>
+        <category label="Sürüm" term="Sürüm"/>
+        <category label="Currency Switcher" term="Currency Switcher"/>
+        <category label="Çeviri" term="Çeviri"/>
+        <category label="Önbellek" term="Önbellek"/>
     </entry>
     <entry>
         <title type="html"><![CDATA[Currency Switcher 2.2.0 — Ziyaretçi IP adresleri artık sunucunuzdan çıkmıyor]]></title>
@@ -48,10 +48,10 @@
             <name>MaxHandMade</name>
             <uri>https://github.com/MaxHandMade</uri>
         </author>
-        <category label="release" term="release"/>
-        <category label="currency-switcher" term="currency-switcher"/>
-        <category label="privacy" term="privacy"/>
-        <category label="geolocation" term="geolocation"/>
+        <category label="Sürüm" term="Sürüm"/>
+        <category label="Currency Switcher" term="Currency Switcher"/>
+        <category label="Gizlilik" term="Gizlilik"/>
+        <category label="Konum algılama" term="Konum algılama"/>
     </entry>
     <entry>
         <title type="html"><![CDATA[Currency Switcher 2.1.0 — WordPress.org'da, her yerde tek önek]]></title>
@@ -81,9 +81,9 @@
             <name>MaxHandMade</name>
             <uri>https://github.com/MaxHandMade</uri>
         </author>
-        <category label="release" term="release"/>
-        <category label="currency-switcher" term="currency-switcher"/>
-        <category label="css" term="css"/>
-        <category label="rest-api" term="rest-api"/>
+        <category label="Sürüm" term="Sürüm"/>
+        <category label="Currency Switcher" term="Currency Switcher"/>
+        <category label="CSS" term="CSS"/>
+        <category label="REST API" term="REST API"/>
     </entry>
 </feed>

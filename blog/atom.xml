@@ -5,7 +5,7 @@
     <updated>2026-09-18T20:07:00.000Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://MaxHandMade.github.io/mhm-currency-switcher-docs/blog"/>
-    <subtitle>MHM Currency Switcher Blog</subtitle>
+    <subtitle>MHM Currency Switcher release notes</subtitle>
     <icon>https://MaxHandMade.github.io/mhm-currency-switcher-docs/img/favicon.ico</icon>
     <entry>
         <title type="html"><![CDATA[Currency Switcher 2.2.1 — Turkish inside the plugin, and cache warnings that stay put]]></title>
@@ -24,10 +24,10 @@
             <name>MaxHandMade</name>
             <uri>https://github.com/MaxHandMade</uri>
         </author>
-        <category label="release" term="release"/>
-        <category label="currency-switcher" term="currency-switcher"/>
-        <category label="translation" term="translation"/>
-        <category label="cache" term="cache"/>
+        <category label="Release" term="Release"/>
+        <category label="Currency Switcher" term="Currency Switcher"/>
+        <category label="Translation" term="Translation"/>
+        <category label="Cache" term="Cache"/>
     </entry>
     <entry>
         <title type="html"><![CDATA[Currency Switcher 2.2.0 — Visitor IP addresses no longer leave your server]]></title>
@@ -48,10 +48,10 @@
             <name>MaxHandMade</name>
             <uri>https://github.com/MaxHandMade</uri>
         </author>
-        <category label="release" term="release"/>
-        <category label="currency-switcher" term="currency-switcher"/>
-        <category label="privacy" term="privacy"/>
-        <category label="geolocation" term="geolocation"/>
+        <category label="Release" term="Release"/>
+        <category label="Currency Switcher" term="Currency Switcher"/>
+        <category label="Privacy" term="Privacy"/>
+        <category label="Geolocation" term="Geolocation"/>
     </entry>
     <entry>
         <title type="html"><![CDATA[Currency Switcher 2.1.0 — On WordPress.org, with one prefix everywhere]]></title>
@@ -81,9 +81,9 @@
             <name>MaxHandMade</name>
             <uri>https://github.com/MaxHandMade</uri>
         </author>
-        <category label="release" term="release"/>
-        <category label="currency-switcher" term="currency-switcher"/>
-        <category label="css" term="css"/>
-        <category label="rest-api" term="rest-api"/>
+        <category label="Release" term="Release"/>
+        <category label="Currency Switcher" term="Currency Switcher"/>
+        <category label="CSS" term="CSS"/>
+        <category label="REST API" term="REST API"/>
     </entry>
 </feed>

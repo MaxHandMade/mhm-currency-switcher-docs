@@ -3,7 +3,7 @@
     <channel>
         <title>MHM Currency Switcher Release Notes</title>
         <link>https://MaxHandMade.github.io/mhm-currency-switcher-docs/blog</link>
-        <description>MHM Currency Switcher Blog</description>
+        <description>MHM Currency Switcher release notes</description>
         <lastBuildDate>Fri, 18 Sep 2026 20:07:00 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>https://github.com/jpmonette/feed</generator>
@@ -21,10 +21,10 @@
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="cache-warnings-no-longer-come-and-go">Cache warnings no longer come and go<a href="https://maxhandmade.github.io/mhm-currency-switcher-docs/blog/currency-switcher-v2.2.1-release#cache-warnings-no-longer-come-and-go" class="hash-link" aria-label="Direct link to Cache warnings no longer come and go" title="Direct link to Cache warnings no longer come and go" translate="no">​</a></h2>
 <p>The two cache-compatibility warnings used to clear, together with every administrator's snooze, whenever a page could not show the problem — a customer opening the cart, or you browsing the store while logged in — and the next page view brought them back. Each check now reaches one of three answers: the problem is there, the page is clean, or this page cannot tell. A warning keeps naming the first page the problem was seen on, and clears only when that same page renders without the problem, when that page no longer exists, or when you save cache compatibility switched off. <strong>Snooze until this changes</strong> now holds, and both warnings say when they clear. How each warning works is described in the <a class="" href="https://maxhandmade.github.io/mhm-currency-switcher-docs/docs/faq">FAQ</a>.</p>
 <p><a href="https://github.com/MaxHandMade/mhm-currency-switcher/releases/tag/v2.2.1" target="_blank" rel="noopener noreferrer" class="">2.2.1 on GitHub</a></p>]]></content:encoded>
-            <category>release</category>
-            <category>currency-switcher</category>
-            <category>translation</category>
-            <category>cache</category>
+            <category>Release</category>
+            <category>Currency Switcher</category>
+            <category>Translation</category>
+            <category>Cache</category>
         </item>
         <item>
             <title><![CDATA[Currency Switcher 2.2.0 — Visitor IP addresses no longer leave your server]]></title>
@@ -41,10 +41,10 @@
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="️-if-you-use-geolocation-without-cloudflare-or-maxmind">⚠️ If you use geolocation without CloudFlare or MaxMind<a href="https://maxhandmade.github.io/mhm-currency-switcher-docs/blog/currency-switcher-v2.2.0-release#%EF%B8%8F-if-you-use-geolocation-without-cloudflare-or-maxmind" class="hash-link" aria-label="Direct link to ⚠️ If you use geolocation without CloudFlare or MaxMind" title="Direct link to ⚠️ If you use geolocation without CloudFlare or MaxMind" translate="no">​</a></h2>
 <p>Detection will now find nothing instead of asking a remote service, and visitors keep your base currency until they choose one. To keep the feature, add a free MaxMind GeoLite2 licence key under <strong>WooCommerce &gt; Settings &gt; Integration &gt; MaxMind Geolocation</strong>. WooCommerce then downloads the database and keeps it up to date, and every lookup happens on your own server. The Advanced tab now states what geolocation needs, whether or not it is switched on. Details: <a class="" href="https://maxhandmade.github.io/mhm-currency-switcher-docs/docs/advanced-settings">Advanced settings</a> and <a class="" href="https://maxhandmade.github.io/mhm-currency-switcher-docs/docs/currency-detection">Currency detection</a>.</p>
 <p><a href="https://github.com/MaxHandMade/mhm-currency-switcher/releases/tag/v2.2.0" target="_blank" rel="noopener noreferrer" class="">2.2.0 on GitHub</a></p>]]></content:encoded>
-            <category>release</category>
-            <category>currency-switcher</category>
-            <category>privacy</category>
-            <category>geolocation</category>
+            <category>Release</category>
+            <category>Currency Switcher</category>
+            <category>Privacy</category>
+            <category>Geolocation</category>
         </item>
         <item>
             <title><![CDATA[Currency Switcher 2.1.0 — On WordPress.org, with one prefix everywhere]]></title>
@@ -70,10 +70,10 @@
 <li class="">The release package no longer includes the compiled translation files. <em>Later: 2.2.1 puts the Turkish translation back into the plugin — see the <a class="" href="https://maxhandmade.github.io/mhm-currency-switcher-docs/blog/currency-switcher-v2.2.1-release">2.2.1 notes</a>.</em></li>
 </ul>
 <p><a href="https://github.com/MaxHandMade/mhm-currency-switcher/releases/tag/v2.1.0" target="_blank" rel="noopener noreferrer" class="">2.1.0 on GitHub</a></p>]]></content:encoded>
-            <category>release</category>
-            <category>currency-switcher</category>
-            <category>css</category>
-            <category>rest-api</category>
+            <category>Release</category>
+            <category>Currency Switcher</category>
+            <category>CSS</category>
+            <category>REST API</category>
         </item>
     </channel>
 </rss>
