@@ -1,0 +1,27 @@
+# Blog tags. Keys are what posts use in `tags:`; permalinks must stay identical
+# in i18n/tr/docusaurus-plugin-content-blog/tags.yml (only labels are
+# translated) — scripts/blog-frontmatter-parity.js checks both.
+release:
+  label: Release
+  permalink: /release
+currency-switcher:
+  label: Currency Switcher
+  permalink: /currency-switcher
+css:
+  label: CSS
+  permalink: /css
+rest-api:
+  label: REST API
+  permalink: /rest-api
+privacy:
+  label: Privacy
+  permalink: /privacy
+geolocation:
+  label: Geolocation
+  permalink: /geolocation
+translation:
+  label: Translation
+  permalink: /translation
+cache:
+  label: Cache
+  permalink: /cache

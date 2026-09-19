@@ -1,6 +1,11 @@
 // @ts-check
 import { themes as prismThemes } from 'prism-react-renderer';
 
+// Docusaurus loads this file once per locale and sets the variable first
+// (core/lib/commands/build/buildLocale.js). The blog feed title is not in the
+// blog's translatable options.json, so it is chosen here per locale.
+const isTurkish = process.env.DOCUSAURUS_CURRENT_LOCALE === 'tr';
+
 /** @type {import('@docusaurus/types').Config} */
 const config = {
   title: 'MHM Currency Switcher',
@@ -49,7 +54,12 @@ const config = {
           showReadingTime: true,
           feedOptions: {
             type: ['rss', 'atom'],
-            title: 'MHM Currency Switcher Release Notes',
+            title: isTurkish
+              ? 'MHM Currency Switcher Sürüm Notları'
+              : 'MHM Currency Switcher Release Notes',
+            description: isTurkish
+              ? 'MHM Currency Switcher sürüm notları'
+              : 'MHM Currency Switcher release notes',
             xslt: true,
           },
           onInlineTags: 'warn',

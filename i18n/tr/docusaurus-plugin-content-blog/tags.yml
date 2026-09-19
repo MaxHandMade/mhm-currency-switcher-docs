@@ -1,0 +1,26 @@
+# Blog etiketleri (TR). Anahtarlar ve permalink'ler blog/tags.yml ile aynı
+# kalır; yalnız görünen ad çevrilir.
+release:
+  label: Sürüm
+  permalink: /release
+currency-switcher:
+  label: Currency Switcher
+  permalink: /currency-switcher
+css:
+  label: CSS
+  permalink: /css
+rest-api:
+  label: REST API
+  permalink: /rest-api
+privacy:
+  label: Gizlilik
+  permalink: /privacy
+geolocation:
+  label: Konum algılama
+  permalink: /geolocation
+translation:
+  label: Çeviri
+  permalink: /translation
+cache:
+  label: Önbellek
+  permalink: /cache
