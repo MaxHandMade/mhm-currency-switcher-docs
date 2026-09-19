@@ -229,8 +229,8 @@ source_has() {   # $1 = token · 0 when the source backs the claim
 
 # ─── Scope ───────────────────────────────────────────────────────────────────
 # 🔴 blog/ is excluded on purpose and the count is PRINTED: a dated release
-#    post is a record of what that version shipped. (Faz A has no blog yet;
-#    the rule is written now so Faz B does not have to rediscover it.)
+#    post is a record of what that version shipped. The count covers every
+#    tracked file under the blog paths (posts, authors.yml, options.json).
 IN_SCOPE_RE='^(docs/|i18n/[^/]+/docusaurus-plugin-content-docs/|src/|README\.md)'
 EXCLUDED_RE='^(blog/|i18n/[^/]+/docusaurus-plugin-content-blog/)'
 
