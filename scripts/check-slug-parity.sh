@@ -35,6 +35,10 @@
 # not this script's — this script only ever compares pairs where both
 # files already exist, and reports how many that was.
 #
+# Blog posts (blog/ ↔ i18n/tr/docusaurus-plugin-content-blog/) are checked
+# too, by scripts/blog-frontmatter-parity.js: slug, date, authors and tags
+# must exist on both sides and be equal (tags/authors as sets).
+#
 # Usage: bash scripts/check-slug-parity.sh
 
 set -euo pipefail
@@ -113,6 +117,28 @@ while IFS= read -r f; do
     fi
   fi
 done <<<"$en_list"
+
+# --- blog posts: front-matter identity ---------------------------------
+# Posts are not docs pages: they have no locale-neutral filename rule, but
+# their slug/date/authors/tags must match their Turkish twin exactly. The
+# comparison lives in blog-frontmatter-parity.js because it needs a real YAML
+# parser — a one-line `key:` reader like extract_slug() reads a block list
+# (`tags:` + `  - release`) as empty and would call empty == empty a match.
+BLOG_EN_DIR="${BLOG_EN_DIR:-blog}"
+BLOG_TR_DIR="${BLOG_TR_DIR:-i18n/tr/docusaurus-plugin-content-blog}"
+if [ -d "$BLOG_EN_DIR" ]; then
+  blog_status=0
+  blog_out="$(node "$(dirname "$0")/blog-frontmatter-parity.js" "$BLOG_EN_DIR" "$BLOG_TR_DIR" 2>&1)" || blog_status=$?
+  if [ "$blog_status" -ne 0 ]; then
+    echo "ERROR: blog front-matter check could not run: $blog_out" >&2
+    exit 2
+  fi
+  blog_pairs="$(sed -n 's/^PAIRS //p' <<<"$blog_out")"
+  while IFS= read -r line; do
+    [ -n "$line" ] && note "blog front matter: ${line#PROBLEM }"
+  done < <(grep '^PROBLEM ' <<<"$blog_out" || true)
+  echo "Blog front matter: ${blog_pairs:-0} pair(s) checked."
+fi
 
 echo ""
 echo "Slug parity: $checked pair(s) checked."

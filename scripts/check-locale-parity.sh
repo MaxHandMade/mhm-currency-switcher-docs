@@ -2,7 +2,7 @@
 # Locale parity for the Turkish translation.
 #
 # Docusaurus falls back to the source locale silently, so "the build is green"
-# says nothing about whether Turkish content exists. This asserts five things
+# says nothing about whether Turkish content exists. This asserts seven things
 # the build cannot:
 #
 #   1. every English doc has a Turkish file, and vice versa (recursive)
@@ -12,6 +12,9 @@
 #   3. the theme-classic translation files exist
 #   4. the built site links to /tr/ from the landing page
 #   5. the English landing page is not a stub
+#   6. every blog post has a Turkish twin, and vice versa (count printed)
+#   7. the Release Notes navbar/footer label exists in Turkish and differs
+#      from English
 #
 # LIMIT, deliberately recorded: an existing-but-untranslated Turkish file (an
 # English copy) passes. This proves a Turkish FILE exists for every page, not
@@ -23,7 +26,7 @@ set -euo pipefail
 
 EN_DIR="docs"
 TR_DIR="i18n/tr/docusaurus-plugin-content-docs/current"
-THEME_DIR="i18n/tr/docusaurus-theme-classic"
+THEME_DIR="${THEME_DIR:-i18n/tr/docusaurus-theme-classic}"
 CODE_JSON="i18n/tr/code.json"
 BUILD_DIR="${BUILD_DIR:-build}"
 
@@ -67,6 +70,33 @@ else
     [ -z "$f" ] && continue
     grep -qxF "$f" <<<"$en_list" || note "Turkish file has no English counterpart (it will never be built): $TR_DIR/${f#./}"
   done <<<"$tr_list"
+fi
+
+# --- 1b. blog post pairs -----------------------------------------------
+# Docusaurus serves the English post under /tr/blog when the Turkish file is
+# missing, without a word — the build cannot tell. Same two-way diff as the
+# docs above, over posts only (authors.yml and options.json are not posts).
+# The pair count is printed so "green" cannot mean "matched nothing".
+BLOG_EN_DIR="${BLOG_EN_DIR:-blog}"
+BLOG_TR_DIR="${BLOG_TR_DIR:-i18n/tr/docusaurus-plugin-content-blog}"
+if [ -d "$BLOG_EN_DIR" ]; then
+  ben="$(cd "$BLOG_EN_DIR" && find . -type f \( -name '*.md' -o -name '*.mdx' \) | sort)"
+  btr=""
+  [ -d "$BLOG_TR_DIR" ] && btr="$(cd "$BLOG_TR_DIR" && find . -type f \( -name '*.md' -o -name '*.mdx' \) | sort)"
+  blog_pairs=0
+  while IFS= read -r f; do
+    [ -z "$f" ] && continue
+    if grep -qxF "$f" <<<"$btr"; then
+      blog_pairs=$((blog_pairs + 1))
+    else
+      note "no Turkish post for $BLOG_EN_DIR/${f#./}"
+    fi
+  done <<<"$ben"
+  while IFS= read -r f; do
+    [ -z "$f" ] && continue
+    grep -qxF "$f" <<<"$ben" || note "Turkish post has no English counterpart: $BLOG_TR_DIR/${f#./}"
+  done <<<"$btr"
+  echo "Blog pairs: $blog_pairs"
 fi
 
 # --- 2. code.json present, no empty messages, actually translated ------
@@ -159,6 +189,31 @@ fi
 # --- 3. theme translations present -------------------------------------
 if [ ! -d "$THEME_DIR" ] || [ -z "$(find "$THEME_DIR" -name '*.json' -print -quit)" ]; then
   note "$THEME_DIR has no translation files — navbar and footer stay English under /tr/."
+fi
+
+# --- 3b. the Release Notes label is translated -------------------------
+# Assertion 3 only asks whether ANY theme json exists. A navbar/footer item
+# added without its Turkish key keeps CI green and leaves the /tr/ menu in
+# English. Checked only once a blog exists, since only then is the item there.
+if [ -d "$BLOG_EN_DIR" ]; then
+  menu_out="$(node -e '
+    const path = require("path");
+    const dir = process.argv[1];
+    const want = [["navbar.json", "item.label.Release Notes"], ["footer.json", "link.item.label.Release Notes"]];
+    const bad = [];
+    for (const [file, key] of want) {
+      let j;
+      try { j = require(path.resolve(dir, file)); } catch (e) { bad.push(file + ": unreadable (" + e.message + ")"); continue; }
+      const m = j[key] && j[key].message;
+      if (typeof m !== "string" || m.trim() === "") bad.push(file + ": missing \"" + key + "\"");
+      else if (m === "Release Notes") bad.push(file + ": \"" + key + "\" is still English");
+    }
+    process.stdout.write(bad.join("\n"));
+  ' "$THEME_DIR" 2>&1)" || menu_out="node failed: $menu_out"
+  if [ -n "$menu_out" ]; then
+    note "the Release Notes label is not translated under /tr/:"
+    echo "$menu_out" | sed 's/^/       /'
+  fi
 fi
 
 # --- 4 & 5. built-output assertions ------------------------------------
