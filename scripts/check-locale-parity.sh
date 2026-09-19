@@ -195,6 +195,9 @@ fi
 # Assertion 3 only asks whether ANY theme json exists. A navbar/footer item
 # added without its Turkish key keeps CI green and leaves the /tr/ menu in
 # English. Checked only once a blog exists, since only then is the item there.
+# LIMIT, deliberately recorded: the label "Release Notes" is written here, not
+# read from docusaurus.config.js (an ES module; this gate would need a loader
+# to import it). Renaming the navbar/footer label means renaming it here too.
 if [ -d "$BLOG_EN_DIR" ]; then
   menu_out="$(node -e '
     const path = require("path");

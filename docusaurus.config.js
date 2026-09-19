@@ -40,9 +40,16 @@ const config = {
           routeBasePath: 'docs',
         },
         blog: {
+          // The navbar calls it Release Notes; without these the English
+          // list page is titled "Blog" and both feeds "MHM Currency Switcher
+          // Blog". Turkish overrides title/description in
+          // i18n/tr/docusaurus-plugin-content-blog/options.json.
+          blogTitle: 'Release Notes',
+          blogDescription: 'MHM Currency Switcher release notes',
           showReadingTime: true,
           feedOptions: {
             type: ['rss', 'atom'],
+            title: 'MHM Currency Switcher Release Notes',
             xslt: true,
           },
           onInlineTags: 'warn',

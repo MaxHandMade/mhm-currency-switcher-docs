@@ -21,12 +21,12 @@ MHM Currency Switcher is now listed on WordPress.org, and 2.1.0 is the version i
 ## Quieter notices, in the right place
 
 - The two cache-compatibility warnings can be snoozed. Snoozing clears a warning only for the problem detected at that moment: if a new, different cache problem appears later, the warning comes back instead of staying silent for good. *Later: in 2.2.1 a snooze holds until the warning clears — see the [2.2.1 notes](/blog/currency-switcher-v2.2.1-release).*
-- The WooCommerce-missing notice and the two cache warnings now appear only on the screens where they belong instead of on every admin screen, and only to people who can act on them: users who can install plugins for the first, users who can manage WooCommerce for the other two.
+- The WooCommerce-missing notice and the two cache warnings now appear only on the screens where they belong instead of on every admin screen, and only to people who can act on them: users who can activate plugins for the first, users who can manage WooCommerce for the other two.
 
 ## Also in this release
 
 - The settings migration for installs that never updated past the 2026-03 release was removed, together with the matching old-option branches in the uninstall routine. Every version released since 1.0.0 (2026-07) is unaffected.
 - The last `mhm-cs-`, `mhm_cs_` and `mhm_currency_switcher_` names left in the plugin were renamed to the `mhmcs` prefix.
-- The release package no longer includes the `languages/` folder. *Later: 2.2.1 puts the Turkish translation back into the plugin — see the [2.2.1 notes](/blog/currency-switcher-v2.2.1-release).*
+- The release package no longer includes the compiled translation files. *Later: 2.2.1 puts the Turkish translation back into the plugin — see the [2.2.1 notes](/blog/currency-switcher-v2.2.1-release).*
 
 [2.1.0 on GitHub](https://github.com/MaxHandMade/mhm-currency-switcher/releases/tag/v2.1.0)

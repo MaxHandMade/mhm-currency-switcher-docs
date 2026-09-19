@@ -21,12 +21,12 @@ MHM Currency Switcher artık WordPress.org'da listeleniyor ve oraya 2.1.0 ile ge
 ## Daha sessiz, doğru yerde duran bildirimler
 
 - İki önbellek uyumluluğu uyarısı artık ertelenebiliyor. Ertelemek uyarıyı yalnızca o an algılanan sorun için kaldırır: sonradan farklı, yeni bir önbellek sorunu çıkarsa uyarı sonsuza dek susmak yerine geri gelir. *Sonra: 2.2.1'de erteleme, uyarı kalkana kadar tutuyor — bkz. [2.2.1 notları](/blog/currency-switcher-v2.2.1-release).*
-- WooCommerce-yok bildirimi ve iki önbellek uyarısı artık her yönetim ekranında değil, yalnızca ait oldukları ekranlarda görünüyor; ve yalnızca üzerlerinde işlem yapabilecek kişilere: ilki için eklenti kurabilen kullanıcılara, diğer ikisi için WooCommerce'i yönetebilen kullanıcılara.
+- WooCommerce-yok bildirimi ve iki önbellek uyarısı artık her yönetim ekranında değil, yalnızca ait oldukları ekranlarda görünüyor; ve yalnızca üzerlerinde işlem yapabilecek kişilere: ilki için eklenti etkinleştirebilen kullanıcılara, diğer ikisi için WooCommerce'i yönetebilen kullanıcılara.
 
 ## Bu sürümde ayrıca
 
 - 2026-03 sürümünden sonra hiç güncellenmemiş kurulumlar için olan ayar geçişi, kaldırma rutinindeki eşleşen eski ayar kollarıyla birlikte kaldırıldı. 1.0.0'dan (2026-07) bu yana çıkan her sürüm etkilenmez.
 - Eklentide kalan son `mhm-cs-`, `mhm_cs_` ve `mhm_currency_switcher_` adları `mhmcs` önekine taşındı.
-- Sürüm paketi artık `languages/` klasörünü içermiyor. *Sonra: 2.2.1 Türkçe çeviriyi eklentiye geri koydu — bkz. [2.2.1 notları](/blog/currency-switcher-v2.2.1-release).*
+- Sürüm paketi artık derlenmiş çeviri dosyalarını içermiyor. *Sonra: 2.2.1 Türkçe çeviriyi eklentiye geri koydu — bkz. [2.2.1 notları](/blog/currency-switcher-v2.2.1-release).*
 
 [GitHub'da 2.1.0](https://github.com/MaxHandMade/mhm-currency-switcher/releases/tag/v2.1.0)

@@ -47,12 +47,19 @@ function walk(dir) {
   });
 }
 
+// Returns the parsed front matter, null when there is none, or
+// { __yamlError: reason } when it is not valid YAML — a broken post is a
+// finding to name, not a crash that hides which file it was.
 function frontMatter(file) {
   const text = fs.readFileSync(file, 'utf8').replace(/^﻿/, '');
   const m = text.match(/^---\r?\n([\s\S]*?)\r?\n---\r?\n/);
   if (!m) return null;
-  const data = yaml.load(m[1]);
-  return data && typeof data === 'object' ? data : {};
+  try {
+    const data = yaml.load(m[1]);
+    return data && typeof data === 'object' ? data : {};
+  } catch (e) {
+    return { __yamlError: e.reason || e.message };
+  }
 }
 
 function norm(key, value) {
@@ -87,6 +94,11 @@ for (const en of posts) {
   const b = frontMatter(tr);
   if (!a || !b) {
     problems.push(rel + ': no front matter on ' + (!a && !b ? 'EN+TR' : !a ? 'EN' : 'TR'));
+    continue;
+  }
+  if (a.__yamlError || b.__yamlError) {
+    if (a.__yamlError) problems.push(rel + ': EN front matter is not valid YAML — ' + a.__yamlError);
+    if (b.__yamlError) problems.push(rel + ': TR front matter is not valid YAML — ' + b.__yamlError);
     continue;
   }
   for (const k of KEYS) {
