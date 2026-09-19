@@ -39,6 +39,10 @@
     "message": "CSS Sınıfları",
     "description": "The label of footer link with label=CSS classes linking to /docs/css"
   },
+  "link.item.label.Release Notes": {
+    "message": "Sürüm Notları",
+    "description": "The label of footer link with label=Release Notes linking to /blog"
+  },
   "link.item.label.GitHub Repository": {
     "message": "GitHub Deposu",
     "description": "The label of footer link with label=GitHub Repository linking to https://github.com/MaxHandMade/mhm-currency-switcher"

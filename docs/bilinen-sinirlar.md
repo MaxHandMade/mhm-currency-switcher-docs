@@ -6,7 +6,9 @@ slug: /known-limits
 
 # Known limits
 
-These are consequences of how cache compatibility mode works, not defects. They're listed here so you can decide with your eyes open.
+These are consequences of how the plugin works, not defects. They're listed here so you can decide with your eyes open.
+
+## Cache compatibility mode
 
 ### Turning the mode off does not restore the exact 1.0.0 behaviour
 
@@ -51,3 +53,9 @@ An order is stored in the currency the customer paid in, and WooCommerce Analyti
 ### Logged-in visitors are converted on the server
 
 Logged-in visitors take the server-side path, which is correct as long as your cache does what nearly all of them do and never serves cached pages to logged-in users. An edge cache or CDN configured to cache without looking at cookies is the exception, and there a logged-in visitor's converted page can be stored and served on. If you cache at the edge, confirm it varies on the login cookie.
+
+## Other limits
+
+### On WordPress 6.6 and 6.7, part of the plugin stays in English
+
+The settings screen is Turkish on every supported version, because it loads its own translation file directly. Everything else the plugin writes through PHP — such as the menu label, admin notices, the **Currency Prices** tab on the product edit screen, error messages returned by the plugin's REST routes and its box under **Appearance > Menus** — relies on WordPress finding the plugin's `languages` folder by itself, and WordPress only does that from 6.8. Your storefront is not affected: the switcher shows currency names from WooCommerce's own translation. Updating WordPress to 6.8 or later makes the whole plugin Turkish.

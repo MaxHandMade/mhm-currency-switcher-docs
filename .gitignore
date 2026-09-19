@@ -12,6 +12,8 @@
 
 !docs/
 !docs/**
+!blog/
+!blog/**
 !i18n/
 !i18n/**
 !src/

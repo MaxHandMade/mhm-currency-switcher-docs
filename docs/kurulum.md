@@ -45,5 +45,9 @@ Your store's base currency always comes from WooCommerce's own settings (**WooCo
 
 Unsaved changes show a bar at the top of the screen. **Save Changes** appears both in that bar and at the bottom of the page, and saves all four tabs in one request.
 
+## Languages
+
+The plugin ships in English and Turkish. On a site whose language is Turkish and that runs WordPress 6.8 or later, the whole plugin appears in Turkish; on 6.6 and 6.7 part of it stays in English — see [Known limits](/docs/known-limits). Translations into other languages are made on [translate.wordpress.org](https://translate.wordpress.org/projects/wp-plugins/mhm-currency-switcher/), where anyone with a WordPress.org account can contribute.
+
 The full FAQ is on the [FAQ](/docs/faq) page; the full list of known limits is
 on the [Known limits](/docs/known-limits) page.

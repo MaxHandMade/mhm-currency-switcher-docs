@@ -10,5 +10,9 @@
   "item.label.GitHub": {
     "message": "GitHub",
     "description": "Navbar item with label GitHub"
+  },
+  "item.label.Release Notes": {
+    "message": "Sürüm Notları",
+    "description": "Navbar item with label Release Notes"
   }
 }

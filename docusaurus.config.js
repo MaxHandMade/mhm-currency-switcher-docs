@@ -39,7 +39,23 @@ const config = {
           sidebarPath: './sidebars.js',
           routeBasePath: 'docs',
         },
-        blog: false,
+        blog: {
+          // The navbar calls it Release Notes; without these the English
+          // list page is titled "Blog" and both feeds "MHM Currency Switcher
+          // Blog". Turkish overrides title/description in
+          // i18n/tr/docusaurus-plugin-content-blog/options.json.
+          blogTitle: 'Release Notes',
+          blogDescription: 'MHM Currency Switcher release notes',
+          showReadingTime: true,
+          feedOptions: {
+            type: ['rss', 'atom'],
+            title: 'MHM Currency Switcher Release Notes',
+            xslt: true,
+          },
+          onInlineTags: 'warn',
+          onInlineAuthors: 'warn',
+          onUntruncatedBlogPosts: 'warn',
+        },
         theme: { customCss: './src/css/custom.css' },
       }),
     ],
@@ -50,6 +66,7 @@ const config = {
       title: 'MHM Currency Switcher',
       items: [
         { type: 'docSidebar', sidebarId: 'docsSidebar', position: 'left', label: 'Docs' },
+        { to: '/blog', label: 'Release Notes', position: 'left' },
         { type: 'localeDropdown', position: 'right' },
         {
           href: 'https://github.com/MaxHandMade/mhm-currency-switcher',
@@ -75,6 +92,7 @@ const config = {
             { label: 'FAQ', to: '/docs/faq' },
             { label: 'Known limits', to: '/docs/known-limits' },
             { label: 'CSS classes', to: '/docs/css' },
+            { label: 'Release Notes', to: '/blog' },
           ],
         },
         {
@@ -104,13 +122,11 @@ const config = {
   plugins: [
     [
       require.resolve('@easyops-cn/docusaurus-search-local'),
-      // indexBlog defaults to true (validateOptions.js), so the plugin scans
-      // blog/ and warns twice per build — once per locale — for a directory
-      // that cannot exist: the preset above sets `blog: false`. Flip this back
-      // to true in the same change that creates the blog (Faz B, Şerit 6);
-      // leaving it false with a blog present would silently drop release posts
-      // out of search.
-      { hashed: true, language: ['en', 'tr'], indexBlog: false },
+      // The blog exists (Faz B, Şerit 6), so indexBlog is true: release posts
+      // must be findable. It defaulted to true anyway (validateOptions.js); it
+      // was false only while `blog: false` made blog/ a directory that could
+      // not exist, which made the plugin warn twice per build.
+      { hashed: true, language: ['en', 'tr'], indexBlog: true },
     ],
     [
       require.resolve('@docusaurus/plugin-client-redirects'),

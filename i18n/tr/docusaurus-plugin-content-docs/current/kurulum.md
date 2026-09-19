@@ -46,3 +46,7 @@ Eklentinin yönetim ekranı dört sekmeden oluşur:
 | **Nasıl kullanılır** | Dönüştürücünün sitenize nerelerde yerleştirilebileceğini gösteren kopyalanabilir kod örnekleri |
 
 Değişiklikleriniz kaydedilmemişse sayfanın üstünde bir uyarı çubuğu belirir. **Değişiklikleri Kaydet** düğmesi hem bu çubukta hem de sayfanın altında bulunur ve dört sekmedeki tüm değişiklikleri tek seferde kaydeder.
+
+## Diller
+
+Eklenti İngilizce ve Türkçe gelir. Dili Türkçe olan ve WordPress 6.8 ya da üstünü çalıştıran bir sitede eklentinin tamamı Türkçe görünür; 6.6 ve 6.7'de bir kısmı İngilizce kalır — bkz. [Bilinen Sınırlar](/docs/known-limits). Başka dillere çeviriler [translate.wordpress.org](https://translate.wordpress.org/projects/wp-plugins/mhm-currency-switcher/) üzerinde yapılır; WordPress.org hesabı olan herkes katkıda bulunabilir.

@@ -6,7 +6,9 @@ slug: /known-limits
 
 # Bilinen Sınırlar
 
-Bunlar önbellek uyumluluğu modunun nasıl çalıştığının sonuçlarıdır, kusur değildir. Gözünüz açık karar verebilmeniz için burada listelenmiştir.
+Bunlar eklentinin nasıl çalıştığının sonuçlarıdır, kusur değildir. Gözünüz açık karar verebilmeniz için burada listelenmiştir.
+
+## Önbellek uyumluluğu modu
 
 ### Modu kapatmak, tam olarak 1.0.0 davranışını geri getirmez
 
@@ -51,3 +53,9 @@ Bir sipariş, müşterinin ödediği para biriminde saklanır ve WooCommerce Ana
 ### Oturum açmış ziyaretçiler sunucuda çevrilir
 
 Oturum açmış ziyaretçiler sunucu tarafı yolu izler; bu, önbelleğiniz neredeyse hepsinin yaptığı gibi davranıp oturum açmış kullanıcılara asla önbelleğe alınmış sayfa sunmadığı sürece doğrudur. Çerezlere bakmadan önbelleğe alan bir kenar (edge) önbelleği veya CDN bir istisnadır ve orada oturum açmış bir ziyaretçinin çevrilmiş sayfası saklanıp başkalarına sunulabilir. Kenarda önbelleğe alıyorsanız, oturum çerezine göre farklılaştığını (vary) doğrulayın.
+
+## Diğer sınırlar
+
+### WordPress 6.6 ve 6.7'de eklentinin bir kısmı İngilizce kalır
+
+Ayarlar ekranı desteklenen her sürümde Türkçedir, çünkü kendi çeviri dosyasını doğrudan yükler. Eklentinin PHP üzerinden yazdığı her şey ise — örneğin menü etiketi, yönetici bildirimleri, ürün düzenleme ekranındaki **Para Birimi Fiyatları** sekmesi, eklentinin REST rotalarının döndürdüğü hata mesajları ve **Görünüm > Menüler** altındaki kutusu — WordPress'in eklentinin `languages` klasörünü kendiliğinden bulmasına bağlıdır; WordPress bunu ancak 6.8'den itibaren yapar. Vitrininiz etkilenmez: switcher para birimi adlarını WooCommerce'in kendi çevirisinden gösterir. WordPress'i 6.8 veya üstüne güncellemek eklentinin tamamını Türkçe yapar.
