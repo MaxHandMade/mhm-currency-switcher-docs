@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkmhm_currency_switcher_docs=self.webpackChunkmhm_currency_switcher_docs||[]).push([["3220"],{1912(r){r.exports=JSON.parse('{"blogBasePath":"/mhm-currency-switcher-docs/tr/blog","blogTitle":"S\xfcr\xfcm Notlar\u0131","authorsListPath":"/mhm-currency-switcher-docs/tr/blog/authors"}')}}]);

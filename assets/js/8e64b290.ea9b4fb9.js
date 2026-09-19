@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkmhm_currency_switcher_docs=self.webpackChunkmhm_currency_switcher_docs||[]).push([["9000"],{5109(e){e.exports=JSON.parse('{"metadata":{"permalink":"/mhm-currency-switcher-docs/blog","page":1,"postsPerPage":10,"totalPages":1,"totalCount":3,"blogDescription":"MHM Currency Switcher release notes","blogTitle":"Release Notes"}}')}}]);

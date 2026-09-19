@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkmhm_currency_switcher_docs=self.webpackChunkmhm_currency_switcher_docs||[]).push([["2537"],{768(a){a.exports=JSON.parse('{"authors":[{"name":"MaxHandMade","title":"Maintainer","url":"https://github.com/MaxHandMade","imageURL":"https://github.com/MaxHandMade.png","key":"maxhandmade","page":null,"count":3}]}')}}]);

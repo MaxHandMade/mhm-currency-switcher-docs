@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?><?xml-stylesheet type="text/xsl" href="rss.xsl"?>
+<rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+    <channel>
+        <title>MHM Currency Switcher Release Notes</title>
+        <link>https://MaxHandMade.github.io/mhm-currency-switcher-docs/tr/blog</link>
+        <description>MHM Currency Switcher Blog</description>
+        <lastBuildDate>Fri, 18 Sep 2026 20:07:00 GMT</lastBuildDate>
+        <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
+        <generator>https://github.com/jpmonette/feed</generator>
+        <language>tr</language>
+        <item>
+            <title><![CDATA[Currency Switcher 2.2.1 — Türkçe eklentinin içinde, önbellek uyarıları yerinde]]></title>
+            <link>https://MaxHandMade.github.io/mhm-currency-switcher-docs/tr/blog/currency-switcher-v2.2.1-release</link>
+            <guid>https://MaxHandMade.github.io/mhm-currency-switcher-docs/tr/blog/currency-switcher-v2.2.1-release</guid>
+            <pubDate>Fri, 18 Sep 2026 20:07:00 GMT</pubDate>
+            <description><![CDATA[2.2.1 gözle görülen iki şeyi düzeltiyor. Türkçe bir sitede eklenti İngilizce görünüyordu, ve iki önbellek uyumluluğu uyarısı sürekli kalkıp geri geliyordu. İkisi de düzeldi; güncellemeden sonra yapmanız gereken bir şey yok.]]></description>
+            <content:encoded><![CDATA[<p>2.2.1 gözle görülen iki şeyi düzeltiyor. Türkçe bir sitede eklenti İngilizce görünüyordu, ve iki önbellek uyumluluğu uyarısı sürekli kalkıp geri geliyordu. İkisi de düzeldi; güncellemeden sonra yapmanız gereken bir şey yok.</p>
+<!-- -->
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="türkçe-çeviri-eklentiyle-birlikte-geliyor">Türkçe çeviri eklentiyle birlikte geliyor<a href="https://maxhandmade.github.io/mhm-currency-switcher-docs/tr/blog/currency-switcher-v2.2.1-release#t%C3%BCrk%C3%A7e-%C3%A7eviri-eklentiyle-birlikte-geliyor" class="hash-link" aria-label="Türkçe çeviri eklentiyle birlikte geliyor doğrudan bağlantı" title="Türkçe çeviri eklentiyle birlikte geliyor doğrudan bağlantı" translate="no">​</a></h2>
+<p>WordPress.org'dan kurulan eklenti Türkçe bir sitede İngilizce görünüyordu: sürüm paketi derlenmiş çeviri dosyalarını dışarıda bırakmıştı ve onların yerini alacak bir WordPress.org dil paketi yoktu. Dosyalar pakete geri döndü. WordPress 6.8 ve üstünde eklentinin tamamı Türkçe. 6.6 ve 6.7'de ayarlar ekranı Türkçe, ama eklentinin PHP kodundan gelen metinler, örneğin menü etiketi, İngilizce kalıyor — bkz. <a class="" href="https://maxhandmade.github.io/mhm-currency-switcher-docs/tr/docs/known-limits">Bilinen Sınırlar</a>. Başka diller <a href="https://translate.wordpress.org/projects/wp-plugins/mhm-currency-switcher/" target="_blank" rel="noopener noreferrer" class="">translate.wordpress.org</a> üzerinden eklenebilir.</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="önbellek-uyarıları-artık-gelip-gitmiyor">Önbellek uyarıları artık gelip gitmiyor<a href="https://maxhandmade.github.io/mhm-currency-switcher-docs/tr/blog/currency-switcher-v2.2.1-release#%C3%B6nbellek-uyar%C4%B1lar%C4%B1-art%C4%B1k-gelip-gitmiyor" class="hash-link" aria-label="Önbellek uyarıları artık gelip gitmiyor doğrudan bağlantı" title="Önbellek uyarıları artık gelip gitmiyor doğrudan bağlantı" translate="no">​</a></h2>
+<p>İki önbellek uyumluluğu uyarısı, sorunu gösteremeyen bir sayfa işlendiğinde — bir müşterinin sepeti açması ya da sizin mağazayı oturum açıkken gezmeniz — bütün yöneticilerin ertelemesiyle birlikte kalkıyor ve bir sonraki sayfa görüntülemesi onları geri getiriyordu. Artık her kontrol üç cevaptan birine varıyor: sorun var, sayfa temiz ya da bu sayfa karar veremez. Uyarı, sorunun ilk görüldüğü sayfayı göstermeye devam ediyor ve yalnızca aynı sayfa sorunsuz işlendiğinde, o sayfa artık olmadığında ya da önbellek uyumluluğunu kapatıp kaydettiğinizde kalkıyor. <strong>Bu değişene kadar ertele</strong> artık tutuyor ve iki uyarı da ne zaman kalkacağını söylüyor. Her uyarının nasıl çalıştığı <a class="" href="https://maxhandmade.github.io/mhm-currency-switcher-docs/tr/docs/faq">SSS</a> sayfasında anlatılıyor.</p>
+<p><a href="https://github.com/MaxHandMade/mhm-currency-switcher/releases/tag/v2.2.1" target="_blank" rel="noopener noreferrer" class="">GitHub'da 2.2.1</a></p>]]></content:encoded>
+            <category>release</category>
+            <category>currency-switcher</category>
+            <category>translation</category>
+            <category>cache</category>
+        </item>
+        <item>
+            <title><![CDATA[Currency Switcher 2.2.0 — Ziyaretçi IP adresleri artık sunucunuzdan çıkmıyor]]></title>
+            <link>https://MaxHandMade.github.io/mhm-currency-switcher-docs/tr/blog/currency-switcher-v2.2.0-release</link>
+            <guid>https://MaxHandMade.github.io/mhm-currency-switcher-docs/tr/blog/currency-switcher-v2.2.0-release</guid>
+            <pubDate>Mon, 07 Sep 2026 13:25:00 GMT</pubDate>
+            <description><![CDATA[2.2.0 bir gizlilik düzeltmesi. Yerel MaxMind veritabanı olmayan bir mağazada konum algılama, her yeni ziyaretçinin IP adresini uzak bir konum servisine gönderebiliyordu. Artık gönderemez. Konum algılama yeni kurulumlarda da varsayılan olarak kapalı geliyor. Ona güveniyorsanız son bölümü okuyun: bazı mağazalarda çalışmaya devam etmesi için artık tek bir ayar gerekiyor.]]></description>
+            <content:encoded><![CDATA[<p>2.2.0 bir gizlilik düzeltmesi. Yerel MaxMind veritabanı olmayan bir mağazada konum algılama, her yeni ziyaretçinin IP adresini uzak bir konum servisine gönderebiliyordu. Artık gönderemez. Konum algılama yeni kurulumlarda da varsayılan olarak kapalı geliyor. Ona güveniyorsanız son bölümü okuyun: bazı mağazalarda çalışmaya devam etmesi için artık tek bir ayar gerekiyor.</p>
+<!-- -->
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="ne-değişti">Ne değişti<a href="https://maxhandmade.github.io/mhm-currency-switcher-docs/tr/blog/currency-switcher-v2.2.0-release#ne-de%C4%9Fi%C5%9Fti" class="hash-link" aria-label="Ne değişti doğrudan bağlantı" title="Ne değişti doğrudan bağlantı" translate="no">​</a></h2>
+<p>Eklenti, ziyaretçinin para birimini algılamak için WooCommerce'e ziyaretçinin hangi ülkede olduğunu sorar. WooCommerce'in yerel bir MaxMind veritabanı yoksa bu soru uzak bir konum servisine düşebiliyor ve o servis ziyaretçinin IP adresini alıyordu. WooCommerce'in kendi vitrin kodu bu yedeği kapatır; bu eklenti ise aynı işlevi varsayılan ayarlarıyla çağırdığı için bu özellikte yedek açık kalıyordu. 2.2.0 onu da kapatıyor. Algılama artık yalnızca CloudFlare'in ülke başlığını ya da kendi sunucunuzdaki bir MaxMind veritabanını kullanıyor — <strong>ziyaretçiye dair hiçbir şey sunucunuzdan çıkmıyor</strong>.</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="konum-algılama-yeni-kurulumlarda-kapalı-başlıyor">Konum algılama yeni kurulumlarda kapalı başlıyor<a href="https://maxhandmade.github.io/mhm-currency-switcher-docs/tr/blog/currency-switcher-v2.2.0-release#konum-alg%C4%B1lama-yeni-kurulumlarda-kapal%C4%B1-ba%C5%9Fl%C4%B1yor" class="hash-link" aria-label="Konum algılama yeni kurulumlarda kapalı başlıyor doğrudan bağlantı" title="Konum algılama yeni kurulumlarda kapalı başlıyor doğrudan bağlantı" translate="no">​</a></h2>
+<p>Ziyaretçinin ülkesini IP adresinden çıkarmak bir veri işleme olduğu için yeni bir kurulumda artık <strong>Gelişmiş</strong> sekmesinden bilerek açtığınız bir özellik. <strong>Güncelleyen mağazalar daha önce seçtikleri ayarı korur</strong> — sizin yerinize hiçbir şey kapatılmaz.</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="️-konum-algılamayı-cloudflare-veya-maxmind-olmadan-kullanıyorsanız">⚠️ Konum algılamayı CloudFlare veya MaxMind olmadan kullanıyorsanız<a href="https://maxhandmade.github.io/mhm-currency-switcher-docs/tr/blog/currency-switcher-v2.2.0-release#%EF%B8%8F-konum-alg%C4%B1lamay%C4%B1-cloudflare-veya-maxmind-olmadan-kullan%C4%B1yorsan%C4%B1z" class="hash-link" aria-label="⚠️ Konum algılamayı CloudFlare veya MaxMind olmadan kullanıyorsanız doğrudan bağlantı" title="⚠️ Konum algılamayı CloudFlare veya MaxMind olmadan kullanıyorsanız doğrudan bağlantı" translate="no">​</a></h2>
+<p>Algılama artık uzak bir servise sormak yerine sonuç bulamayacak ve ziyaretçiler bir para birimi seçene kadar ana para biriminizi görecek. Özelliği korumak için <strong>WooCommerce &gt; Ayarlar &gt; Entegrasyon &gt; MaxMind Geolocation</strong> altına ücretsiz bir MaxMind GeoLite2 lisans anahtarı ekleyin. WooCommerce veritabanını indirip güncel tutar ve her sorgu kendi sunucunuzda yapılır. Gelişmiş sekmesi artık, ayar açık olsun ya da olmasın, konum algılamanın neye ihtiyaç duyduğunu söylüyor. Ayrıntılar: <a class="" href="https://maxhandmade.github.io/mhm-currency-switcher-docs/tr/docs/advanced-settings">Gelişmiş Ayarlar</a> ve <a class="" href="https://maxhandmade.github.io/mhm-currency-switcher-docs/tr/docs/currency-detection">Para Birimi Algılama Mekanizması</a>.</p>
+<p><a href="https://github.com/MaxHandMade/mhm-currency-switcher/releases/tag/v2.2.0" target="_blank" rel="noopener noreferrer" class="">GitHub'da 2.2.0</a></p>]]></content:encoded>
+            <category>release</category>
+            <category>currency-switcher</category>
+            <category>privacy</category>
+            <category>geolocation</category>
+        </item>
+        <item>
+            <title><![CDATA[Currency Switcher 2.1.0 — WordPress.org'da, her yerde tek önek]]></title>
+            <link>https://MaxHandMade.github.io/mhm-currency-switcher-docs/tr/blog/currency-switcher-v2.1.0-release</link>
+            <guid>https://MaxHandMade.github.io/mhm-currency-switcher-docs/tr/blog/currency-switcher-v2.1.0-release</guid>
+            <pubDate>Sun, 30 Aug 2026 15:27:00 GMT</pubDate>
+            <description><![CDATA[MHM Currency Switcher artık WordPress.org'da listeleniyor ve oraya 2.1.0 ile geldi; bundan sonra WordPress eklentinin güncellemelerini diğer eklentilerinki gibi sunuyor. Bu sürüm ayrıca, özel kodun dayanabileceği üç şeyi değiştiren bir adlandırma temizliğini tamamlıyor. Eklentiye karşı CSS, JavaScript ya da PHP yazdıysanız güncellemeden önce ilk bölümü okuyun.]]></description>
+            <content:encoded><![CDATA[<p>MHM Currency Switcher artık WordPress.org'da listeleniyor ve oraya 2.1.0 ile geldi; bundan sonra WordPress eklentinin güncellemelerini diğer eklentilerinki gibi sunuyor. Bu sürüm ayrıca, özel kodun dayanabileceği üç şeyi değiştiren bir adlandırma temizliğini tamamlıyor. Eklentiye karşı CSS, JavaScript ya da PHP yazdıysanız güncellemeden önce ilk bölümü okuyun.</p>
+<!-- -->
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="güncellemeden-önce-adı-ya-da-biçimi-değişen-üç-şey">Güncellemeden önce: adı ya da biçimi değişen üç şey<a href="https://maxhandmade.github.io/mhm-currency-switcher-docs/tr/blog/currency-switcher-v2.1.0-release#g%C3%BCncellemeden-%C3%B6nce-ad%C4%B1-ya-da-bi%C3%A7imi-de%C4%9Fi%C5%9Fen-%C3%BC%C3%A7-%C5%9Fey" class="hash-link" aria-label="Güncellemeden önce: adı ya da biçimi değişen üç şey doğrudan bağlantı" title="Güncellemeden önce: adı ya da biçimi değişen üç şey doğrudan bağlantı" translate="no">​</a></h2>
+<p><strong>CSS sınıfları.</strong> Switcher'ın kullandığı her sınıfın öneki <code>mhm-cs-</code>'den <code>mhmcs-</code>'ye değişti: <code>.mhm-cs-switcher</code> artık <code>.mhmcs-switcher</code>, <code>.mhm-cs-dropdown</code> artık <code>.mhmcs-dropdown</code>; diğer bütün sınıflar da böyle. Eski adlar için takma ad bırakılmadı, bu yüzden eski adlara göre yazılmış özel CSS veya JavaScript güncellemeden sonra eşleşmeyi bırakır. Tam liste <a class="" href="https://maxhandmade.github.io/mhm-currency-switcher-docs/tr/docs/css">CSS ile Özelleştirme</a> sayfasında.</p>
+<p><strong>Kur yedeği.</strong> Ana kur kaynağına ulaşılamadığında eklenti artık Avrupa Merkez Bankası'nın günlük referans kur akışına tek bir istek yapıyor. 2.0.0'da eklenen iki aşamalı zincir — önce Currency API, sonra Frankfurter — kaldırıldı. Kapsam değişmedi, yaklaşık otuz para birimi, çünkü ECB zaten eski zincirin son adımıydı. Kodunuz yedek adresi filtreliyorsa, <code>mhmcs_fallback_rates_url</code> filtresinin <code>$source</code> argümanı artık her zaman <code>ecb</code>. Bkz. <a class="" href="https://maxhandmade.github.io/mhm-currency-switcher-docs/tr/docs/managing-currencies">Para Birimlerini Yönet</a>.</p>
+<p><strong>Herkese açık kur ucu.</strong> Kimlik doğrulaması istemeyen <code>GET /mhmcs/v1/rates</code> REST rotası kaldırıldı; sayfanın fiyatlarında zaten görünen bilgiyi tekrarlıyordu. Ayarlar ekranının kullandığı kimlik doğrulamalı rotalar etkilenmedi. Bkz. <a class="" href="https://maxhandmade.github.io/mhm-currency-switcher-docs/tr/docs/rest-api">REST API Referansı</a>.</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="daha-sessiz-doğru-yerde-duran-bildirimler">Daha sessiz, doğru yerde duran bildirimler<a href="https://maxhandmade.github.io/mhm-currency-switcher-docs/tr/blog/currency-switcher-v2.1.0-release#daha-sessiz-do%C4%9Fru-yerde-duran-bildirimler" class="hash-link" aria-label="Daha sessiz, doğru yerde duran bildirimler doğrudan bağlantı" title="Daha sessiz, doğru yerde duran bildirimler doğrudan bağlantı" translate="no">​</a></h2>
+<ul>
+<li class="">İki önbellek uyumluluğu uyarısı artık ertelenebiliyor. Ertelemek uyarıyı yalnızca o an algılanan sorun için kaldırır: sonradan farklı, yeni bir önbellek sorunu çıkarsa uyarı sonsuza dek susmak yerine geri gelir. <em>Sonra: 2.2.1'de erteleme, uyarı kalkana kadar tutuyor — bkz. <a class="" href="https://maxhandmade.github.io/mhm-currency-switcher-docs/tr/blog/currency-switcher-v2.2.1-release">2.2.1 notları</a>.</em></li>
+<li class="">WooCommerce-yok bildirimi ve iki önbellek uyarısı artık her yönetim ekranında değil, yalnızca ait oldukları ekranlarda görünüyor; ve yalnızca üzerlerinde işlem yapabilecek kişilere: ilki için eklenti etkinleştirebilen kullanıcılara, diğer ikisi için WooCommerce'i yönetebilen kullanıcılara.</li>
+</ul>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="bu-sürümde-ayrıca">Bu sürümde ayrıca<a href="https://maxhandmade.github.io/mhm-currency-switcher-docs/tr/blog/currency-switcher-v2.1.0-release#bu-s%C3%BCr%C3%BCmde-ayr%C4%B1ca" class="hash-link" aria-label="Bu sürümde ayrıca doğrudan bağlantı" title="Bu sürümde ayrıca doğrudan bağlantı" translate="no">​</a></h2>
+<ul>
+<li class="">2026-03 sürümünden sonra hiç güncellenmemiş kurulumlar için olan ayar geçişi, kaldırma rutinindeki eşleşen eski ayar kollarıyla birlikte kaldırıldı. 1.0.0'dan (2026-07) bu yana çıkan her sürüm etkilenmez.</li>
+<li class="">Eklentide kalan son <code>mhm-cs-</code>, <code>mhm_cs_</code> ve <code>mhm_currency_switcher_</code> adları <code>mhmcs</code> önekine taşındı.</li>
+<li class="">Sürüm paketi artık derlenmiş çeviri dosyalarını içermiyor. <em>Sonra: 2.2.1 Türkçe çeviriyi eklentiye geri koydu — bkz. <a class="" href="https://maxhandmade.github.io/mhm-currency-switcher-docs/tr/blog/currency-switcher-v2.2.1-release">2.2.1 notları</a>.</em></li>
+</ul>
+<p><a href="https://github.com/MaxHandMade/mhm-currency-switcher/releases/tag/v2.1.0" target="_blank" rel="noopener noreferrer" class="">GitHub'da 2.1.0</a></p>]]></content:encoded>
+            <category>release</category>
+            <category>currency-switcher</category>
+            <category>css</category>
+            <category>rest-api</category>
+        </item>
+    </channel>
+</rss>
