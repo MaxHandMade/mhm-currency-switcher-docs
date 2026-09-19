@@ -54,7 +54,23 @@ Evet. Önbellek uyumluluğu modu açıkken, önbelleğe alınmış sayfalardaki 
 
 ### "Önbellek uyumluluğu uygulanmıyor" uyarısını görüyorum, bu ne demek?
 
-Bazı temalar ve eklentiler, header'da bir sepet toplamı göstermek için WooCommerce'in sepet sabitini her sayfada tanımlar. Bu olduğunda eklenti her sayfayı bir ödeme (checkout) sayfası gibi ele alır — çünkü müşterinin parası söz konusudur — ve fiyatları sunucuda çevirir; bu da önbellek uyumluluğu modunun tam olarak önlemeye çalıştığı şeydir. Sitede görünürde yanlış bir şey yoktur: sayfayı ilk yükleyen kişi için fiyatlar doğrudur, ardından bir sayfa önbelleği o kişinin para birimini herkese sunabilir. Görünür bir belirti olmadığı için eklenti bunu yönetim panelinde bildirir. Bildirim, bir ön yüz sayfası normal şekilde render edilir edilmez kendiliğinden temizlenir.
+Bazı temalar ve eklentiler, header'da bir sepet toplamı göstermek için WooCommerce'in sepet sabitini her sayfada tanımlar. Bu olduğunda eklenti her sayfayı bir ödeme (checkout) sayfası gibi ele alır — çünkü müşterinin parası söz konusudur — ve fiyatları sunucuda çevirir; bu da önbellek uyumluluğu modunun tam olarak önlemeye çalıştığı şeydir. Sitede görünürde yanlış bir şey yoktur: sayfayı ilk yükleyen kişi için fiyatlar doğrudur, ardından bir sayfa önbelleği o kişinin para birimini herkese sunabilir. Görünür bir belirti olmadığı için eklenti bunu yönetim panelinde bildirir.
+
+**Hangi sayfayı gösterir.** Uyarı, sorunun ilk görüldüğü sayfayı adıyla söyler (yalnız yol; sorgu dizesi olmadan) ve sorun sürdükçe başka sayfalarda da aynı sorun görülse bile o sayfayı göstermeye devam eder. Gerçek sepet ya da ödeme sayfasına yapılan bir ziyaret iki yönde de sayılmaz: sabit orada zaten meşru olarak tanımlıdır.
+
+**Ne zaman kalkar.** Aynı sayfa yeniden normal şekilde işlendiğinde, o sayfa artık yoksa (sayfaya yapılan istek "bulunamadı" döndüğünde) ya da önbellek uyumluluğunu kapatıp kaydettiğiniz anda. Sayfa önbelleğinizden sunulan bir kopya eklentinin sunucudaki denetimine hiç ulaşmaz; bu yüzden temayı düzelttikten sonra önbelleği temizleyin.
+
+**Kim görür, nerede görünür.** Yalnızca WooCommerce'i yönetebilen kullanıcılara ve yalnızca üç ekranda gösterilir: bu eklentinin ayarlar sayfası, **WooCommerce > Ayarlar** ve **WooCommerce > Durum**.
+
+**Ertelemek.** **Bu değişene kadar ertele** düğmesi uyarıyı yalnızca sizin için gizler — WooCommerce'i yönetebilen diğer kullanıcılar görmeye devam eder — ve uyarı kalkana kadar geçerlidir. Sorun bundan sonra yeniden ortaya çıkarsa uyarı, aynı sayfa için bile yeniden gösterilir.
+
+### "Mini sepet ana para biriminde takılı kaldı" uyarısını görüyorum, bu ne demek?
+
+Önbelleğe alınan bir sayfada mini sepet önce ana para biriminizde basılır, ardından WooCommerce'in `wc-cart-fragments` betiği onu yeniler. Bu yenileme sunucudan geçer; çeviri de orada yapılır. Temalar ve optimizasyon eklentileri hız için bu betiği sık sık kaldırır. Kaldırdıklarında sayfadaki diğer tüm fiyatlar tarayıcıda çevrilir, ama mini sepet toplamı ana para biriminde kalır.
+
+Uyarı yalnızca dört koşulun hepsi birden sağlandığında görünür: önbellek uyumluluğu açık, sayfa önbelleğe alınan türden (oturum açmamış bir ziyaretçi; sepet, ödeme ya da hesap sayfası olmayan bir sayfa), gerçekten bir mini sepet basılmış ve WordPress betiği o sayfaya basmamış. Mini sepeti olmayan bir mağaza, betik kaldırılmış olsa bile bu uyarıyı hiç görmez. Düzeltmek için betiğin yeniden yüklenmesine izin verin ya da mini sepeti önbelleğe alınan sayfalardan kaldırın.
+
+Bir sayfayı adıyla söyler; yukarıdaki önbellek uyumluluğu uyarısıyla aynı kişilere, aynı ekranlarda gösterilir ve aynı şekilde ertelenir. Aynı sayfa, oturum açmamış bir ziyaretçi için betik yüklenmiş olarak işlendiğinde — ya da mini sepeti kaldırdıysanız, sepetinde ürün bulunan oturum açmamış bir ziyaretçi için işlendiğinde — ya da önbellek uyumluluğunu kapatıp kaydettiğiniz anda kendiliğinden kalkar. Kendi mağazanızı oturum açıkken gezmeniz onu hiçbir zaman kaldırmaz, çünkü o görüntüleme önbelleğin sakladığı görüntüleme değildir; sepet sabitinin tanımlı olduğu her sayfada da — yukarıdaki uyarının bildirdiği sorun — hiçbir işleme önbelleğe alınabilir sayılmaz, bu yüzden önce onu düzeltin. Öteki uyarıda olduğu gibi, düzelttikten sonra sayfa önbelleğinizi temizleyin.
 
 ### Yapılandırılmış veri (structured data) neden sayfadaki fiyattan farklı bir para birimi gösteriyor?
 
