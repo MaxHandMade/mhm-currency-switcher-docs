@@ -8,7 +8,7 @@ date: 2026-08-30T15:27
 
 MHM Currency Switcher is now listed on WordPress.org, and 2.1.0 is the version it arrived with — WordPress offers its updates like any other plugin's from here on. The release also finishes a naming clean-up that changes three things custom code can rely on, so if you have written CSS, JavaScript or PHP against the plugin, read the first section before you update.
 
-<!--truncate-->
+{/* truncate */}
 
 ## Before you update: three things changed name or shape
 

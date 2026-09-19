@@ -8,7 +8,7 @@ date: 2026-09-07T13:25
 
 2.2.0 is a privacy fix. On a store without a local MaxMind database, geolocation could send every new visitor's IP address to a remote geolocation service. It no longer can. Geolocation is also switched off by default on new installs. If you rely on it, read the last section: on some stores it now needs one setting to keep working.
 
-<!--truncate-->
+{/* truncate */}
 
 ## What changed
 

@@ -8,7 +8,7 @@ date: 2026-09-18T20:07
 
 2.2.1 gözle görülen iki şeyi düzeltiyor. Türkçe bir sitede eklenti İngilizce görünüyordu, ve iki önbellek uyumluluğu uyarısı sürekli kalkıp geri geliyordu. İkisi de düzeldi; güncellemeden sonra yapmanız gereken bir şey yok.
 
-<!--truncate-->
+{/* truncate */}
 
 ## Türkçe çeviri eklentiyle birlikte geliyor
 

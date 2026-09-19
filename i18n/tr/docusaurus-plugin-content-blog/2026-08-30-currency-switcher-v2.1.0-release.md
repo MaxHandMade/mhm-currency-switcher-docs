@@ -8,7 +8,7 @@ date: 2026-08-30T15:27
 
 MHM Currency Switcher artık WordPress.org'da listeleniyor ve oraya 2.1.0 ile geldi; bundan sonra WordPress eklentinin güncellemelerini diğer eklentilerinki gibi sunuyor. Bu sürüm ayrıca, özel kodun dayanabileceği üç şeyi değiştiren bir adlandırma temizliğini tamamlıyor. Eklentiye karşı CSS, JavaScript ya da PHP yazdıysanız güncellemeden önce ilk bölümü okuyun.
 
-<!--truncate-->
+{/* truncate */}
 
 ## Güncellemeden önce: adı ya da biçimi değişen üç şey
 

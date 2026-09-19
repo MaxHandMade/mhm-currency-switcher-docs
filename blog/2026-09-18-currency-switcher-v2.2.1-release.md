@@ -8,7 +8,7 @@ date: 2026-09-18T20:07
 
 2.2.1 fixes two things you could see. On a Turkish site the plugin appeared in English, and the two cache-compatibility warnings kept clearing and coming back. Both are fixed, and there is nothing to do after you update.
 
-<!--truncate-->
+{/* truncate */}
 
 ## The Turkish translation ships with the plugin
 

@@ -8,7 +8,7 @@ date: 2026-09-07T13:25
 
 2.2.0 bir gizlilik düzeltmesi. Yerel MaxMind veritabanı olmayan bir mağazada konum algılama, her yeni ziyaretçinin IP adresini uzak bir konum servisine gönderebiliyordu. Artık gönderemez. Konum algılama yeni kurulumlarda da varsayılan olarak kapalı geliyor. Ona güveniyorsanız son bölümü okuyun: bazı mağazalarda çalışmaya devam etmesi için artık tek bir ayar gerekiyor.
 
-<!--truncate-->
+{/* truncate */}
 
 ## Ne değişti
 
