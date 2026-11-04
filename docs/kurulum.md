@@ -12,7 +12,7 @@ slug: /installation
 |---|---|
 | WordPress | 6.6 |
 | PHP | 7.4 |
-| WooCommerce | 7.4 |
+| WooCommerce | 9.1 |
 
 This is the only page on this site that states these floors — see them here, not elsewhere.
 
