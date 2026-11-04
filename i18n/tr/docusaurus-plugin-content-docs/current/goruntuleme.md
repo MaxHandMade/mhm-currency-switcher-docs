@@ -27,6 +27,10 @@ Etiket metni açık olan parçalardan sırayla oluşturulur: **simge → kod →
 | **Orta** (varsayılan) | 14px |
 | **Büyük** | 16px |
 
+## Klavyeyle Kullanım
+
+Dönüştürücü fare olmadan da kullanılabilir. Tab ile üzerine gelin; **Enter**, **Boşluk** ya da bir **ok tuşu** listeyi geçerli para biriminde açar. **↑ ↓ Home End** liste içinde gezinir, **Enter** ya da **Boşluk** para birimini seçer, **Escape** hiçbir şeyi değiştirmeden listeyi kapatır. Klavye odağı, dönüştürücü bir gezinme menüsündeyken de çerçeveyle gösterilir.
+
 ## Ürün Fiyat Bileşeni
 
 Ürün sayfalarında ana fiyatın altında, fiyatı birkaç para biriminde birden gösteren şerittir.
@@ -37,7 +41,7 @@ Etiket metni açık olan parçalardan sırayla oluşturulur: **simge → kod →
 | **Gösterilecek para birimleri** | En fazla 5 para birimi seçebilirsiniz |
 | **Bileşende bayrakları göster** | Fiyatların yanında bayrak simgesi gösterir |
 
-Bileşen açıkken ürün sayfasında fiyat özetinin içinde otomatik olarak görünür; kısa kodu elle eklemenize gerek yoktur. Hiçbir para birimi seçilmemişse bileşen görünmez.
+Bileşen açıkken ürün sayfasında fiyat özetinin içinde otomatik olarak görünür; kısa kodu elle eklemenize gerek yoktur. Hiçbir para birimi seçilmemişse bileşen görünmez. Ürünün kendi fiyatı gizlendiğinde de görünmez: bir tema ya da eklenti fiyatları gizliyorsa (katalog veya bakım modu, "fiyatı görmek için giriş yapın"), dönüştürülmüş fiyatlar da onunla birlikte gizlenir. Fiyata yalnızca ek yapan bir eklenti (örneğin "KDV dahil" yazısı) bileşeni gizlemez.
 
 **Örnek görünüm:**
 

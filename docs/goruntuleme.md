@@ -27,6 +27,10 @@ The label is built from whichever parts are on, in this order: symbol → code �
 | Medium (default) | 14px |
 | Large | 16px |
 
+## Keyboard use
+
+The switcher can be used without a mouse. Tab to it, then press **Enter**, **Space** or an **arrow key** to open the list on the current currency. **↑ ↓ Home End** move through the list, **Enter** or **Space** picks a currency, and **Escape** closes the list without changing anything. Keyboard focus is outlined, also when the switcher sits in a navigation menu.
+
 ## Product price widget
 
 A strip under the main price on product pages, showing the price converted into several currencies at once.
@@ -37,7 +41,7 @@ A strip under the main price on product pages, showing the price converted into 
 | **Currencies to display** | Pick up to 5 currencies |
 | **Show flags in widget** | Shows a flag next to each price |
 
-When enabled, it appears automatically inside the product's price summary — you don't need to add a shortcode for it. It stays hidden if no currency is selected.
+When enabled, it appears automatically inside the product's price summary — you don't need to add a shortcode for it. It stays hidden if no currency is selected. It is also hidden whenever the product's own price is: if a theme or plugin hides prices (a catalogue or maintenance mode, "log in to see prices"), the converted prices go with it. A plugin that only adds to the price, such as a "VAT included" suffix, does not hide it.
 
 **Example:**
 
