@@ -16,7 +16,7 @@ The plugin used to say it supported WooCommerce 7.4, but nothing tested that. Th
 
 ## The switcher works from the keyboard
 
-You could reach the switcher with Tab and open it with Enter, but no key could pick a currency. Now **Enter**, **Space** or an **arrow key** open the list on the current currency. **↑ ↓ Home End** move through it, **Enter** or **Space** picks a currency, and **Escape** closes the list without changing anything. Keyboard focus is outlined, including when the switcher sits in a navigation menu, where it used to be invisible. This works the same in the shortcode, the Elementor widget and the menu item. See [Display options](/docs/display-options).
+You could reach the switcher with Tab and open it with Enter, but no key could pick a currency. Now **Enter**, **Space**, **↓** or **↑** open the list on the current currency. **↑ ↓ Home End** move through it, **Enter** or **Space** picks a currency, and **Escape** closes the list without changing anything. Keyboard focus is outlined, including when the switcher sits in a navigation menu, where it used to be invisible. This works the same in the shortcode, the Elementor widget and the menu item. See [Display options](/docs/display-options).
 
 ## Converted prices are hidden when the price is
 
@@ -24,4 +24,6 @@ If a theme or plugin hid a product's price (a catalogue or maintenance mode, "lo
 
 ## Less to load where the switcher isn't used
 
-When prices are converted on your server (cache compatibility off, logged-in customers, the cart and checkout), the switcher's script now loads only on pages that show a switcher. With cache compatibility on, which is the default, nothing changes.
+When prices are converted on your server (cache compatibility off, logged-in customers, the cart and checkout), the switcher's script now loads only on pages that show a switcher. Where the browser converts prices (cache compatibility on, which is the default, for visitors who are not logged in, outside the cart and checkout), nothing changes.
+
+[2.3.0 on GitHub](https://github.com/MaxHandMade/mhm-currency-switcher/releases/tag/v2.3.0)

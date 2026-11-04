@@ -29,7 +29,7 @@ Etiket metni açık olan parçalardan sırayla oluşturulur: **simge → kod →
 
 ## Klavyeyle Kullanım
 
-Dönüştürücü fare olmadan da kullanılabilir. Tab ile üzerine gelin; **Enter**, **Boşluk** ya da bir **ok tuşu** listeyi geçerli para biriminde açar. **↑ ↓ Home End** liste içinde gezinir, **Enter** ya da **Boşluk** para birimini seçer, **Escape** hiçbir şeyi değiştirmeden listeyi kapatır. Klavye odağı, dönüştürücü bir gezinme menüsündeyken de çerçeveyle gösterilir.
+Dönüştürücü fare olmadan da kullanılabilir. Tab ile üzerine gelin; **Enter**, **Boşluk**, **↓** ya da **↑** listeyi geçerli para biriminde açar. **↑ ↓ Home End** liste içinde gezinir, **Enter** ya da **Boşluk** para birimini seçer, **Escape** hiçbir şeyi değiştirmeden listeyi kapatır. Klavye odağı, dönüştürücü bir gezinme menüsündeyken de çerçeveyle gösterilir.
 
 ## Ürün Fiyat Bileşeni
 

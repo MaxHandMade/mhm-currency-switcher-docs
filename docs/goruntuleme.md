@@ -29,7 +29,7 @@ The label is built from whichever parts are on, in this order: symbol → code �
 
 ## Keyboard use
 
-The switcher can be used without a mouse. Tab to it, then press **Enter**, **Space** or an **arrow key** to open the list on the current currency. **↑ ↓ Home End** move through the list, **Enter** or **Space** picks a currency, and **Escape** closes the list without changing anything. Keyboard focus is outlined, also when the switcher sits in a navigation menu.
+The switcher can be used without a mouse. Tab to it, then press **Enter**, **Space**, **↓** or **↑** to open the list on the current currency. **↑ ↓ Home End** move through the list, **Enter** or **Space** picks a currency, and **Escape** closes the list without changing anything. Keyboard focus is outlined, also when the switcher sits in a navigation menu.
 
 ## Product price widget
 

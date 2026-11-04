@@ -16,7 +16,7 @@ Eklenti WooCommerce 7.4'ü desteklediğini söylüyordu, ama bunu sınayan hiçb
 
 ## Dönüştürücü klavyeyle çalışıyor
 
-Dönüştürücüye Tab ile gelip Enter ile açabiliyordunuz, ama hiçbir tuş para birimi seçemiyordu. Artık **Enter**, **Boşluk** ya da bir **ok tuşu** listeyi geçerli para biriminde açıyor. **↑ ↓ Home End** liste içinde geziniyor, **Enter** ya da **Boşluk** para birimini seçiyor, **Escape** hiçbir şeyi değiştirmeden listeyi kapatıyor. Klavye odağı çerçeveyle gösteriliyor; daha önce hiç görünmediği gezinme menüsünde de. Bu davranış kısa kodda, Elementor bileşeninde ve menü öğesinde aynı. Bkz. [Görüntüleme seçenekleri](/docs/display-options).
+Dönüştürücüye Tab ile gelip Enter ile açabiliyordunuz, ama hiçbir tuş para birimi seçemiyordu. Artık **Enter**, **Boşluk**, **↓** ya da **↑** listeyi geçerli para biriminde açıyor. **↑ ↓ Home End** liste içinde geziniyor, **Enter** ya da **Boşluk** para birimini seçiyor, **Escape** hiçbir şeyi değiştirmeden listeyi kapatıyor. Klavye odağı çerçeveyle gösteriliyor; daha önce hiç görünmediği gezinme menüsünde de. Bu davranış kısa kodda, Elementor bileşeninde ve menü öğesinde aynı. Bkz. [Görüntüleme seçenekleri](/docs/display-options).
 
 ## Fiyat gizlendiğinde dönüştürülmüş fiyatlar da gizleniyor
 
@@ -24,4 +24,6 @@ Bir tema ya da eklenti ürünün fiyatını gizlediğinde (katalog veya bakım m
 
 ## Dönüştürücünün kullanılmadığı sayfalarda daha az yükleme
 
-Fiyatlar sunucunuzda dönüştürüldüğünde (önbellek uyumluluğu kapalıyken, giriş yapmış müşterilerde, sepet ve ödeme sayfasında) dönüştürücünün betiği artık yalnızca dönüştürücü gösteren sayfalarda yükleniyor. Önbellek uyumluluğu açıkken, ki varsayılan budur, hiçbir şey değişmiyor.
+Fiyatlar sunucunuzda dönüştürüldüğünde (önbellek uyumluluğu kapalıyken, giriş yapmış müşterilerde, sepet ve ödeme sayfasında) dönüştürücünün betiği artık yalnızca dönüştürücü gösteren sayfalarda yükleniyor. Fiyatların tarayıcıda dönüştürüldüğü yerlerde (varsayılan olan önbellek uyumluluğu açıkken, giriş yapmamış ziyaretçilerde, sepet ve ödeme sayfası dışında) hiçbir şey değişmiyor.
+
+[GitHub'da 2.3.0](https://github.com/MaxHandMade/mhm-currency-switcher/releases/tag/v2.3.0)
