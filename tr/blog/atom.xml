@@ -2,11 +2,35 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://MaxHandMade.github.io/mhm-currency-switcher-docs/tr/blog</id>
     <title>MHM Currency Switcher Sürüm Notları</title>
-    <updated>2026-09-18T20:07:00.000Z</updated>
+    <updated>2026-11-04T02:30:00.000Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://MaxHandMade.github.io/mhm-currency-switcher-docs/tr/blog"/>
     <subtitle>MHM Currency Switcher sürüm notları</subtitle>
     <icon>https://MaxHandMade.github.io/mhm-currency-switcher-docs/tr/img/favicon.ico</icon>
+    <entry>
+        <title type="html"><![CDATA[Currency Switcher 2.3.0 — klavyeyle çalışan dönüştürücü, gerçek fiyatı izleyen dönüştürülmüş fiyatlar]]></title>
+        <id>https://MaxHandMade.github.io/mhm-currency-switcher-docs/tr/blog/currency-switcher-v2.3.0-release</id>
+        <link href="https://MaxHandMade.github.io/mhm-currency-switcher-docs/tr/blog/currency-switcher-v2.3.0-release"/>
+        <updated>2026-11-04T02:30:00.000Z</updated>
+        <summary type="html"><![CDATA[2.3.0 ile para birimi dönüştürücüsü klavyeyle kullanılabiliyor. Ürünün kendi fiyatı gizlendiğinde dönüştürülmüş fiyatlar da gizleniyor, dönüştürücüye ihtiyaç duymayan sayfalar da daha az yükleniyor. Sürüm WooCommerce tabanını 9.1'e çıkarıyor; güncellemeden önce WooCommerce sürümünüzü kontrol edin.]]></summary>
+        <content type="html"><![CDATA[<p>2.3.0 ile para birimi dönüştürücüsü klavyeyle kullanılabiliyor. Ürünün kendi fiyatı gizlendiğinde dönüştürülmüş fiyatlar da gizleniyor, dönüştürücüye ihtiyaç duymayan sayfalar da daha az yükleniyor. Sürüm WooCommerce tabanını 9.1'e çıkarıyor; güncellemeden önce WooCommerce sürümünüzü kontrol edin.</p>
+<!-- -->
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="woocommerce-91-veya-sonrası">WooCommerce 9.1 veya sonrası<a href="https://maxhandmade.github.io/mhm-currency-switcher-docs/tr/blog/currency-switcher-v2.3.0-release#woocommerce-91-veya-sonras%C4%B1" class="hash-link" aria-label="WooCommerce 9.1 veya sonrası doğrudan bağlantı" title="WooCommerce 9.1 veya sonrası doğrudan bağlantı" translate="no">​</a></h2>
+<p>Eklenti WooCommerce 7.4'ü desteklediğini söylüyordu, ama bunu sınayan hiçbir şey yoktu. Taban artık eklentinin otomatik testlerinin gerçekten kurduğu en eski WooCommerce'i gösteriyor: <strong>9.1</strong>. Mağazanız WooCommerce 7.4–9.0 kullanıyorsa önce WooCommerce'i güncelleyin. Gereksinimlerin tamamı <a class="" href="https://maxhandmade.github.io/mhm-currency-switcher-docs/tr/docs/installation">kurulum sayfasında</a>.</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="dönüştürücü-klavyeyle-çalışıyor">Dönüştürücü klavyeyle çalışıyor<a href="https://maxhandmade.github.io/mhm-currency-switcher-docs/tr/blog/currency-switcher-v2.3.0-release#d%C3%B6n%C3%BC%C5%9Ft%C3%BCr%C3%BCc%C3%BC-klavyeyle-%C3%A7al%C4%B1%C5%9F%C4%B1yor" class="hash-link" aria-label="Dönüştürücü klavyeyle çalışıyor doğrudan bağlantı" title="Dönüştürücü klavyeyle çalışıyor doğrudan bağlantı" translate="no">​</a></h2>
+<p>Dönüştürücüye Tab ile gelip Enter ile açabiliyordunuz, ama hiçbir tuş para birimi seçemiyordu. Artık <strong>Enter</strong>, <strong>Boşluk</strong>, <strong>↓</strong> ya da <strong>↑</strong> listeyi geçerli para biriminde açıyor. <strong>↑ ↓ Home End</strong> liste içinde geziniyor, <strong>Enter</strong> ya da <strong>Boşluk</strong> para birimini seçiyor, <strong>Escape</strong> hiçbir şeyi değiştirmeden listeyi kapatıyor. Klavye odağı çerçeveyle gösteriliyor; daha önce hiç görünmediği gezinme menüsünde de. Bu davranış kısa kodda, Elementor bileşeninde ve menü öğesinde aynı. Bkz. <a class="" href="https://maxhandmade.github.io/mhm-currency-switcher-docs/tr/docs/display-options">Görüntüleme seçenekleri</a>.</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="fiyat-gizlendiğinde-dönüştürülmüş-fiyatlar-da-gizleniyor">Fiyat gizlendiğinde dönüştürülmüş fiyatlar da gizleniyor<a href="https://maxhandmade.github.io/mhm-currency-switcher-docs/tr/blog/currency-switcher-v2.3.0-release#fiyat-gizlendi%C4%9Finde-d%C3%B6n%C3%BC%C5%9Ft%C3%BCr%C3%BClm%C3%BC%C5%9F-fiyatlar-da-gizleniyor" class="hash-link" aria-label="Fiyat gizlendiğinde dönüştürülmüş fiyatlar da gizleniyor doğrudan bağlantı" title="Fiyat gizlendiğinde dönüştürülmüş fiyatlar da gizleniyor doğrudan bağlantı" translate="no">​</a></h2>
+<p>Bir tema ya da eklenti ürünün fiyatını gizlediğinde (katalog veya bakım modu, "fiyatı görmek için giriş yapın") WooCommerce'in fiyatı kayboluyor, ama dönüştürülmüş fiyatlar altında görünmeye devam ediyordu. Ürün fiyat bileşeni artık ürünün kendi fiyatını izliyor. Fiyat gizlendiğinde ya da bir mesajla değiştirildiğinde dönüştürülmüş fiyatlar da gizleniyor. Fiyata yalnızca ek yapan bir eklentide, örneğin "KDV dahil" yazısında, görünmeye devam ediyorlar.</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="dönüştürücünün-kullanılmadığı-sayfalarda-daha-az-yükleme">Dönüştürücünün kullanılmadığı sayfalarda daha az yükleme<a href="https://maxhandmade.github.io/mhm-currency-switcher-docs/tr/blog/currency-switcher-v2.3.0-release#d%C3%B6n%C3%BC%C5%9Ft%C3%BCr%C3%BCc%C3%BCn%C3%BCn-kullan%C4%B1lmad%C4%B1%C4%9F%C4%B1-sayfalarda-daha-az-y%C3%BCkleme" class="hash-link" aria-label="Dönüştürücünün kullanılmadığı sayfalarda daha az yükleme doğrudan bağlantı" title="Dönüştürücünün kullanılmadığı sayfalarda daha az yükleme doğrudan bağlantı" translate="no">​</a></h2>
+<p>Fiyatlar sunucunuzda dönüştürüldüğünde (önbellek uyumluluğu kapalıyken, giriş yapmış müşterilerde, sepet ve ödeme sayfasında) dönüştürücünün betiği artık yalnızca dönüştürücü gösteren sayfalarda yükleniyor. Fiyatların tarayıcıda dönüştürüldüğü yerlerde (varsayılan olan önbellek uyumluluğu açıkken, giriş yapmamış ziyaretçilerde, sepet ve ödeme sayfası dışında) hiçbir şey değişmiyor.</p>
+<p><a href="https://github.com/MaxHandMade/mhm-currency-switcher/releases/tag/v2.3.0" target="_blank" rel="noopener noreferrer" class="">GitHub'da 2.3.0</a></p>]]></content>
+        <author>
+            <name>MaxHandMade</name>
+            <uri>https://github.com/MaxHandMade</uri>
+        </author>
+        <category label="Sürüm" term="Sürüm"/>
+        <category label="Currency Switcher" term="Currency Switcher"/>
+    </entry>
     <entry>
         <title type="html"><![CDATA[Currency Switcher 2.2.1 — Türkçe eklentinin içinde, önbellek uyarıları yerinde]]></title>
         <id>https://MaxHandMade.github.io/mhm-currency-switcher-docs/tr/blog/currency-switcher-v2.2.1-release</id>
