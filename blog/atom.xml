@@ -2,11 +2,35 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://MaxHandMade.github.io/mhm-currency-switcher-docs/blog</id>
     <title>MHM Currency Switcher Release Notes</title>
-    <updated>2026-11-04T02:30:00.000Z</updated>
+    <updated>2026-11-21T09:40:00.000Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://MaxHandMade.github.io/mhm-currency-switcher-docs/blog"/>
     <subtitle>MHM Currency Switcher release notes</subtitle>
     <icon>https://MaxHandMade.github.io/mhm-currency-switcher-docs/img/favicon.ico</icon>
+    <entry>
+        <title type="html"><![CDATA[Currency Switcher 2.3.1 — German and Spanish, and translations that reach every screen]]></title>
+        <id>https://MaxHandMade.github.io/mhm-currency-switcher-docs/blog/currency-switcher-v2.3.1-release</id>
+        <link href="https://MaxHandMade.github.io/mhm-currency-switcher-docs/blog/currency-switcher-v2.3.1-release"/>
+        <updated>2026-11-21T09:40:00.000Z</updated>
+        <summary type="html"><![CDATA[2.3.1 adds German and Spanish translations and changes which translation the plugin uses when there is more than one. Nothing else changes, and there is nothing to configure.]]></summary>
+        <content type="html"><![CDATA[<p>2.3.1 adds German and Spanish translations and changes which translation the plugin uses when there is more than one. Nothing else changes, and there is nothing to configure.</p>
+<!-- -->
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="german-and-spanish">German and Spanish<a href="https://maxhandmade.github.io/mhm-currency-switcher-docs/blog/currency-switcher-v2.3.1-release#german-and-spanish" class="hash-link" aria-label="Direct link to German and Spanish" title="Direct link to German and Spanish" translate="no">​</a></h2>
+<p>The plugin now ships in English, Turkish, German and Spanish. On a German or Spanish site the settings screen, the menu labels, the admin notices and the switcher appear in that language. See <a class="" href="https://maxhandmade.github.io/mhm-currency-switcher-docs/docs/installation#languages">Languages</a>.</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="wordpressorg-translations-reach-the-settings-screen">WordPress.org translations reach the settings screen<a href="https://maxhandmade.github.io/mhm-currency-switcher-docs/blog/currency-switcher-v2.3.1-release#wordpressorg-translations-reach-the-settings-screen" class="hash-link" aria-label="Direct link to WordPress.org translations reach the settings screen" title="Direct link to WordPress.org translations reach the settings screen" translate="no">​</a></h2>
+<p>Translations made on <a href="https://translate.wordpress.org/projects/wp-plugins/mhm-currency-switcher/" target="_blank" rel="noopener noreferrer" class="">translate.wordpress.org</a> arrive as a language pack. Until now the settings screen ignored the pack for the languages the plugin ships, and always showed the plugin's own translation, so a correction made on translate.wordpress.org never reached it. The language pack now takes precedence on every screen.</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="missing-text-falls-back-to-the-plugins-translation">Missing text falls back to the plugin's translation<a href="https://maxhandmade.github.io/mhm-currency-switcher-docs/blog/currency-switcher-v2.3.1-release#missing-text-falls-back-to-the-plugins-translation" class="hash-link" aria-label="Direct link to Missing text falls back to the plugin's translation" title="Direct link to Missing text falls back to the plugin's translation" translate="no">​</a></h2>
+<p>A language pack can lag behind a new release: text added in the release shows in English until translators catch up. Now that text uses the plugin's own translation instead, and the language pack still wins wherever it has the text.</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="wordpress-66-and-67">WordPress 6.6 and 6.7<a href="https://maxhandmade.github.io/mhm-currency-switcher-docs/blog/currency-switcher-v2.3.1-release#wordpress-66-and-67" class="hash-link" aria-label="Direct link to WordPress 6.6 and 6.7" title="Direct link to WordPress 6.6 and 6.7" translate="no">​</a></h2>
+<p>On WordPress 6.6 and 6.7, the menu labels, admin notices and the switcher stayed in English even when the plugin carried a translation for your language. They are now translated there too, so the plugin looks the same on every supported version.</p>
+<p><a href="https://github.com/MaxHandMade/mhm-currency-switcher/releases/tag/v2.3.1" target="_blank" rel="noopener noreferrer" class="">2.3.1 on GitHub</a></p>]]></content>
+        <author>
+            <name>MaxHandMade</name>
+            <uri>https://github.com/MaxHandMade</uri>
+        </author>
+        <category label="Release" term="Release"/>
+        <category label="Currency Switcher" term="Currency Switcher"/>
+    </entry>
     <entry>
         <title type="html"><![CDATA[Currency Switcher 2.3.0 — a keyboard-friendly switcher, and converted prices that follow the real one]]></title>
         <id>https://MaxHandMade.github.io/mhm-currency-switcher-docs/blog/currency-switcher-v2.3.0-release</id>

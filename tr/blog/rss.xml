@@ -4,10 +4,30 @@
         <title>MHM Currency Switcher Sürüm Notları</title>
         <link>https://MaxHandMade.github.io/mhm-currency-switcher-docs/tr/blog</link>
         <description>MHM Currency Switcher sürüm notları</description>
-        <lastBuildDate>Wed, 04 Nov 2026 02:30:00 GMT</lastBuildDate>
+        <lastBuildDate>Sat, 21 Nov 2026 09:40:00 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>https://github.com/jpmonette/feed</generator>
         <language>tr</language>
+        <item>
+            <title><![CDATA[Currency Switcher 2.3.1 — Almanca ve İspanyolca, her ekrana ulaşan çeviriler]]></title>
+            <link>https://MaxHandMade.github.io/mhm-currency-switcher-docs/tr/blog/currency-switcher-v2.3.1-release</link>
+            <guid>https://MaxHandMade.github.io/mhm-currency-switcher-docs/tr/blog/currency-switcher-v2.3.1-release</guid>
+            <pubDate>Sat, 21 Nov 2026 09:40:00 GMT</pubDate>
+            <description><![CDATA[2.3.1 Almanca ve İspanyolca çeviri ekliyor ve birden fazla çeviri olduğunda eklentinin hangisini kullandığını değiştiriyor. Başka bir şey değişmiyor, ayarlanacak bir şey de yok.]]></description>
+            <content:encoded><![CDATA[<p>2.3.1 Almanca ve İspanyolca çeviri ekliyor ve birden fazla çeviri olduğunda eklentinin hangisini kullandığını değiştiriyor. Başka bir şey değişmiyor, ayarlanacak bir şey de yok.</p>
+<!-- -->
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="almanca-ve-i̇spanyolca">Almanca ve İspanyolca<a href="https://maxhandmade.github.io/mhm-currency-switcher-docs/tr/blog/currency-switcher-v2.3.1-release#almanca-ve-i%CC%87spanyolca" class="hash-link" aria-label="Almanca ve İspanyolca doğrudan bağlantı" title="Almanca ve İspanyolca doğrudan bağlantı" translate="no">​</a></h2>
+<p>Eklenti artık İngilizce, Türkçe, Almanca ve İspanyolca geliyor. Almanca ya da İspanyolca bir sitede ayarlar ekranı, menü etiketleri, yönetici bildirimleri ve dönüştürücü o dilde görünüyor. Bkz. <a class="" href="https://maxhandmade.github.io/mhm-currency-switcher-docs/tr/docs/installation#diller">Diller</a>.</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="wordpressorg-çevirileri-ayarlar-ekranına-ulaşıyor">WordPress.org çevirileri ayarlar ekranına ulaşıyor<a href="https://maxhandmade.github.io/mhm-currency-switcher-docs/tr/blog/currency-switcher-v2.3.1-release#wordpressorg-%C3%A7evirileri-ayarlar-ekran%C4%B1na-ula%C5%9F%C4%B1yor" class="hash-link" aria-label="WordPress.org çevirileri ayarlar ekranına ulaşıyor doğrudan bağlantı" title="WordPress.org çevirileri ayarlar ekranına ulaşıyor doğrudan bağlantı" translate="no">​</a></h2>
+<p><a href="https://translate.wordpress.org/projects/wp-plugins/mhm-currency-switcher/" target="_blank" rel="noopener noreferrer" class="">translate.wordpress.org</a> üzerinde yapılan çeviriler bir dil paketi olarak gelir. Şimdiye kadar ayarlar ekranı, eklentinin kendi taşıdığı dillerde bu paketi yok sayıp hep eklentinin çevirisini gösteriyordu; translate.wordpress.org'da yapılan bir düzeltme oraya hiç ulaşmıyordu. Artık her ekranda öncelik dil paketinde.</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="eksik-metin-eklentinin-çevirisine-düşüyor">Eksik metin eklentinin çevirisine düşüyor<a href="https://maxhandmade.github.io/mhm-currency-switcher-docs/tr/blog/currency-switcher-v2.3.1-release#eksik-metin-eklentinin-%C3%A7evirisine-d%C3%BC%C5%9F%C3%BCyor" class="hash-link" aria-label="Eksik metin eklentinin çevirisine düşüyor doğrudan bağlantı" title="Eksik metin eklentinin çevirisine düşüyor doğrudan bağlantı" translate="no">​</a></h2>
+<p>Dil paketi yeni bir sürümün gerisinde kalabilir: sürümde eklenen metin, çevirmenler yetişene kadar İngilizce görünür. Artık bu metin eklentinin kendi çevirisini kullanıyor; dil paketinin taşıdığı her metinde yine paket kazanıyor.</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="wordpress-66-ve-67">WordPress 6.6 ve 6.7<a href="https://maxhandmade.github.io/mhm-currency-switcher-docs/tr/blog/currency-switcher-v2.3.1-release#wordpress-66-ve-67" class="hash-link" aria-label="WordPress 6.6 ve 6.7 doğrudan bağlantı" title="WordPress 6.6 ve 6.7 doğrudan bağlantı" translate="no">​</a></h2>
+<p>WordPress 6.6 ve 6.7'de menü etiketleri, yönetici bildirimleri ve dönüştürücü, eklenti dilinizin çevirisini taşısa bile İngilizce kalıyordu. Artık orada da çevriliyor; eklenti desteklenen her sürümde aynı görünüyor.</p>
+<p><a href="https://github.com/MaxHandMade/mhm-currency-switcher/releases/tag/v2.3.1" target="_blank" rel="noopener noreferrer" class="">GitHub'da 2.3.1</a></p>]]></content:encoded>
+            <category>Sürüm</category>
+            <category>Currency Switcher</category>
+        </item>
         <item>
             <title><![CDATA[Currency Switcher 2.3.0 — klavyeyle çalışan dönüştürücü, gerçek fiyatı izleyen dönüştürülmüş fiyatlar]]></title>
             <link>https://MaxHandMade.github.io/mhm-currency-switcher-docs/tr/blog/currency-switcher-v2.3.0-release</link>
