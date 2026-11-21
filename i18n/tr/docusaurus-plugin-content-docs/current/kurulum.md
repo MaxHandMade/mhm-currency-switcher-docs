@@ -49,4 +49,4 @@ Değişiklikleriniz kaydedilmemişse sayfanın üstünde bir uyarı çubuğu bel
 
 ## Diller
 
-Eklenti İngilizce ve Türkçe gelir. Dili Türkçe olan ve WordPress 6.8 ya da üstünü çalıştıran bir sitede eklentinin tamamı Türkçe görünür; 6.6 ve 6.7'de bir kısmı İngilizce kalır — bkz. [Bilinen Sınırlar](/docs/known-limits). Başka dillere çeviriler [translate.wordpress.org](https://translate.wordpress.org/projects/wp-plugins/mhm-currency-switcher/) üzerinde yapılır; WordPress.org hesabı olan herkes katkıda bulunabilir.
+Eklenti İngilizce, Türkçe, Almanca ve İspanyolca gelir; bu dillerden birini kullanan bir sitede eklentinin tamamı, desteklenen her WordPress sürümünde (6.6 ve üstü) o dilde görünür. WordPress.org'da dilinize ait bir dil paketi varsa öncelik pakettedir; paketin henüz taşımadığı metinleri eklentinin kendi çevirisi tamamlar. Başka dillere çeviriler [translate.wordpress.org](https://translate.wordpress.org/projects/wp-plugins/mhm-currency-switcher/) üzerinde yapılır; WordPress.org hesabı olan herkes katkıda bulunabilir.
