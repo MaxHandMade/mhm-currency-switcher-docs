@@ -47,7 +47,7 @@ Unsaved changes show a bar at the top of the screen. **Save Changes** appears bo
 
 ## Languages
 
-The plugin ships in English and Turkish. On a site whose language is Turkish and that runs WordPress 6.8 or later, the whole plugin appears in Turkish; on 6.6 and 6.7 part of it stays in English — see [Known limits](/docs/known-limits). Translations into other languages are made on [translate.wordpress.org](https://translate.wordpress.org/projects/wp-plugins/mhm-currency-switcher/), where anyone with a WordPress.org account can contribute.
+The plugin ships in English, Turkish, German and Spanish, and on a site in one of these languages the whole plugin appears in that language on every supported WordPress version (6.6 and later). When WordPress.org has a language pack for your language, the pack takes precedence, and the plugin's own translation fills any text the pack does not have yet. Translations into other languages are made on [translate.wordpress.org](https://translate.wordpress.org/projects/wp-plugins/mhm-currency-switcher/), where anyone with a WordPress.org account can contribute.
 
 The full FAQ is on the [FAQ](/docs/faq) page; the full list of known limits is
 on the [Known limits](/docs/known-limits) page.
