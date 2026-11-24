@@ -26,3 +26,7 @@ docs/rest-api.md	/mhmcs/v1/rates	Removed in 2.1.0
 i18n/tr/docusaurus-plugin-content-docs/current/rest-api.md	/mhmcs/v1/rates	2.1.0'da kaldırıldı
 docs/wp-cli.md	wp mhm-cs rates-sync	Renamed in 2.1.0
 i18n/tr/docusaurus-plugin-content-docs/current/wp-cli.md	wp mhm-cs rates-sync	2.1.0'da yeniden adlandırıldı
+i18n/es/docusaurus-plugin-content-docs/current/rest-api.md	/mhmcs/v1/rates	Eliminado en la 2.1.0
+i18n/de/docusaurus-plugin-content-docs/current/rest-api.md	/mhmcs/v1/rates	Entfernt in 2.1.0
+i18n/es/docusaurus-plugin-content-docs/current/wp-cli.md	wp mhm-cs rates-sync	Renombrado en la 2.1.0
+i18n/de/docusaurus-plugin-content-docs/current/wp-cli.md	wp mhm-cs rates-sync	In 2.1.0 umbenannt

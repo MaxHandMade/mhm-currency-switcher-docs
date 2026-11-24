@@ -1,0 +1,26 @@
+# Etiquetas del blog (ES). Las claves y los permalinks son los mismos que en
+# blog/tags.yml; solo se traduce el nombre visible.
+release:
+  label: Versión
+  permalink: /release
+currency-switcher:
+  label: Currency Switcher
+  permalink: /currency-switcher
+css:
+  label: CSS
+  permalink: /css
+rest-api:
+  label: REST API
+  permalink: /rest-api
+privacy:
+  label: Privacidad
+  permalink: /privacy
+geolocation:
+  label: Geolocalización
+  permalink: /geolocation
+translation:
+  label: Traducción
+  permalink: /translation
+cache:
+  label: Caché
+  permalink: /cache

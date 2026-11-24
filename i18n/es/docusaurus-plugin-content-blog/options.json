@@ -1,0 +1,14 @@
+{
+  "title": {
+    "message": "Notas de la versión",
+    "description": "The title for the blog used in SEO"
+  },
+  "description": {
+    "message": "Notas de la versión de MHM Currency Switcher",
+    "description": "The description for the blog used in SEO"
+  },
+  "sidebar.title": {
+    "message": "Entradas recientes",
+    "description": "The label for the left sidebar"
+  }
+}

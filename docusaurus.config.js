@@ -28,10 +28,12 @@ const config = {
 
   i18n: {
     defaultLocale: 'en',
-    locales: ['en', 'tr'],
+    locales: ['en', 'tr', 'es', 'de'],
     localeConfigs: {
       en: { label: 'English', htmlLang: 'en-US' },
       tr: { label: 'Türkçe', htmlLang: 'tr-TR' },
+      es: { label: 'Español', htmlLang: 'es-ES' },
+      de: { label: 'Deutsch', htmlLang: 'de-DE' },
     },
   },
 
