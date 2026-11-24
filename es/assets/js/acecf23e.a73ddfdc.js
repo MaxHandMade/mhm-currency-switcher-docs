@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkmhm_currency_switcher_docs=self.webpackChunkmhm_currency_switcher_docs||[]).push([["3220"],{1912(s){s.exports=JSON.parse('{"blogBasePath":"/mhm-currency-switcher-docs/es/blog","blogTitle":"Notas de la versi\xf3n","authorsListPath":"/mhm-currency-switcher-docs/es/blog/authors"}')}}]);

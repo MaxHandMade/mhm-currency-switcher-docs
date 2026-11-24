@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkmhm_currency_switcher_docs=self.webpackChunkmhm_currency_switcher_docs||[]).push([["5889"],{8488(c,e,r){r.d(e,{createArchitectureServices:()=>s.S});var s=r(9221);r(1400)}}]);

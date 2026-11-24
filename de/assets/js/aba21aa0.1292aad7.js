@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkmhm_currency_switcher_docs=self.webpackChunkmhm_currency_switcher_docs||[]).push([["3747"],{7093(c){c.exports=JSON.parse('{"name":"docusaurus-plugin-content-docs","id":"default"}')}}]);
