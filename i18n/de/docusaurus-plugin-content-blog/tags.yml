@@ -1,0 +1,26 @@
+# Blog-Schlagwörter (DE). Schlüssel und Permalinks sind dieselben wie in
+# blog/tags.yml; übersetzt wird nur der angezeigte Name.
+release:
+  label: Version
+  permalink: /release
+currency-switcher:
+  label: Currency Switcher
+  permalink: /currency-switcher
+css:
+  label: CSS
+  permalink: /css
+rest-api:
+  label: REST API
+  permalink: /rest-api
+privacy:
+  label: Datenschutz
+  permalink: /privacy
+geolocation:
+  label: Geolokalisierung
+  permalink: /geolocation
+translation:
+  label: Übersetzung
+  permalink: /translation
+cache:
+  label: Cache
+  permalink: /cache
