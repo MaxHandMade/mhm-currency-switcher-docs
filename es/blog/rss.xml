@@ -4,10 +4,26 @@
         <title>MHM Currency Switcher Release Notes</title>
         <link>https://MaxHandMade.github.io/mhm-currency-switcher-docs/es/blog</link>
         <description>MHM Currency Switcher release notes</description>
-        <lastBuildDate>Sat, 21 Nov 2026 09:40:00 GMT</lastBuildDate>
+        <lastBuildDate>Sat, 28 Nov 2026 12:00:00 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>https://github.com/jpmonette/feed</generator>
         <language>es</language>
+        <item>
+            <title><![CDATA[Currency Switcher 2.3.2: encabezados de columna más limpios, probado con WooCommerce 11.3]]></title>
+            <link>https://MaxHandMade.github.io/mhm-currency-switcher-docs/es/blog/currency-switcher-v2.3.2-release</link>
+            <guid>https://MaxHandMade.github.io/mhm-currency-switcher-docs/es/blog/currency-switcher-v2.3.2-release</guid>
+            <pubDate>Sat, 28 Nov 2026 12:00:00 GMT</pubDate>
+            <description><![CDATA[La versión 2.3.2 es una pequeña versión de mantenimiento. Los encabezados de columna largos de la pestaña Gestionar monedas ahora se dividen entre sílabas, y el plugin está probado con WooCommerce 11.3. No hay nada que configurar.]]></description>
+            <content:encoded><![CDATA[<p>La versión 2.3.2 es una pequeña versión de mantenimiento. Los encabezados de columna largos de la pestaña Gestionar monedas ahora se dividen entre sílabas, y el plugin está probado con WooCommerce 11.3. No hay nada que configurar.</p>
+<!-- -->
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="los-encabezados-se-dividen-entre-sílabas">Los encabezados se dividen entre sílabas<a href="https://maxhandmade.github.io/mhm-currency-switcher-docs/es/blog/currency-switcher-v2.3.2-release#los-encabezados-se-dividen-entre-s%C3%ADlabas" class="hash-link" aria-label="Enlace directo al Los encabezados se dividen entre sílabas" title="Enlace directo al Los encabezados se dividen entre sílabas" translate="no">​</a></h2>
+<p>Cuando un encabezado de columna de la pestaña <strong>Gestionar monedas</strong> no cabe en su columna, pasa a una segunda línea. Hasta ahora se cortaba en la letra que llegaba al borde: por ejemplo, el alemán «Reihenfolge» (Orden) quedaba como «Reihenf / olge». Ahora se divide entre sílabas y añade un guion: «Reihen- / folge». En español, «Activado» se divide como «Acti- / vado». Los encabezados en inglés y en turco siguen cabiendo en una línea.</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="probado-con-woocommerce-113">Probado con WooCommerce 11.3<a href="https://maxhandmade.github.io/mhm-currency-switcher-docs/es/blog/currency-switcher-v2.3.2-release#probado-con-woocommerce-113" class="hash-link" aria-label="Enlace directo al Probado con WooCommerce 11.3" title="Enlace directo al Probado con WooCommerce 11.3" translate="no">​</a></h2>
+<p>Las pruebas automáticas se ejecutaron con WooCommerce 11.3.1 sobre WordPress 7.1.5, con y sin HPOS, y pasaron. La cabecera «WC tested up to» del plugin ahora indica 11.3.</p>
+<p><a href="https://github.com/MaxHandMade/mhm-currency-switcher/releases/tag/v2.3.2" target="_blank" rel="noopener noreferrer" class="">2.3.2 en GitHub</a></p>]]></content:encoded>
+            <category>Versión</category>
+            <category>Currency Switcher</category>
+        </item>
         <item>
             <title><![CDATA[Currency Switcher 2.3.1: alemán y español, y traducciones que llegan a todas las pantallas]]></title>
             <link>https://MaxHandMade.github.io/mhm-currency-switcher-docs/es/blog/currency-switcher-v2.3.1-release</link>

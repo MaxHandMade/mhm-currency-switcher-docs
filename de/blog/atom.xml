@@ -2,11 +2,31 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://MaxHandMade.github.io/mhm-currency-switcher-docs/de/blog</id>
     <title>MHM Currency Switcher Release Notes</title>
-    <updated>2026-11-21T09:40:00.000Z</updated>
+    <updated>2026-11-28T12:00:00.000Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://MaxHandMade.github.io/mhm-currency-switcher-docs/de/blog"/>
     <subtitle>MHM Currency Switcher release notes</subtitle>
     <icon>https://MaxHandMade.github.io/mhm-currency-switcher-docs/de/img/favicon.ico</icon>
+    <entry>
+        <title type="html"><![CDATA[Currency Switcher 2.3.2 — sauberere Spaltenüberschriften, getestet mit WooCommerce 11.3]]></title>
+        <id>https://MaxHandMade.github.io/mhm-currency-switcher-docs/de/blog/currency-switcher-v2.3.2-release</id>
+        <link href="https://MaxHandMade.github.io/mhm-currency-switcher-docs/de/blog/currency-switcher-v2.3.2-release"/>
+        <updated>2026-11-28T12:00:00.000Z</updated>
+        <summary type="html"><![CDATA[2.3.2 ist eine kleine Wartungsversion. Lange Spaltenüberschriften auf dem Tab „Währungen verwalten“ werden jetzt zwischen Silben getrennt, und das Plugin ist mit WooCommerce 11.3 getestet. Es gibt nichts zu konfigurieren.]]></summary>
+        <content type="html"><![CDATA[<p>2.3.2 ist eine kleine Wartungsversion. Lange Spaltenüberschriften auf dem Tab „Währungen verwalten“ werden jetzt zwischen Silben getrennt, und das Plugin ist mit WooCommerce 11.3 getestet. Es gibt nichts zu konfigurieren.</p>
+<!-- -->
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="spaltenüberschriften-werden-nach-silben-getrennt">Spaltenüberschriften werden nach Silben getrennt<a href="https://maxhandmade.github.io/mhm-currency-switcher-docs/de/blog/currency-switcher-v2.3.2-release#spalten%C3%BCberschriften-werden-nach-silben-getrennt" class="hash-link" aria-label="Direkter Link zur Spaltenüberschriften werden nach Silben getrennt" title="Direkter Link zur Spaltenüberschriften werden nach Silben getrennt" translate="no">​</a></h2>
+<p>Ist eine Spaltenüberschrift auf dem Tab <strong>Währungen verwalten</strong> zu lang für ihre Spalte, bricht sie in eine zweite Zeile um. Bisher geschah das an dem Buchstaben, der gerade den Rand erreichte – „Reihenfolge“ wurde zum Beispiel zu „Reihenf / olge“. Jetzt wird zwischen Silben getrennt und ein Bindestrich gesetzt: „Reihen- / folge“. Englische und türkische Überschriften passen weiterhin in eine Zeile.</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="getestet-mit-woocommerce-113">Getestet mit WooCommerce 11.3<a href="https://maxhandmade.github.io/mhm-currency-switcher-docs/de/blog/currency-switcher-v2.3.2-release#getestet-mit-woocommerce-113" class="hash-link" aria-label="Direkter Link zur Getestet mit WooCommerce 11.3" title="Direkter Link zur Getestet mit WooCommerce 11.3" translate="no">​</a></h2>
+<p>Die automatischen Tests liefen mit WooCommerce 11.3.1 auf WordPress 7.1.5, mit und ohne HPOS, und waren erfolgreich. Der Plugin-Header „WC tested up to“ lautet jetzt 11.3.</p>
+<p><a href="https://github.com/MaxHandMade/mhm-currency-switcher/releases/tag/v2.3.2" target="_blank" rel="noopener noreferrer" class="">2.3.2 auf GitHub</a></p>]]></content>
+        <author>
+            <name>MaxHandMade</name>
+            <uri>https://github.com/MaxHandMade</uri>
+        </author>
+        <category label="Version" term="Version"/>
+        <category label="Currency Switcher" term="Currency Switcher"/>
+    </entry>
     <entry>
         <title type="html"><![CDATA[Currency Switcher 2.3.1 — Deutsch und Spanisch sowie Übersetzungen, die jeden Bildschirm erreichen]]></title>
         <id>https://MaxHandMade.github.io/mhm-currency-switcher-docs/de/blog/currency-switcher-v2.3.1-release</id>

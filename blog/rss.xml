@@ -4,10 +4,26 @@
         <title>MHM Currency Switcher Release Notes</title>
         <link>https://MaxHandMade.github.io/mhm-currency-switcher-docs/blog</link>
         <description>MHM Currency Switcher release notes</description>
-        <lastBuildDate>Sat, 21 Nov 2026 09:40:00 GMT</lastBuildDate>
+        <lastBuildDate>Sat, 28 Nov 2026 12:00:00 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>https://github.com/jpmonette/feed</generator>
         <language>en</language>
+        <item>
+            <title><![CDATA[Currency Switcher 2.3.2 — tidier column headings, tested with WooCommerce 11.3]]></title>
+            <link>https://MaxHandMade.github.io/mhm-currency-switcher-docs/blog/currency-switcher-v2.3.2-release</link>
+            <guid>https://MaxHandMade.github.io/mhm-currency-switcher-docs/blog/currency-switcher-v2.3.2-release</guid>
+            <pubDate>Sat, 28 Nov 2026 12:00:00 GMT</pubDate>
+            <description><![CDATA[2.3.2 is a small maintenance release. Long column headings on the Manage Currencies tab now break between syllables, and the plugin is tested with WooCommerce 11.3. There is nothing to configure.]]></description>
+            <content:encoded><![CDATA[<p>2.3.2 is a small maintenance release. Long column headings on the Manage Currencies tab now break between syllables, and the plugin is tested with WooCommerce 11.3. There is nothing to configure.</p>
+<!-- -->
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="column-headings-break-between-syllables">Column headings break between syllables<a href="https://maxhandmade.github.io/mhm-currency-switcher-docs/blog/currency-switcher-v2.3.2-release#column-headings-break-between-syllables" class="hash-link" aria-label="Direct link to Column headings break between syllables" title="Direct link to Column headings break between syllables" translate="no">​</a></h2>
+<p>When a column heading on the <strong>Manage Currencies</strong> tab is too long for its column, it wraps onto a second line. Until now it broke at whichever letter reached the edge, for example the German "Reihenfolge" (Order) split as "Reihenf / olge". It now breaks between syllables and adds a hyphen: "Reihen- / folge". English and Turkish headings fit on one line, as before.</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="tested-with-woocommerce-113">Tested with WooCommerce 11.3<a href="https://maxhandmade.github.io/mhm-currency-switcher-docs/blog/currency-switcher-v2.3.2-release#tested-with-woocommerce-113" class="hash-link" aria-label="Direct link to Tested with WooCommerce 11.3" title="Direct link to Tested with WooCommerce 11.3" translate="no">​</a></h2>
+<p>The automated tests ran against WooCommerce 11.3.1 on WordPress 7.1.5, with and without HPOS, and passed. The plugin's "WC tested up to" header now says 11.3.</p>
+<p><a href="https://github.com/MaxHandMade/mhm-currency-switcher/releases/tag/v2.3.2" target="_blank" rel="noopener noreferrer" class="">2.3.2 on GitHub</a></p>]]></content:encoded>
+            <category>Release</category>
+            <category>Currency Switcher</category>
+        </item>
         <item>
             <title><![CDATA[Currency Switcher 2.3.1 — German and Spanish, and translations that reach every screen]]></title>
             <link>https://MaxHandMade.github.io/mhm-currency-switcher-docs/blog/currency-switcher-v2.3.1-release</link>

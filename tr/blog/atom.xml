@@ -2,11 +2,31 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://MaxHandMade.github.io/mhm-currency-switcher-docs/tr/blog</id>
     <title>MHM Currency Switcher Sürüm Notları</title>
-    <updated>2026-11-21T09:40:00.000Z</updated>
+    <updated>2026-11-28T12:00:00.000Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://MaxHandMade.github.io/mhm-currency-switcher-docs/tr/blog"/>
     <subtitle>MHM Currency Switcher sürüm notları</subtitle>
     <icon>https://MaxHandMade.github.io/mhm-currency-switcher-docs/tr/img/favicon.ico</icon>
+    <entry>
+        <title type="html"><![CDATA[Currency Switcher 2.3.2 — daha düzgün sütun başlıkları, WooCommerce 11.3 ile sınandı]]></title>
+        <id>https://MaxHandMade.github.io/mhm-currency-switcher-docs/tr/blog/currency-switcher-v2.3.2-release</id>
+        <link href="https://MaxHandMade.github.io/mhm-currency-switcher-docs/tr/blog/currency-switcher-v2.3.2-release"/>
+        <updated>2026-11-28T12:00:00.000Z</updated>
+        <summary type="html"><![CDATA[2.3.2 küçük bir bakım sürümü. Para Birimlerini Yönet sekmesindeki uzun sütun başlıkları artık heceden bölünüyor ve eklenti WooCommerce 11.3 ile sınandı. Ayarlanacak bir şey yok.]]></summary>
+        <content type="html"><![CDATA[<p>2.3.2 küçük bir bakım sürümü. Para Birimlerini Yönet sekmesindeki uzun sütun başlıkları artık heceden bölünüyor ve eklenti WooCommerce 11.3 ile sınandı. Ayarlanacak bir şey yok.</p>
+<!-- -->
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="sütun-başlıkları-heceden-bölünüyor">Sütun başlıkları heceden bölünüyor<a href="https://maxhandmade.github.io/mhm-currency-switcher-docs/tr/blog/currency-switcher-v2.3.2-release#s%C3%BCtun-ba%C5%9Fl%C4%B1klar%C4%B1-heceden-b%C3%B6l%C3%BCn%C3%BCyor" class="hash-link" aria-label="Sütun başlıkları heceden bölünüyor doğrudan bağlantı" title="Sütun başlıkları heceden bölünüyor doğrudan bağlantı" translate="no">​</a></h2>
+<p><strong>Para Birimlerini Yönet</strong> sekmesindeki bir sütun başlığı sütununa sığmayınca ikinci satıra iner. Şimdiye kadar kenara hangi harf denk gelirse oradan bölünüyordu; örneğin Almanca "Reihenfolge" (Sıra) "Reihenf / olge" diye ayrılıyordu. Artık heceden bölünüyor ve araya tire konuyor: "Reihen- / folge". Türkçe ve İngilizce başlıklar eskisi gibi tek satıra sığıyor.</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="woocommerce-113-ile-sınandı">WooCommerce 11.3 ile sınandı<a href="https://maxhandmade.github.io/mhm-currency-switcher-docs/tr/blog/currency-switcher-v2.3.2-release#woocommerce-113-ile-s%C4%B1nand%C4%B1" class="hash-link" aria-label="WooCommerce 11.3 ile sınandı doğrudan bağlantı" title="WooCommerce 11.3 ile sınandı doğrudan bağlantı" translate="no">​</a></h2>
+<p>Otomatik testler WordPress 7.1.5 üzerinde WooCommerce 11.3.1 ile, HPOS açık ve kapalıyken koştu ve geçti. Eklentinin "WC tested up to" başlığı artık 11.3 diyor.</p>
+<p><a href="https://github.com/MaxHandMade/mhm-currency-switcher/releases/tag/v2.3.2" target="_blank" rel="noopener noreferrer" class="">GitHub'da 2.3.2</a></p>]]></content>
+        <author>
+            <name>MaxHandMade</name>
+            <uri>https://github.com/MaxHandMade</uri>
+        </author>
+        <category label="Sürüm" term="Sürüm"/>
+        <category label="Currency Switcher" term="Currency Switcher"/>
+    </entry>
     <entry>
         <title type="html"><![CDATA[Currency Switcher 2.3.1 — Almanca ve İspanyolca, her ekrana ulaşan çeviriler]]></title>
         <id>https://MaxHandMade.github.io/mhm-currency-switcher-docs/tr/blog/currency-switcher-v2.3.1-release</id>
@@ -19,7 +39,7 @@
 <p>Eklenti artık İngilizce, Türkçe, Almanca ve İspanyolca geliyor. Almanca ya da İspanyolca bir sitede ayarlar ekranı, menü etiketleri, yönetici bildirimleri ve dönüştürücü o dilde görünüyor. Bkz. <a class="" href="https://maxhandmade.github.io/mhm-currency-switcher-docs/tr/docs/installation#diller">Diller</a>.</p>
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="wordpressorg-çevirileri-ayarlar-ekranına-ulaşıyor">WordPress.org çevirileri ayarlar ekranına ulaşıyor<a href="https://maxhandmade.github.io/mhm-currency-switcher-docs/tr/blog/currency-switcher-v2.3.1-release#wordpressorg-%C3%A7evirileri-ayarlar-ekran%C4%B1na-ula%C5%9F%C4%B1yor" class="hash-link" aria-label="WordPress.org çevirileri ayarlar ekranına ulaşıyor doğrudan bağlantı" title="WordPress.org çevirileri ayarlar ekranına ulaşıyor doğrudan bağlantı" translate="no">​</a></h2>
 <p><a href="https://translate.wordpress.org/projects/wp-plugins/mhm-currency-switcher/" target="_blank" rel="noopener noreferrer" class="">translate.wordpress.org</a> üzerinde yapılan çeviriler bir dil paketi olarak gelir. Şimdiye kadar ayarlar ekranı, eklentinin kendi taşıdığı dillerde bu paketi yok sayıp hep eklentinin çevirisini gösteriyordu; translate.wordpress.org'da yapılan bir düzeltme oraya hiç ulaşmıyordu. Artık her ekranda öncelik dil paketinde.</p>
-<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="eksik-metin-eklentinin-çevirisine-düşüyor">Eksik metin eklentinin çevirisine düşüyor<a href="https://maxhandmade.github.io/mhm-currency-switcher-docs/tr/blog/currency-switcher-v2.3.1-release#eksik-metin-eklentinin-%C3%A7evirisine-d%C3%BC%C5%9F%C3%BCyor" class="hash-link" aria-label="Eksik metin eklentinin çevirisine düşüyor doğrudan bağlantı" title="Eksik metin eklentinin çevirisine düşüyor doğrudan bağlantı" translate="no">​</a></h2>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="eksik-metin-eklentinin-çevirisine-düşüyor">Eksik metin eklentinin çevirisine düşüyor<a href="https://maxhandmade.github.io/mhm-currency-switcher-docs/tr/blog/currency-switcher-v2.3.1-release#eksik-metin-eklentinin-%C3%A7evirisine-d%C3%BC%C5%9F%C3%BCyor" class="hash-link" aria-label="Eksik metin eklentinin çevirisine düşüyor doğrudan bağlantı" title="Eksik metin eklentinin �çevirisine düşüyor doğrudan bağlantı" translate="no">​</a></h2>
 <p>Dil paketi yeni bir sürümün gerisinde kalabilir: sürümde eklenen metin, çevirmenler yetişene kadar İngilizce görünür. Artık bu metin eklentinin kendi çevirisini kullanıyor; dil paketinin taşıdığı her metinde yine paket kazanıyor.</p>
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="wordpress-66-ve-67">WordPress 6.6 ve 6.7<a href="https://maxhandmade.github.io/mhm-currency-switcher-docs/tr/blog/currency-switcher-v2.3.1-release#wordpress-66-ve-67" class="hash-link" aria-label="WordPress 6.6 ve 6.7 doğrudan bağlantı" title="WordPress 6.6 ve 6.7 doğrudan bağlantı" translate="no">​</a></h2>
 <p>WordPress 6.6 ve 6.7'de menü etiketleri, yönetici bildirimleri ve dönüştürücü, eklenti dilinizin çevirisini taşısa bile İngilizce kalıyordu. Artık orada da çevriliyor; eklenti desteklenen her sürümde aynı görünüyor.</p>
